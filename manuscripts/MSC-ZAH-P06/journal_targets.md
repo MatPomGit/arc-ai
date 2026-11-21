@@ -1,4 +1,4 @@
-# MSC-SUV-P06 — kandydackie czasopisma
+# MSC-ZAH-P06 — kandydackie czasopisma
 
 Nie są to potwierdzone wybory redakcyjne. Zakres, opłaty, indeksowanie i dostępne tryby publikacji wymagają aktualnej weryfikacji.
 
