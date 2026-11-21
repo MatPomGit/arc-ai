@@ -1,0 +1,10 @@
+# Proposed study; no preregistration or results.
+schema_version: 1
+paper_id: "MSC-AFFECT-P06"
+study_type: "simulation"
+research_question: "Does a confidence-gated controller improve a pre-specified game outcome compared with static and random difficulty policies for one player?"
+hypotheses: [{"id":"H1","statement":"Closed-loop difficulty control conditioned on uncertainty/quality and explicit abstention, evaluated against matched non-affective policies. The candidate method is expected to improve the specified primary metric over a well-matched baseline.","status":"proposed"},{"id":"H2","statement":"Any improvement remains reproducible under independently held-out evaluation and explicit uncertainty estimates.","status":"proposed"}]
+design: {"type":"prospective reproducible methodological comparison","unit_of_analysis":"held-out participant, scenario or device","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Pre-specified primary comparison","unit":null,"definition":"Task completion, error rate, challenge target deviation, control stability, intervention frequency, p95 feedback latency, self-report as secondary."},"secondary":[]}
+analysis: {"methods":["Grouped or chronological held-out evaluation","Baseline and ablation comparison","Uncertainty intervals and negative controls"],"validation":"Require independent validation, source rights and no participant leakage."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}

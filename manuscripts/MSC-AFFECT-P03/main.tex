@@ -1,0 +1,31 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[hidelinks]{hyperref}
+\title{Longitudinal Drift-Aware Personal Workload Estimation With Label-Efficient Recalibration}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Can within-person performance be maintained across sessions with fewer recalibration labels than periodic retraining? The manuscript defines a reproducible research design that tests an explicit methodological contribution against appropriate non-adaptive or low-capacity baselines. All comparisons are prospective; no empirical improvement or validated model performance is claimed at this stage.
+\end{abstract}
+\section{Introduction and related methodological problem}
+Can within-person performance be maintained across sessions with fewer recalibration labels than periodic retraining? The scientific goal is to distinguish a genuine computational contribution from gains due to subject overlap, dataset bias, confounded acquisition settings, or favourable synthetic conditions.
+\section{Research objectives and hypotheses}
+Evaluation of drift detection and bounded recalibration cost across days for a personalized, nonclinical workload proxy. Hypothesis H1 predicts better pre-specified robustness or accuracy than an appropriate baseline under independently held-out evaluation; hypothesis H2 requires that the measured gain remains interpretable after accounting for uncertainty and deployment constraints. Both hypotheses are proposals, not tested findings.
+\section{Materials and data eligibility}
+Repeated webcam/Leap sessions N=1 default, up to 3 university staff; Muse EEG optional only after licence gate. Data usage requires source licensing, stable event/label definitions, and a documented eligibility gate. Any unavailable or incomparable source must be excluded with an explicit reason.
+\section{Methods and experimental design}
+Pre-register sessions on multiple days; randomized n-back/Stroop/visual search task difficulty, no clinical conclusions. Compare frozen, periodic-retrain and drift-triggered models; chronological forward-chaining tests; label budget matched. Hyperparameters and calibration are selected only from training splits. Evaluation units and confidence intervals must correspond to independent subjects, sessions, devices or scenarios rather than artificially replicated samples.
+\section{Statistical analysis and primary outcomes}
+Within-person prediction error, latency to recover, labels consumed, drift false alarms, session-level confidence intervals. Every primary comparison will report uncertainty intervals, failure cases, negative controls and the actual sample/split sizes. Planned sensitivity analyses vary missingness, corruption and acquisition conditions.
+\section{Results}
+No empirical dataset analysis or confirmatory comparison has been completed for this manuscript. This section will report results only after authorised data collection or reproducible benchmark execution; planned metrics are not observed effects.
+\section{Discussion, limitations and continuation criteria}
+Practice effects, fatigue, day/time and task difficulty are confounders; label is not latent state truth. Replicated within-person benefit under chronological evaluation and budget-equivalent controls; no population generalization claim. A novel method cannot be asserted solely from a different application domain; comparison against current prior art and reproducibility on an independent setting are required.
+\section{Reproducibility and provenance}
+The original research plan is preserved in \texttt{source\_plan.md}; repository and exact source commit are recorded in \texttt{provenance.json}. No sensitive recordings or private credentials are embedded.
+\end{document}

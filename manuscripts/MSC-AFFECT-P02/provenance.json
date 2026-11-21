@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "MSC-AFFECT-P02",
+  "source_repository": "MatPomGit/arc-affective",
+  "source_commit_sha": "0ff5f1531f03270c4f9fdcc7f3af6d2e9aca85dd",
+  "source_path": "manuscripts/P02/plan.md",
+  "source_blob_sha": "093060fde5b411cd42d12aa6f5ad63ec47fda1e8",
+  "source_url": "https://github.com/MatPomGit/arc-affective/blob/0ff5f1531f03270c4f9fdcc7f3af6d2e9aca85dd/manuscripts/P02/plan.md",
+  "source_role": "working_research_plan",
+  "original_status": "PLANNED",
+  "source_license_spdx": "Apache-2.0",
+  "local_origin_path": "manuscripts/MSC-AFFECT-P02/source_plan.md",
+  "transfer_scope": "plan_and_manuscript_draft_only",
+  "empirical_results_transferred": false
+}

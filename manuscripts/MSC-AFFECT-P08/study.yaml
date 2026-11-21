@@ -1,0 +1,10 @@
+# Proposed study; no preregistration or results.
+schema_version: 1
+paper_id: "MSC-AFFECT-P08"
+study_type: "methods"
+research_question: "What workload-aware scheduling policy achieves reliable p95/p99 deadlines during sensor faults on desktop and Raspberry Pi class devices?"
+hypotheses: [{"id":"H1","statement":"Reproducible scheduling/backpressure/fallback policies for asynchronous multimodal stream quality with deadline-aware performance. The candidate method is expected to improve the specified primary metric over a well-matched baseline.","status":"proposed"},{"id":"H2","statement":"Any improvement remains reproducible under independently held-out evaluation and explicit uncertainty estimates.","status":"proposed"}]
+design: {"type":"prospective reproducible methodological comparison","unit_of_analysis":"held-out participant, scenario or device","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Pre-specified primary comparison","unit":null,"definition":"p50/p95/p99 end-to-end latency, deadline-miss %, lost events, throughput, CPU/RAM, energy optional, model quality under dropped samples."},"secondary":[]}
+analysis: {"methods":["Grouped or chronological held-out evaluation","Baseline and ablation comparison","Uncertainty intervals and negative controls"],"validation":"Require independent validation, source rights and no participant leakage."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}

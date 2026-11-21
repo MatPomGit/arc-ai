@@ -1,0 +1,10 @@
+# Proposed study; no preregistration or results.
+schema_version: 1
+paper_id: "MSC-AFFECT-P01"
+study_type: "methods"
+research_question: "Does a low-channel model remain calibrated on held-out people and across corpora when reference montage and acquisition domains change?"
+hypotheses: [{"id":"H1","statement":"Channel sparsity × corpus shift factorial benchmark with explicit montage-reference compatibility, transfer-risk uncertainty and no false Muse-equivalence claims. The candidate method is expected to improve the specified primary metric over a well-matched baseline.","status":"proposed"},{"id":"H2","statement":"Any improvement remains reproducible under independently held-out evaluation and explicit uncertainty estimates.","status":"proposed"}]
+design: {"type":"prospective reproducible methodological comparison","unit_of_analysis":"held-out participant, scenario or device","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Pre-specified primary comparison","unit":null,"definition":"Macro-F1, balanced accuracy, AUROC where applicable, concordance for continuous targets, ECE, Brier, CPU time, clustered 95% CI."},"secondary":[]}
+analysis: {"methods":["Grouped or chronological held-out evaluation","Baseline and ablation comparison","Uncertainty intervals and negative controls"],"validation":"Require independent validation, source rights and no participant leakage."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}
