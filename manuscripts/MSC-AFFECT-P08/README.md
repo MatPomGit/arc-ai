@@ -11,3 +11,7 @@ Zgoda na wykorzystanie danych, walidacja eksperymentów i decyzja o zgłoszeniu 
 ## Pełny roboczy manuskrypt
 
 Plik [main.tex](main.tex) kompiluje cztery merytoryczne sekcje ([introduction](sections/introduction.tex), [methods](sections/methods.tex), [results](sections/results.tex), [discussion](sections/discussion.tex)) oraz [bibliografię](references.bib). Rozwinięte źródła przeniesiono z historycznego szkicu IEEE, zachowując ich treść naukową i cytowania. Zmieniono tylko warstwę składu na standardową klasę `article`, aby umożliwić niezależną kompilację bez wymuszania docelowego czasopisma. Wszystkie historyczne pliki pozostają niezmienione w [original/](original/); wskazany wynik `Pending` nie jest wynikiem badania.
+
+## Implementacja badań i kontrola odtwarzalności
+
+[Pinned research code and QA](../../research/affective/README.md) contains the source evaluation methods, synthetic-only regression tests and documented limitations of the experimental pipeline. The code is kept byte-for-byte from the historical source; use the [manifest](../../research/affective/source_manifest.json) for exact Git blob provenance. This does not establish authorisation to analyse raw EEG or an empirical hardware benchmark.
