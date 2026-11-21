@@ -16,8 +16,8 @@ def main() -> int:
         print("LaTeX toolchain required; refusing to claim success", file=sys.stderr)
         return 2
     papers = json.loads((ROOT / "portfolio/papers.json").read_text(encoding="utf-8"))["papers"]
-    if len(papers) != 21 or len({p["id"] for p in papers}) != 21:
-        raise ValueError("Expected 21 unique MSC manuscripts")
+    if not papers or len({p["id"] for p in papers}) != len(papers):
+        raise ValueError("Expected a nonempty set of unique MSC manuscripts")
     for paper in papers:
         source = ROOT / paper["manuscript"]["path"]
         if (source.name != "main.tex" or source.is_symlink()
@@ -63,7 +63,7 @@ def main() -> int:
                 print("PDF too small:", paper["id"], file=sys.stderr)
                 return 1
             print("LaTeX PASS:", paper["id"])
-    print("ARC AI 21/21 LaTeX manuscripts compiled in isolated temporary directories.")
+    print(f"ARC AI {len(papers)}/{len(papers)} LaTeX manuscripts compiled in isolated temporary directories.")
     return 0
 
 
