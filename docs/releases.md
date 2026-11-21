@@ -1,6 +1,6 @@
 # Wydania i wersjonowanie programu badawczego ARC
 
-**Przedmiot wydania:** zweryfikowana, odtwarzalna **migawka programu i jego publicznych metadanych**, a nie publikacja artykułu naukowego, danych uczestników, aplikacji ani bibliotek. Kanoniczne wyniki badań pozostają w repozytorium ich właściciela (lokalne ARC albo zewnętrzne MSC), a oprogramowanie w `app-*` i `lib-*`. GitHub Release, publikacja Pages, DOI, prerejestracja i zgłoszenie do czasopisma są odrębnymi czynnościami, z odrębnymi zgodami i dowodami. Szablon ma status `scaffold`; aktualnie nie jest dopuszczony do wydania.
+**Przedmiot wydania:** zweryfikowana, odtwarzalna **migawka programu i jego publicznych metadanych**, a nie publikacja artykułu naukowego, danych uczestników, aplikacji ani bibliotek. Kanoniczne wyniki badań pozostają w repozytorium ich właściciela (lokalne ARC albo zewnętrzne MSC), a oprogramowanie w `app-*` i `lib-*`. GitHub Release, publikacja Pages, DOI, prerejestracja i zgłoszenie do czasopisma są odrębnymi czynnościami, z odrębnymi zgodami i dowodami. Program ARC AI jest skonfigurowany, lecz badania pozostają na etapie planowania i nie zatwierdzono wydania.
 
 ## 1. Tożsamość, wersje i zakres
 
@@ -51,5 +51,5 @@ Przed tagowaniem wykonaj przegląd diff i historii, skontroluj listę plików w 
 
 Przy wykryciu błędu oznacz wydanie jako wycofane lub zastąpione, zablokuj dalszą dystrybucję poufnych plików, powiadom odbiorców i wydaj nową wersję z odniesieniem do poprzedniej. Nie przepinaj tagu. W razie ujawnienia prywatnych danych postępuj zgodnie z [procedurą incydentu](security/incident-response.md); usunięcie bieżącego Release nie wycofuje skopiowanych plików. Rejestr utrzymuje dokładne SHA i źródło decyzji.
 
-**Stan szablonu:** brak zgody na GitHub Release, brak danych naukowych i brak atestowanego artefaktu. Status takich czynności to **NOT_RUN**, a nie PASS.
+**Stan ARC AI:** brak zgody na GitHub Release, brak zweryfikowanych wyników empirycznych i brak atestowanego artefaktu. Status takich czynności to **NOT_RUN**, a nie PASS.
 

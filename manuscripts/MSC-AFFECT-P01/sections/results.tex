@@ -2,17 +2,19 @@
 \textbf{No empirical results are available in this manuscript version.} This section is an explicit reporting contract, not a table of observations.
 
 \begin{table}[htbp]
-\caption{Primary evaluation table, to be populated only after the data and evidence gates pass}
+\caption{Planned participant-level continuous valence evaluation; no observations are reported}
 \centering
 \begin{tabular}{llll}
 \toprule
-Corpus & Montage & Balanced acc. & Brier \\
+Corpus & Montage & CCC & MSE \\
 \midrule
 Eligible corpus & Full & Pending & Pending\\
 Eligible corpus & Sparse $k=4$ & Pending & Pending\\
-Held-out corpus & Compatible subset & Not yet eligible & Pending\\
+Held-out corpus & Compatible subset & Not eligible & Not eligible\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+CCC is undefined rather than zero for participants whose observed valence ratings are constant. MSE must be reported for each eligible held-out participant against a training-only mean-response baseline. A categorical analysis (balanced accuracy and Brier score) would require a separate prespecified transformation and is not part of this continuous-outcome table.
 
 The final report will contain participant-level paired differences and intervals, the exact number of legal datasets and unique participants, montage/reference exclusions, train-only preprocessing audit, loss of utility versus electrode count and a corpus-by-montage comparison only where scientifically identifiable. Negative controls and failure cases must be shown alongside positive results. Any claim unsupported by an actual data and code run will be omitted.

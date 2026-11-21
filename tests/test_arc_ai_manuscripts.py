@@ -142,10 +142,58 @@ class AiManuscriptTests(unittest.TestCase):
                 self.assertEqual(bibliography, (base / "original/references.bib").read_bytes())
                 for name in ("introduction", "methods", "results", "discussion"):
                     self.assertIn(r"\input{sections/" + name + "}", active)
-                    self.assertEqual(
-                        (base / "sections" / (name + ".tex")).read_bytes(),
-                        (base / "original/sections" / (name + ".tex")).read_bytes(),
-                    )
+                    current_section = (base / "sections" / (name + ".tex")).read_bytes()
+                    historical_section = (base / "original/sections" / (name + ".tex")).read_bytes()
+                    if ident == "MSC-AFFECT-P01" and name == "results":
+                        # Active reporting table corrected in E4; archived bytes remain SHA-pinned.
+                        self.assertNotEqual(current_section, historical_section)
+                    else:
+                        self.assertEqual(current_section, historical_section)
+
+    def test_p01_continuous_endpoint_matches_reporting_contract(self):
+        import yaml
+        base = MANUSCRIPTS / "MSC-AFFECT-P01"
+        plan = yaml.safe_load((base / "study.yaml").read_text(encoding="utf-8"))
+        primary = plan["outcomes"]["primary"]
+        self.assertEqual(primary["name"], "Lin concordance correlation coefficient (CCC)")
+        self.assertEqual(primary["unit"], "unitless")
+        self.assertIn("held-out participants", primary["definition"])
+        self.assertIn("constant true ratings", primary["definition"])
+        self.assertIn("Mean squared error (MSE)",
+                      {item["name"] for item in plan["outcomes"]["secondary"]})
+        table = (base / "sections/results.tex").read_text(encoding="utf-8")
+        self.assertIn("CCC & MSE", table)
+        self.assertIn("CCC is undefined rather than zero", table)
+        self.assertNotIn("Balanced acc. & Brier", table)
+        methods = (base / "sections/methods.tex").read_text(encoding="utf-8")
+        self.assertIn("participant-level Lin concordance correlation coefficient", methods)
+        self.assertFalse(plan["evidence"]["protocol_frozen"])
+
+    def test_p08_unfrozen_status_and_goodput_contract(self):
+        import yaml
+        base = MANUSCRIPTS / "MSC-AFFECT-P08"
+        plan = yaml.safe_load((base / "study.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(plan["outcomes"]["primary"]["name"], "On-time valid-output goodput")
+        self.assertEqual(plan["outcomes"]["primary"]["unit"], "fraction of attempted input events")
+        self.assertFalse(plan["evidence"]["protocol_frozen"])
+        abstract = (base / "main.tex").read_text(encoding="utf-8")
+        self.assertIn("unfrozen pre-preregistration methods draft", abstract)
+        self.assertNotIn("preregistration-stage draft", abstract)
+        methods = (base / "sections/methods.tex").read_text(encoding="utf-8")
+        self.assertIn("proportion of attempted input events yielding an on-time", methods)
+
+    def test_program_citation_and_publication_documents_are_consistent(self):
+        import yaml
+        program = json.loads((ROOT / "program.json").read_text(encoding="utf-8"))
+        citation = yaml.safe_load((ROOT / "CITATION.cff").read_text(encoding="utf-8"))
+        self.assertEqual(citation["title"], program["title"])
+        self.assertEqual(citation["version"], (ROOT / "VERSION").read_text(encoding="utf-8").strip())
+        self.assertNotIn("REPLACE", citation["title"])
+        publication = (ROOT / "docs/publication-policy.md").read_text(encoding="utf-8")
+        releases = (ROOT / "docs/releases.md").read_text(encoding="utf-8")
+        self.assertIn("lokalnym ARC albo zewnętrznym", publication)
+        self.assertNotIn("Szablon ma status `scaffold`", releases)
+        self.assertNotIn("**Stan szablonu:**", releases)
 
     def test_study_metadata_correspond_to_registry(self):
         import yaml
