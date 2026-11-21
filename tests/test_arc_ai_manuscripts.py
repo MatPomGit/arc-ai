@@ -91,18 +91,37 @@ class AiManuscriptTests(unittest.TestCase):
                 copied = MANUSCRIPTS / record["id"] / "source_plan.md"
                 self.assertEqual(blob_sha(copied), record["source_blob_sha"])
                 self.assertEqual(record["source_license_spdx"], "Apache-2.0")
+                provenance = json.loads((MANUSCRIPTS / record["id"] / "provenance.json").read_text(encoding="utf-8"))
+                self.assertEqual(provenance, record, "Local provenance differs from canonical source record")
+        # Exact blobs verified against the pinned arc-affective snapshot.
+        # Check the complete historical source, not only its main.tex.
         expected = {
-            "MSC-AFFECT-P01": "3850b11c3b24f575b112334dce565f04b99bd3aa",
-            "MSC-AFFECT-P08": "4134a2ebcc973d2bb398dbbef4e5d542fba24dfb",
+            "MSC-AFFECT-P01": {
+                "main.tex": "3850b11c3b24f575b112334dce565f04b99bd3aa",
+                "sections/introduction.tex": "ef19ddad59d7f68a805a1bcf4a49faf078d32833",
+                "sections/methods.tex": "94b64ff2730a49b6ecc29694487f415db7a776a5",
+                "sections/results.tex": "b0b73f2dd0512affd32f484745c5002e2d47506a",
+                "sections/discussion.tex": "d4594337cbe8f70db829ea4cab3c6c3c30b3f51e",
+                "protocol.md": "2e01e5fff48851c352dd32e2c65df2eceea0aa49",
+                "references.bib": "00e894c8c7c75110a5cddf923c4e2f3f6116cb50",
+            },
+            "MSC-AFFECT-P08": {
+                "main.tex": "4134a2ebcc973d2bb398dbbef4e5d542fba24dfb",
+                "sections/introduction.tex": "1478a468d129e0135be792e4934701a52827e74a",
+                "sections/methods.tex": "cf170dd7cc6bf01315810201a47847bc6c62545d",
+                "sections/results.tex": "9948b78c578ebd133eee585406e5d361e2c7d8b3",
+                "sections/discussion.tex": "d7b923df288221972a50ae0539f0d6b21a764c66",
+                "protocol.md": "46c1293a4c02d8b7623cc60e2b38edd701dd8a17",
+                "references.bib": "fe779b3f8ee776c754e1a4294c792762d80a204d",
+            },
         }
-        for ident, sha in expected.items():
-            with self.subTest(id=ident):
-                base = MANUSCRIPTS / ident / "original"
-                self.assertEqual(blob_sha(base / "main.tex"), sha)
-                for rel in ("sections/introduction.tex", "sections/methods.tex",
-                            "sections/results.tex", "sections/discussion.tex",
-                            "protocol.md", "references.bib"):
-                    self.assertTrue((base / rel).is_file())
+        for ident, files in expected.items():
+            for rel, source_sha in files.items():
+                with self.subTest(id=ident, path=rel):
+                    original = MANUSCRIPTS / ident / "original" / rel
+                    self.assertTrue(original.is_file(), original)
+                    self.assertEqual(blob_sha(original), source_sha)
+
         self.assertEqual(blob_sha(MANUSCRIPTS / "ORIGINAL_LICENSE_APACHE_2.0"),
                          "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64")
 
