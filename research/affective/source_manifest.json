@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "source_repository": "MatPomGit/arc-affective",
+  "source_commit_sha": "0ff5f1531f03270c4f9fdcc7f3af6d2e9aca85dd",
+  "scope": "P01 and P08 synthetic-only executable research methods, tests, QA reports and package metadata",
+  "reproduced_empirical_results": false,
+  "real_hardware_validation": false,
+  "files": [
+    {
+      "source_path": "pyproject.toml",
+      "destination_path": "research/affective/pyproject.toml",
+      "blob_sha": "8d487bdee87dfd49d4bf820cbe65156d1dba2c9f"
+    },
+    {
+      "source_path": "reports/P01-bids-metadata-qa.md",
+      "destination_path": "research/affective/reports/P01-bids-metadata-qa.md",
+      "blob_sha": "5c8511f8f297ac3e13adb96d3a25910d53d32adb"
+    },
+    {
+      "source_path": "reports/P01-continuous-inference-qa.md",
+      "destination_path": "research/affective/reports/P01-continuous-inference-qa.md",
+      "blob_sha": "c8a31b90b7157911f7bf0a6ff58912c514dcbcd5"
+    },
+    {
+      "source_path": "reports/P01-continuous-qa.md",
+      "destination_path": "research/affective/reports/P01-continuous-qa.md",
+      "blob_sha": "3a42acba3f91ae84abdac46d7d9533ba1a864b9a"
+    },
+    {
+      "source_path": "reports/P01-controls-qa.md",
+      "destination_path": "research/affective/reports/P01-controls-qa.md",
+      "blob_sha": "acaff5a5522d4a0b4b196714f258ca7b2f812e65"
+    },
+    {
+      "source_path": "reports/P01-converter-qa.md",
+      "destination_path": "research/affective/reports/P01-converter-qa.md",
+      "blob_sha": "2763e56bb4e5a19eaa2c08d45b73372c96b389e3"
+    },
+    {
+      "source_path": "reports/P01-data-audit.md",
+      "destination_path": "research/affective/reports/P01-data-audit.md",
+      "blob_sha": "311605eebc2fb8ab1c8f52db44743a06ccf85784"
+    },
+    {
+      "source_path": "reports/P01-endpoint-decision.md",
+      "destination_path": "research/affective/reports/P01-endpoint-decision.md",
+      "blob_sha": "bac4b9e050601d321fbd30a575994640b3b3b7e5"
+    },
+    {
+      "source_path": "reports/P01-evaluation-qa.md",
+      "destination_path": "research/affective/reports/P01-evaluation-qa.md",
+      "blob_sha": "f3d59a63980dd07c0724d8368c3187390ca64fa7"
+    },
+    {
+      "source_path": "reports/P01-event-linkage-qa.md",
+      "destination_path": "research/affective/reports/P01-event-linkage-qa.md",
+      "blob_sha": "2cb81b7694e2e3576438c2f5590ecb7bf319c83c"
+    },
+    {
+      "source_path": "reports/P01-faced-preprocessed-order-qa.md",
+      "destination_path": "research/affective/reports/P01-faced-preprocessed-order-qa.md",
+      "blob_sha": "dbcf9f16942f1a2aa2cd1aa3aaa7af39fb30cdc6"
+    },
+    {
+      "source_path": "reports/P01-faced-provenance-qa.md",
+      "destination_path": "research/affective/reports/P01-faced-provenance-qa.md",
+      "blob_sha": "208b93e5faa5fc5dae19999c8598631f75b5d87f"
+    },
+    {
+      "source_path": "reports/P01-manifest-gate.md",
+      "destination_path": "research/affective/reports/P01-manifest-gate.md",
+      "blob_sha": "69bce00adf6999c238c1e11edc189b5db4fbd3c5"
+    },
+    {
+      "source_path": "reports/P01-montage-review-qa.md",
+      "destination_path": "research/affective/reports/P01-montage-review-qa.md",
+      "blob_sha": "a8c7bdfcd759d8a00a144cb72fcd43c3c8d9ef9c"
+    },
+    {
+      "source_path": "reports/P01-source-recording-qa.md",
+      "destination_path": "research/affective/reports/P01-source-recording-qa.md",
+      "blob_sha": "2a3d7cf695ea6c1dddad776f39092a49714e95db"
+    },
+    {
+      "source_path": "reports/P01-statistics-qa.md",
+      "destination_path": "research/affective/reports/P01-statistics-qa.md",
+      "blob_sha": "e031008ef0b1cf16edefa0952eccc9ec770729a3"
+    },
+    {
+      "source_path": "reports/P01-stimulus-confound-qa.md",
+      "destination_path": "research/affective/reports/P01-stimulus-confound-qa.md",
+      "blob_sha": "289dccf197bd0378a7e7e221713979f81228cade"
+    },
+    {
+      "source_path": "reports/P08-data-qa.md",
+      "destination_path": "research/affective/reports/P08-data-qa.md",
+      "blob_sha": "40dd65dd2f393ad3762dfeb7b25609fb93ba50a4"
+    },
+    {
+      "source_path": "src/arc_affective/__init__.py",
+      "destination_path": "research/affective/src/arc_affective/__init__.py",
+      "blob_sha": "626ab7f36cc723f53d98cbdba18eef2b0f7f0dae"
+    },
+    {
+      "source_path": "src/arc_affective/cli.py",
+      "destination_path": "research/affective/src/arc_affective/cli.py",
+      "blob_sha": "1dbf525d9435a380c1716cd2799c2322341c2a06"
+    },
+    {
+      "source_path": "src/arc_affective/events.py",
+      "destination_path": "research/affective/src/arc_affective/events.py",
+      "blob_sha": "c37ab06a7f5898df0464f976ed496afaa78e4f48"
+    },
+    {
+      "source_path": "src/arc_affective/p01_bids_qc.py",
+      "destination_path": "research/affective/src/arc_affective/p01_bids_qc.py",
+      "blob_sha": "e60672d1521b90ca72a81f87fb3ee764e2392bfd"
+    },
+    {
+      "source_path": "src/arc_affective/p01_continuous_inference.py",
+      "destination_path": "research/affective/src/arc_affective/p01_continuous_inference.py",
+      "blob_sha": "6ba4dadc20fffc8da9c1f1f24d98b4418c3d23ed"
+    },
+    {
+      "source_path": "src/arc_affective/p01_continuous.py",
+      "destination_path": "research/affective/src/arc_affective/p01_continuous.py",
+      "blob_sha": "ecfe64423aede779c8d2ebaa7685db76733cbbca"
+    },
+    {
+      "source_path": "src/arc_affective/p01_controls.py",
+      "destination_path": "research/affective/src/arc_affective/p01_controls.py",
+      "blob_sha": "dab6c1d8ce7955439f436446acf64b41d8260584"
+    },
+    {
+      "source_path": "src/arc_affective/p01_converter_qc.py",
+      "destination_path": "research/affective/src/arc_affective/p01_converter_qc.py",
+      "blob_sha": "9af8142c8c9dc86b5af6ad0eecf760756ffd2825"
+    },
+    {
+      "source_path": "src/arc_affective/p01_evaluation.py",
+      "destination_path": "research/affective/src/arc_affective/p01_evaluation.py",
+      "blob_sha": "dab4ea3069795fe1a2bb1c4c0f188f46d58d6768"
+    },
+    {
+      "source_path": "src/arc_affective/p01_event_linkage.py",
+      "destination_path": "research/affective/src/arc_affective/p01_event_linkage.py",
+      "blob_sha": "9be70645fbc6dc6c56dd2518e490da347abd9785"
+    },
+    {
+      "source_path": "src/arc_affective/p01_faced_preprocessing_order.py",
+      "destination_path": "research/affective/src/arc_affective/p01_faced_preprocessing_order.py",
+      "blob_sha": "10411bff5172dfc0ffc95955f2cc44762fa6bde0"
+    },
+    {
+      "source_path": "src/arc_affective/p01_faced_provenance.py",
+      "destination_path": "research/affective/src/arc_affective/p01_faced_provenance.py",
+      "blob_sha": "3323b85788a7842509df0e67cca3655595d2b8b2"
+    },
+    {
+      "source_path": "src/arc_affective/p01_montage_review.py",
+      "destination_path": "research/affective/src/arc_affective/p01_montage_review.py",
+      "blob_sha": "2ab6cb66fec8455aae2460de4df5b0fdc2515663"
+    },
+    {
+      "source_path": "src/arc_affective/p01_registry.py",
+      "destination_path": "research/affective/src/arc_affective/p01_registry.py",
+      "blob_sha": "bf2322165305f4dd0661216acc97d0801efb4df1"
+    },
+    {
+      "source_path": "src/arc_affective/p01_source_recording_reconcile.py",
+      "destination_path": "research/affective/src/arc_affective/p01_source_recording_reconcile.py",
+      "blob_sha": "b3e5369a5c9d88cf28a1e83c24af3c417c91cb3d"
+    },
+    {
+      "source_path": "src/arc_affective/p01_stimulus_control.py",
+      "destination_path": "research/affective/src/arc_affective/p01_stimulus_control.py",
+      "blob_sha": "34c36c9e133584f67c9bc8f3c2b72cc0e62a7ae2"
+    },
+    {
+      "source_path": "src/arc_affective/p01_uncertainty.py",
+      "destination_path": "research/affective/src/arc_affective/p01_uncertainty.py",
+      "blob_sha": "ef7447a681a4c8c3de541c4e0619b02aad1a0e6b"
+    },
+    {
+      "source_path": "src/arc_affective/p08_benchmark.py",
+      "destination_path": "research/affective/src/arc_affective/p08_benchmark.py",
+      "blob_sha": "e4332fc69fdc34331cfbfbb0683355b8606e0337"
+    },
+    {
+      "source_path": "src/arc_affective/synthetic.py",
+      "destination_path": "research/affective/src/arc_affective/synthetic.py",
+      "blob_sha": "f26e15a038aa9356541c67bf47559b08b90bb63c"
+    },
+    {
+      "source_path": "tests/test_p01_bids_qc.py",
+      "destination_path": "research/affective/tests/test_p01_bids_qc.py",
+      "blob_sha": "71a12b8a687fb314c501173c1af1362a0efc3d3b"
+    },
+    {
+      "source_path": "tests/test_p01_continuous_inference.py",
+      "destination_path": "research/affective/tests/test_p01_continuous_inference.py",
+      "blob_sha": "1aeb44c5a7a7d210be613351d5c71b2b68d5fc71"
+    },
+    {
+      "source_path": "tests/test_p01_continuous.py",
+      "destination_path": "research/affective/tests/test_p01_continuous.py",
+      "blob_sha": "dc2437019113d0e39dfc8ce4a26dcaa6e00067c9"
+    },
+    {
+      "source_path": "tests/test_p01_controls.py",
+      "destination_path": "research/affective/tests/test_p01_controls.py",
+      "blob_sha": "38e37fa7c30663b63173ce57a3d06cc0182204a7"
+    },
+    {
+      "source_path": "tests/test_p01_converter_qc.py",
+      "destination_path": "research/affective/tests/test_p01_converter_qc.py",
+      "blob_sha": "966bde6e21fc775bda940f3e272cb432a753bdf4"
+    },
+    {
+      "source_path": "tests/test_p01_evaluation.py",
+      "destination_path": "research/affective/tests/test_p01_evaluation.py",
+      "blob_sha": "1aaa40dcc9a4f41748527ec653fecf82b0f32abe"
+    },
+    {
+      "source_path": "tests/test_p01_event_linkage.py",
+      "destination_path": "research/affective/tests/test_p01_event_linkage.py",
+      "blob_sha": "e7dc44187fee25208aa652945263fac352f666da"
+    },
+    {
+      "source_path": "tests/test_p01_faced_preprocessing_order.py",
+      "destination_path": "research/affective/tests/test_p01_faced_preprocessing_order.py",
+      "blob_sha": "8470b658b23e6c3e9d615d3c3bd5fa4256236b96"
+    },
+    {
+      "source_path": "tests/test_p01_faced_provenance.py",
+      "destination_path": "research/affective/tests/test_p01_faced_provenance.py",
+      "blob_sha": "b016e93c1db5290ddf8ba595547e0d4c9618fe46"
+    },
+    {
+      "source_path": "tests/test_p01_montage_review.py",
+      "destination_path": "research/affective/tests/test_p01_montage_review.py",
+      "blob_sha": "c4ee166f5c0e8ff7090ae3bbd181590f5346a9e7"
+    },
+    {
+      "source_path": "tests/test_p01_registry.py",
+      "destination_path": "research/affective/tests/test_p01_registry.py",
+      "blob_sha": "d617204c39400b96b52d155ac4c2842e110839a0"
+    },
+    {
+      "source_path": "tests/test_p01_source_recording_reconcile.py",
+      "destination_path": "research/affective/tests/test_p01_source_recording_reconcile.py",
+      "blob_sha": "a9362ae2609b3cac75b261a96e91101de37db985"
+    },
+    {
+      "source_path": "tests/test_p01_stimulus_control.py",
+      "destination_path": "research/affective/tests/test_p01_stimulus_control.py",
+      "blob_sha": "b4f1cb9da6d8f12867d92fb744b166737491c392"
+    },
+    {
+      "source_path": "tests/test_p01_uncertainty.py",
+      "destination_path": "research/affective/tests/test_p01_uncertainty.py",
+      "blob_sha": "6de829dc5c9adad9eb173c4f4b31d25764fb6d89"
+    },
+    {
+      "source_path": "tests/test_p08_benchmark.py",
+      "destination_path": "research/affective/tests/test_p08_benchmark.py",
+      "blob_sha": "1e1ace85775c457b4b927d7983d19dc516584903"
+    }
+  ]
+}

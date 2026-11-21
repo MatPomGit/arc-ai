@@ -17,3 +17,7 @@ Opis zakresu znajduje się w [RESEARCH.md](RESEARCH.md), a [klasyfikacja temató
 [Zasady odtwarzalności](REPRODUCIBILITY.md) i [architektura](ARCHITECTURE.md) rozdzielają źródła naukowe od kodu aplikacyjnego oraz zasobów pomiarowych. Dotychczasowe prace zachowują odniesienia do historycznych commitów. Szkice nie stanowią potwierdzenia uzyskania wyników, formalnej prerejestracji ani decyzji redakcyjnej.
 
 [Strona informacyjna](pages/index.md) pozostaje oddzielona od katalogów badawczych; wpisy `public_listing=false` nie są automatycznie umieszczane na stronie programu.
+
+## Wykonywalne protokoły P01 i P08
+
+[Sklonowane źródła metod badawczych](research/affective/README.md) obejmują kod Python, testy i raporty QC dla `MSC-AFFECT-P01` oraz `MSC-AFFECT-P08`, zachowane z historycznego `arc-affective` bez modyfikacji treści. [Manifest 52 plików](research/affective/source_manifest.json) wiąże każdy plik z dokładnym Git blob SHA. Testy CI sprawdzają integralność i uruchamiają deterministyczne scenariusze syntetyczne; nie stanowią walidacji na rzeczywistym EEG ani pomiarów czasu wykonania urządzenia.
