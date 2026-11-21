@@ -4,10 +4,12 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 MANUSCRIPTS = ROOT / "manuscripts"
 EXISTING = {
     "MSC-AFFECT-P01", "MSC-AFFECT-P02", "MSC-AFFECT-P03",
