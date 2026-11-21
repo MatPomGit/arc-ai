@@ -25,7 +25,31 @@ def main() -> int:
             raise ValueError("Unsafe manuscript source: " + paper["id"])
         with tempfile.TemporaryDirectory(prefix="arc-ai-latex-") as temp:
             dst = Path(temp)
+            # Copy the registered manuscript and its explicit LaTeX inputs only.
+            # This prevents hidden dependencies on files from the source tree.
             shutil.copyfile(source, dst / "main.tex")
+            latex = source.read_text(encoding="utf-8")
+            if r"\input{sections/" in latex:
+                section_names = ("introduction", "methods", "results", "discussion")
+                section_dir = source.parent / "sections"
+                if section_dir.is_symlink():
+                    raise ValueError("Symlinked LaTeX sections: " + paper["id"])
+                (dst / "sections").mkdir()
+                for section_name in section_names:
+                    relative = f"sections/{section_name}.tex"
+                    if r"\input{sections/" + section_name + "}" not in latex:
+                        raise ValueError("Missing LaTeX inclusion: " + paper["id"])
+                    section_file = section_dir / (section_name + ".tex")
+                    if (not section_file.is_file() or section_file.is_symlink()
+                            or not section_file.resolve().is_relative_to(ROOT.resolve())):
+                        raise ValueError("Unsafe LaTeX section: " + relative)
+                    shutil.copyfile(section_file, dst / relative)
+            if r"\bibliography{references}" in latex:
+                bibliography = source.parent / "references.bib"
+                if (not bibliography.is_file() or bibliography.is_symlink()
+                        or not bibliography.resolve().is_relative_to(ROOT.resolve())):
+                    raise ValueError("Unsafe references.bib: " + paper["id"])
+                shutil.copyfile(bibliography, dst / "references.bib")
             result = subprocess.run(
                 ["latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error",
                  "-file-line-error", "main.tex"],

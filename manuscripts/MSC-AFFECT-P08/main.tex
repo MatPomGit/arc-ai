@@ -6,26 +6,19 @@
 \usepackage[hidelinks]{hyperref}
 \title{Deadline-Aware Multimodal Stream Scheduling Under Sensor Faults on Edge Nodes}
 \author{}
-\date{}
 \begin{document}
 \maketitle
 \begin{abstract}
-What workload-aware scheduling policy achieves reliable p95/p99 deadlines during sensor faults on desktop and Raspberry Pi class devices? The manuscript defines a reproducible research design that tests an explicit methodological contribution against appropriate non-adaptive or low-capacity baselines. All comparisons are prospective; no empirical improvement or validated model performance is claimed at this stage.
+Time-sensitive multimodal inference must balance output freshness, tail latency, throughput and sensor reliability under finite resources. This manuscript specifies a reproducible edge benchmark that compares FIFO, latest-sample, bounded-queue and a proposed quality- and deadline-aware scheduler with explicit drop accounting. Real-clock measurements, repeatability and physical-node profiling are required to establish its engineering value. The evaluation isolates queueing effects from the predictive accuracy of affect recognition. This is a preregistration-stage draft; no real-node benchmarks, improvements or sensor-inference claims have yet been established.
 \end{abstract}
-\section{Introduction and related methodological problem}
-What workload-aware scheduling policy achieves reliable p95/p99 deadlines during sensor faults on desktop and Raspberry Pi class devices? The scientific goal is to distinguish a genuine computational contribution from gains due to subject overlap, dataset bias, confounded acquisition settings, or favourable synthetic conditions.
-\section{Research objectives and hypotheses}
-Reproducible scheduling/backpressure/fallback policies for asynchronous multimodal stream quality with deadline-aware performance. Hypothesis H1 predicts better pre-specified robustness or accuracy than an appropriate baseline under independently held-out evaluation; hypothesis H2 requires that the measured gain remains interpretable after accounting for uncertainty and deployment constraints. Both hypotheses are proposals, not tested findings.
-\section{Materials and data eligibility}
-Synthetic replay and licensed public datasets, no prospective participants; optional local webcam for end-to-end real stream. Existing Windows workstation and Raspberry Pi 5; GPU optional. Data usage requires source licensing, stable event/label definitions, and a documented eligibility gate. Any unavailable or incomparable source must be excluded with an explicit reason.
-\section{Methods and experimental design}
-Version timestamped event streams; test FIFO, latest-frame, bounded queue, quality-aware drop, CPU fallback. Controlled CPU load/dropout/reconnect; report hardware versions, wall power only if measurable. Hyperparameters and calibration are selected only from training splits. Evaluation units and confidence intervals must correspond to independent subjects, sessions, devices or scenarios rather than artificially replicated samples.
-\section{Statistical analysis and primary outcomes}
-p50/p95/p99 end-to-end latency, deadline-miss \%, lost events, throughput, CPU/RAM, energy optional, model quality under dropped samples. Every primary comparison will report uncertainty intervals, failure cases, negative controls and the actual sample/split sizes. Planned sensitivity analyses vary missingness, corruption and acquisition conditions.
-\section{Results}
-No empirical dataset analysis or confirmatory comparison has been completed for this manuscript. This section will report results only after authorised data collection or reproducible benchmark execution; planned metrics are not observed effects.
-\section{Discussion, limitations and continuation criteria}
-Mock timing cannot establish real camera/EEG latency; hardware-specific results may not transfer. Real-clock measurements on at least one physical node, reproducible profiles and non-fabricated fault injection; no affected-state accuracy claim without validated benchmark. A novel method cannot be asserted solely from a different application domain; comparison against current prior art and reproducibility on an independent setting are required.
-\section{Reproducibility and provenance}
-The original research plan is preserved in \texttt{source\_plan.md}; repository and exact source commit are recorded in \texttt{provenance.json}. No sensitive recordings or private credentials are embedded.
+\paragraph{Keywords.}
+edge computing, real-time streams, backpressure, deadlines, missingness
+
+\noindent\textit{No empirical results are claimed in this draft.}
+\input{sections/introduction}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\bibliographystyle{plain}
+\bibliography{references}
 \end{document}

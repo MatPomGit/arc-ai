@@ -106,6 +106,28 @@ class AiManuscriptTests(unittest.TestCase):
         self.assertEqual(blob_sha(MANUSCRIPTS / "ORIGINAL_LICENSE_APACHE_2.0"),
                          "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64")
 
+    def test_substantive_drafts_are_active_not_only_archived(self):
+        # The canonical main.tex must use the complete manuscript sections.
+        for ident in ("MSC-AFFECT-P01", "MSC-AFFECT-P08"):
+            with self.subTest(id=ident):
+                base = MANUSCRIPTS / ident
+                active = (base / "main.tex").read_text(encoding="utf-8")
+                archived = (base / "original/main.tex").read_text(encoding="utf-8")
+                self.assertGreater(len(active), 900)
+                self.assertIn(r"\bibliography{references}", active)
+                self.assertIn("No empirical", active)
+                self.assertIn(r"\documentclass[conference]{IEEEtran}", archived)
+                self.assertIn(r"\documentclass[11pt,a4paper]{article}", active)
+                self.assertNotIn("Author information to be confirmed", active)
+                bibliography = (base / "references.bib").read_bytes()
+                self.assertEqual(bibliography, (base / "original/references.bib").read_bytes())
+                for name in ("introduction", "methods", "results", "discussion"):
+                    self.assertIn(r"\input{sections/" + name + "}", active)
+                    self.assertEqual(
+                        (base / "sections" / (name + ".tex")).read_bytes(),
+                        (base / "original/sections" / (name + ".tex")).read_bytes(),
+                    )
+
     def test_study_metadata_correspond_to_registry(self):
         import yaml
         from validate_study import validate_study
