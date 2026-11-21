@@ -114,15 +114,15 @@ class AiManuscriptTests(unittest.TestCase):
                 active = (base / "main.tex").read_text(encoding="utf-8")
                 archived = (base / "original/main.tex").read_text(encoding="utf-8")
                 self.assertGreater(len(active), 900)
-                self.assertIn(r"\\bibliography{references}", active)
+                self.assertIn(r"\bibliography{references}", active)
                 self.assertIn("No empirical", active)
-                self.assertIn(r"\\documentclass[conference]{IEEEtran}", archived)
-                self.assertIn(r"\\documentclass[11pt,a4paper]{article}", active)
+                self.assertIn(r"\documentclass[conference]{IEEEtran}", archived)
+                self.assertIn(r"\documentclass[11pt,a4paper]{article}", active)
                 self.assertNotIn("Author information to be confirmed", active)
                 bibliography = (base / "references.bib").read_bytes()
                 self.assertEqual(bibliography, (base / "original/references.bib").read_bytes())
                 for name in ("introduction", "methods", "results", "discussion"):
-                    self.assertIn(r"\\input{sections/" + name + "}", active)
+                    self.assertIn(r"\input{sections/" + name + "}", active)
                     self.assertEqual(
                         (base / "sections" / (name + ".tex")).read_bytes(),
                         (base / "original/sections" / (name + ".tex")).read_bytes(),
