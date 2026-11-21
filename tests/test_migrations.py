@@ -1,5 +1,6 @@
 """E2E migration checks: no invented research, no silent loss or early writes."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 import json
 import shutil
 import subprocess
@@ -18,7 +19,7 @@ class MigrationTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory()
         self.root=Path(self.temp.name)/"arc"
-        shutil.copytree(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
         self.prepare_v1()
 
     def tearDown(self):

@@ -1,5 +1,6 @@
 """ARC v2: local and external ownership, provenance and negative cases."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 import json
 import shutil
 import subprocess
@@ -31,7 +32,7 @@ class RegistryV2Tests(unittest.TestCase):
 
     def fixture(self,folder):
         root=Path(folder)/"arc"
-        shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
         meta=json.loads((root/"program.json").read_text())
         meta.update(programme="arc-neuro",repository_visibility="public",
                     repository_full_name="MatPomGit/arc-neuro")

@@ -1,5 +1,6 @@
 """Offline tests for ARC template structure, privacy and data ownership."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 import copy
 import json
 import sys
@@ -96,7 +97,7 @@ class ARCContractTests(unittest.TestCase):
         import shutil
         with tempfile.TemporaryDirectory() as d:
             dst = Path(d)
-            shutil.copytree(ROOT, dst / "repo", ignore=shutil.ignore_patterns("__pycache__"))
+            copytree_scaffold(ROOT, dst / "repo", ignore=shutil.ignore_patterns("__pycache__"))
             dst = dst / "repo"
             meta = json.loads((dst / "program.json").read_text(encoding="utf-8"))
             meta["repository_visibility"] = "public"
@@ -113,7 +114,7 @@ class ARCContractTests(unittest.TestCase):
         import shutil
         with tempfile.TemporaryDirectory() as d:
             dst = Path(d)
-            shutil.copytree(ROOT, dst / "repo", ignore=shutil.ignore_patterns("__pycache__"))
+            copytree_scaffold(ROOT, dst / "repo", ignore=shutil.ignore_patterns("__pycache__"))
             dst = dst / "repo"
             meta = json.loads((dst / "program.json").read_text(encoding="utf-8"))
             meta["repository_visibility"] = "private"
@@ -133,7 +134,7 @@ class ARCContractTests(unittest.TestCase):
         import shutil
         with tempfile.TemporaryDirectory() as d:
             dst = Path(d)
-            shutil.copytree(ROOT, dst / "repo", ignore=shutil.ignore_patterns("__pycache__"))
+            copytree_scaffold(ROOT, dst / "repo", ignore=shutil.ignore_patterns("__pycache__"))
             dst = dst / "repo"
             meta = json.loads((dst / "program.json").read_text(encoding="utf-8"))
             meta["programme"] = "arc-neuro"
