@@ -1,6 +1,6 @@
-from scaffold_fixture import copytree_scaffold
 """Compile the generated LaTeX scaffold on a disposable ARC clone."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import shutil
 import subprocess

@@ -1,6 +1,6 @@
-from scaffold_fixture import copytree_scaffold
 """Public ARC branding: reviewed local programme and project logos only."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import hashlib
 import json

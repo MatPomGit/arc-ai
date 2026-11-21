@@ -1,6 +1,6 @@
-from scaffold_fixture import copytree_scaffold
 """Article Pages must be deterministic and fail closed on unsafe metadata."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import json
 import shutil

@@ -1,6 +1,6 @@
-from scaffold_fixture import copytree_scaffold
 """End-to-end CLI checks on an isolated ARC clone. No network or deployment."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import json
 import shutil

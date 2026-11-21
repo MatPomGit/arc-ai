@@ -1,6 +1,6 @@
-from scaffold_fixture import copytree_scaffold
 """Offline E2E tests for ARC initialization, manuscript generation and study plans."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import json
 import shutil

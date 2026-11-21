@@ -1,6 +1,6 @@
-from scaffold_fixture import copytree_scaffold
 """Negative tests for closed schemas, provenance and submodule trust."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 import json
 import shutil
 import tempfile

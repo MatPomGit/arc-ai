@@ -1,6 +1,6 @@
-from scaffold_fixture import copytree_scaffold
 """Regression tests for Unicode character budgets in ARC documentation."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import importlib.util
 import json
