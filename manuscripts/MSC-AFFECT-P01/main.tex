@@ -6,26 +6,19 @@
 \usepackage[hidelinks]{hyperref}
 \title{Sparse-Channel EEG Affect Representation Under Cross-Dataset and Montage Shift}
 \author{}
-\date{}
 \begin{document}
 \maketitle
 \begin{abstract}
-Does a low-channel model remain calibrated on held-out people and across corpora when reference montage and acquisition domains change? The manuscript defines a reproducible research design that tests an explicit methodological contribution against appropriate non-adaptive or low-capacity baselines. All comparisons are prospective; no empirical improvement or validated model performance is claimed at this stage.
+Portable affective EEG decoding is challenged by sensor density, electrode reference, participant identity and acquisition-domain shift. This work specifies a controlled benchmark that separates the effect of channel sparsity from corpus and montage incompatibility. The proposed design uses subject-disjoint evaluation, auditable channel coordinates, train-only preprocessing, strong low-capacity baselines and uncertainty at participant level. Cross-corpus inference is permitted only when acquisition and label compatibility are established. This document is a methods-stage manuscript draft: no dataset rights, experiments or predictive results are claimed as completed.
 \end{abstract}
-\section{Introduction and related methodological problem}
-Does a low-channel model remain calibrated on held-out people and across corpora when reference montage and acquisition domains change? The scientific goal is to distinguish a genuine computational contribution from gains due to subject overlap, dataset bias, confounded acquisition settings, or favourable synthetic conditions.
-\section{Research objectives and hypotheses}
-Channel sparsity  by  corpus shift factorial benchmark with explicit montage-reference compatibility, transfer-risk uncertainty and no false Muse-equivalence claims. Hypothesis H1 predicts better pre-specified robustness or accuracy than an appropriate baseline under independently held-out evaluation; hypothesis H2 requires that the measured gain remains interpretable after accounting for uncertainty and deployment constraints. Both hypotheses are proposals, not tested findings.
-\section{Materials and data eligibility}
-DEAP, DREAMER and AMIGOS (only after licence/data audit); open-licensed fallback candidates GAMEEMO v3 and FACED NEMAR v1.1.4 (also requiring actual file and reference QA). Public EEG only. No local volunteers necessary. Data usage requires source licensing, stable event/label definitions, and a documented eligibility gate. Any unavailable or incomparable source must be excluded with an explicit reason.
-\section{Methods and experimental design}
-Create montage registry; compare available channel subsets (not claiming Muse channel equivalence), spectral/entropy features and compact CNN; grouped LOSO in each corpus, external corpus only if labels/reference harmonize. Compare with full-channel, linear and shuffled-label baselines. Hyperparameters and calibration are selected only from training splits. Evaluation units and confidence intervals must correspond to independent subjects, sessions, devices or scenarios rather than artificially replicated samples.
-\section{Statistical analysis and primary outcomes}
-Macro-F1, balanced accuracy, AUROC where applicable, concordance for continuous targets, ECE, Brier, CPU time, clustered 95\% CI. Every primary comparison will report uncertainty intervals, failure cases, negative controls and the actual sample/split sizes. Planned sensitivity analyses vary missingness, corruption and acquisition conditions.
-\section{Results}
-No empirical dataset analysis or confirmatory comparison has been completed for this manuscript. This section will report results only after authorised data collection or reproducible benchmark execution; planned metrics are not observed effects.
-\section{Discussion, limitations and continuation criteria}
-Montage locations may differ; stimulus, sampling and label semantics confound transfer; restricted datasets may not be available. Show reproducible subject-disjoint evaluation, positive delta against appropriate low-channel baseline with CIs, and explicit limitations for any non-equivalent montage. A novel method cannot be asserted solely from a different application domain; comparison against current prior art and reproducibility on an independent setting are required.
-\section{Reproducibility and provenance}
-The original research plan is preserved in \texttt{source\_plan.md}; repository and exact source commit are recorded in \texttt{provenance.json}. No sensitive recordings or private credentials are embedded.
+\paragraph{Keywords.}
+EEG, domain shift, montage, calibration, participant-disjoint evaluation
+
+\noindent\textit{No empirical results are claimed in this draft.}
+\input{sections/introduction}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\bibliographystyle{plain}
+\bibliography{references}
 \end{document}
