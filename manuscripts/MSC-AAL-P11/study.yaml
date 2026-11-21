@@ -1,0 +1,10 @@
+# Candidate concept only; not preregistered.
+schema_version: 1
+paper_id: "MSC-AAL-P11"
+study_type: "methods"
+research_question: "When should a model withhold identity attribution while retaining reliable activity classification?"
+hypotheses: [{"id":"H1","statement":"The proposed method improves the pre-specified primary outcome against an appropriate baseline: Incorrectly addressed alerts per event at fixed minimum attribution coverage.","status":"proposed"},{"id":"H2","statement":"The measured effect is robust under the predefined independent validation and failure scenarios.","status":"proposed"}]
+design: {"type":"prospective benchmark with explicit no-go gate","unit_of_analysis":"independent scenario, device, participant or household","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Methodological primary outcome","unit":null,"definition":"Incorrectly addressed alerts per event at fixed minimum attribution coverage."},"secondary":[]}
+analysis: {"methods":["Compare against a fixed baseline","Use independently held-out splits and sensitivity analyses","Compute confidence intervals matched to the independent unit"],"validation":"Hold out households, perturb sensor availability and quantify selective risk."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}

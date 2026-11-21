@@ -1,0 +1,10 @@
+# Candidate concept only; not preregistered.
+schema_version: 1
+paper_id: "MSC-SYNC-P02"
+study_type: "simulation"
+research_question: "Can explicit camera-latency uncertainty improve temporal attribution of gaze to 2D game events?"
+hypotheses: [{"id":"H1","statement":"The proposed method improves the pre-specified primary outcome against an appropriate baseline: Absolute timing error and coverage of uncertainty intervals for gaze-to-stimulus alignment.","status":"proposed"},{"id":"H2","statement":"The measured effect is robust under the predefined independent validation and failure scenarios.","status":"proposed"}]
+design: {"type":"prospective benchmark with explicit no-go gate","unit_of_analysis":"independent scenario, device, participant or household","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Methodological primary outcome","unit":null,"definition":"Absolute timing error and coverage of uncertainty intervals for gaze-to-stimulus alignment."},"secondary":[]}
+analysis: {"methods":["Compare against a fixed baseline","Use independently held-out splits and sensitivity analyses","Compute confidence intervals matched to the independent unit"],"validation":"Hold out devices and sessions; compare constant offset, linear drift and confidence-aware alignment."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}
