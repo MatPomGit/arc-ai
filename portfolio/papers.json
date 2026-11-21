@@ -452,7 +452,7 @@
       "stage_evidence": null
     },
     {
-      "id": "MSC-SUV-P06",
+      "id": "MSC-ZAH-P06",
       "title": "Predicting Social Uncanniness from Appearance, Motion and Contextual Expectation",
       "area": "multimodal",
       "research_state": "deferred",
@@ -464,10 +464,10 @@
         "project_id": null
       },
       "manuscript": {
-        "path": "manuscripts/MSC-SUV-P06/main.tex",
+        "path": "manuscripts/MSC-ZAH-P06/main.tex",
         "format": "latex"
       },
-      "study_plan": "manuscripts/MSC-SUV-P06/study.yaml",
+      "study_plan": "manuscripts/MSC-ZAH-P06/study.yaml",
       "public_listing": false,
       "public_summary": null,
       "doi": null,

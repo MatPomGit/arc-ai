@@ -31,4 +31,4 @@ Rejestr obejmuje 22 pozycje MSC: sześć planowanych lub rozwijanych manuskrypt�
 
 Zapis kandydatury nie oznacza zatwierdzonej publikacji. Wiele pomysłów wymaga audytu podobieństwa, rozstrzygnięcia odrębności estymandów i potwierdzenia uprawnień do danych. Żaden wpis nie jest automatycznie prezentowany na GitHub Pages.
 
-- [MSC-SUV-P06](MSC-SUV-P06/README.md): Predicting Social Uncanniness from Appearance, Motion and Contextual Expectation. Status IDEA_HOLD.
+- [MSC-ZAH-P06](MSC-ZAH-P06/README.md): Predicting Social Uncanniness from Appearance, Motion and Contextual Expectation. Status IDEA_HOLD.
