@@ -1,4 +1,37 @@
 {
   "schema_version": 1,
-  "lines": []
+  "lines": [
+    {
+      "id": "eeg-ml",
+      "title": "Reprezentacje EEG i transfer między domenami"
+    },
+    {
+      "id": "multimodal",
+      "title": "Fuzja multimodalna i odporność predykcji"
+    },
+    {
+      "id": "edge-privacy",
+      "title": "Edge AI, prywatność i wykonanie w czasie rzeczywistym"
+    },
+    {
+      "id": "adaptive",
+      "title": "Uczenie adaptacyjne, polityki interwencji i niepewność"
+    },
+    {
+      "id": "temporal",
+      "title": "Synchronizacja i proweniencja czasowa obserwacji"
+    },
+    {
+      "id": "aal",
+      "title": "Metody sztucznej inteligencji dla wspomaganego życia"
+    },
+    {
+      "id": "agents",
+      "title": "Przyczynowa proweniencja zdarzeń i bezpieczeństwo agentów"
+    },
+    {
+      "id": "domain-transfer",
+      "title": "Generalizacja międzykulturowa i międzydziedzinowa"
+    }
+  ]
 }
