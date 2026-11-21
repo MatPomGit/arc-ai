@@ -1,6 +1,6 @@
 # Manuskrypty i koncepcje ARC AI
 
-Rejestr obejmuje 21 pozycji MSC: sześć planowanych lub rozwijanych manuskryptów z historycznymi źródłami ARC Affective oraz 15 kandydatur metodologicznych. Numery MSC są stałe. Brak dowodów empirycznych, prerejestracji i zatwierdzonych wyników jest jawnie oznaczony. Dla każdej pracy dostępne są LaTeX, plan badania, opis i kandydackie czasopisma. Plany źródłowe sześciu prac AFFECT zachowano bez zmian. Dla P01 i P08 dodatkowo utrwalono kompletne historyczne szkice LaTeX, bibliografie i protokoły; historycznego repozytorium nie modyfikowano.
+Rejestr obejmuje 22 pozycje MSC: sześć planowanych lub rozwijanych manuskryptów z historycznymi źródłami ARC Affective oraz 16 kandydatur metodologicznych. Numery MSC są stałe. Brak dowodów empirycznych, prerejestracji i zatwierdzonych wyników jest jawnie oznaczony. Dla każdej pracy dostępne są LaTeX, plan badania, opis i kandydackie czasopisma. Plany źródłowe sześciu prac AFFECT zachowano bez zmian. Dla P01 i P08 dodatkowo utrwalono kompletne historyczne szkice LaTeX, bibliografie i protokoły; historycznego repozytorium nie modyfikowano.
 
 ## Istniejące szkice i plany (6)
 
@@ -11,7 +11,7 @@ Rejestr obejmuje 21 pozycji MSC: sześć planowanych lub rozwijanych manuskrypt�
 - [MSC-AFFECT-P06](MSC-AFFECT-P06/README.md): Uncertainty-Gated Affective Adaptation for Single-User Digital Games. Planowane badanie, bez zweryfikowanych wyników.
 - [MSC-AFFECT-P08](MSC-AFFECT-P08/README.md): Deadline-Aware Multimodal Stream Scheduling Under Sensor Faults on Edge Nodes. Oryginalny szkic LaTeX zachowany w katalogu original/; brak potwierdzonego wyniku.
 
-## Kandydatury do weryfikacji naukowej (15)
+## Kandydatury do weryfikacji naukowej (16)
 
 - [MSC-SYNC-P01](MSC-SYNC-P01/README.md): Smartphone–EEG Clock Drift and Time-Dependent Self-Regulation Metrics. Status IDEA_HOLD.
 - [MSC-SYNC-P02](MSC-SYNC-P02/README.md): Uncertain Android Camera Latency in Mobile Gaze-to-Game Alignment. Status IDEA_HOLD.
@@ -30,3 +30,5 @@ Rejestr obejmuje 21 pozycji MSC: sześć planowanych lub rozwijanych manuskrypt�
 - [MSC-AAL-P11](MSC-AAL-P11/README.md): Selective Resident Attribution Under Unidentifiable Multi-Occupant ADL Signals. Status IDEA_HOLD.
 
 Zapis kandydatury nie oznacza zatwierdzonej publikacji. Wiele pomysłów wymaga audytu podobieństwa, rozstrzygnięcia odrębności estymandów i potwierdzenia uprawnień do danych. Żaden wpis nie jest automatycznie prezentowany na GitHub Pages.
+
+- [MSC-SUV-P06](MSC-SUV-P06/README.md): Predicting Social Uncanniness from Appearance, Motion and Contextual Expectation. Status IDEA_HOLD.

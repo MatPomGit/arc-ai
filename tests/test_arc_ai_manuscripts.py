@@ -28,12 +28,12 @@ class AiManuscriptTests(unittest.TestCase):
         cls.registry = json.loads((ROOT / "portfolio/papers.json").read_text(encoding="utf-8"))
         cls.papers = cls.registry["papers"]
 
-    def test_21_real_msc_packages_and_no_public_approval(self):
+    def test_22_real_msc_packages_and_no_public_approval(self):
         ids = {p["id"] for p in self.papers}
-        self.assertEqual(len(self.papers), 21)
-        self.assertEqual(len(ids), 21)
+        self.assertEqual(len(self.papers), 22)
+        self.assertEqual(len(ids), 22)
         self.assertEqual(len(EXISTING & ids), 6)
-        self.assertEqual(len(ids - EXISTING), 15)
+        self.assertEqual(len(ids - EXISTING), 16)
         self.assertEqual(
             ids,
             {p.name for p in MANUSCRIPTS.iterdir() if p.is_dir() and p.name.startswith("MSC-")}
