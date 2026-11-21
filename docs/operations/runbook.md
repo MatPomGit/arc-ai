@@ -1,6 +1,6 @@
 # Runbook programu ARC
 
-**Stan:** szablon. Nie zakłada się skonfigurowanej infrastruktury ani prywatnego dostępu.
+**Stan:** skonfigurowany program ARC AI, faza planowania badań. Nie zakłada się potwierdzonego dostępu do prywatnej infrastruktury.
 
 1. Sprawdź `program.json`, `PROJECT_STATE.yaml` i aktualny commit. Przed zapisem rejestrów zweryfikuj ich właścicieli, brak prywatnych metadanych w repo publicznym i statusy naukowe.
 2. Wykonaj izolowane testy statyczne i jednostkowe. Nie inicjuj submodułów lub zewnętrznego `audit-live` bez potrzeby i uprawnienia.
@@ -13,6 +13,6 @@
 
 ## Bramka ochrony gałęzi `main`
 
-Przed scaleniem zmian R2/R3 właściciel administracyjny GitHub powinien włączyć w rulesecie docelowej gałęzi: **Require a pull request before merging**, niezależną recenzję zgodną z rolami oraz **Require status checks to pass** dla joba `offline-arc-validation` (workflow `ARC research contract`). Należy zweryfikować źródło GitHub App i identyfikator statusu przed zapisaniem wymaganej kontroli. Stały bypass administratora należy wyłączyć albo ograniczyć do jawnej, audytowanej sytuacji awaryjnej. Dodatkowo nie wolno wykonywać push bezpośrednio do `main`.
+Przed scaleniem zmian R2/R3 właściciel administracyjny GitHub powinien utrzymać **Require a pull request before merging** oraz włączyć **Require status checks to pass** dla joba `offline-arc-validation` (workflow `ARC research contract`). Niezależny przegląd stosuje się według etapów Research Autopilot; nie ustanawia się fikcyjnej recenzji. Należy zweryfikować źródło GitHub App i identyfikator statusu przed zapisaniem wymaganej kontroli. Stały bypass administratora należy wyłączyć albo ograniczyć do jawnej, audytowanej sytuacji awaryjnej. Dodatkowo nie wolno wykonywać push bezpośrednio do `main`.
 
-**Stan przeglądu E3.0/E4.0 (2026-11-20):** aktywny ruleset `27653249` miał tylko `deletion` i `non_fast_forward`, z `bypass_mode: always`. Niniejszy plik **nie zmienia konfiguracji GitHub**. Do zamknięcia bramki konieczna jest rzeczywista zmiana w ustawieniach repozytorium i ponowny odczyt reguł. Zielony CI bez obowiązkowego status check nie wystarcza do ochrony gałęzi.
+**Stan API 2026-11-21:** aktywny ruleset `27795305` wymaga PR, lecz `required_status_checks` ma pustą listę, a rola administratora ma stały bypass. Status: `CI_NOT_ENFORCED`. Niniejszy plik **nie zmienia konfiguracji GitHub**. Zamknięcie bramki wymaga zapisania reguły w GitHub, ponownego odczytu API i negatywnego testu blokady merge. Zielony CI nie wystarcza jako dowód egzekwowania reguły.
