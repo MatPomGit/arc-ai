@@ -1,3 +1,4 @@
+from scaffold_fixture import copytree_scaffold
 """Regression tests for Unicode character budgets in ARC documentation."""
 from __future__ import annotations
 
@@ -18,7 +19,7 @@ SPEC.loader.exec_module(validator)
 
 class DocumentationPolicyTests(unittest.TestCase):
     def fixture(self, dest: Path) -> Path:
-        shutil.copytree(ROOT, dest, ignore=shutil.ignore_patterns(
+        copytree_scaffold(ROOT, dest, ignore=shutil.ignore_patterns(
             ".git", ".venv", "__pycache__", "site"))
         return dest
 

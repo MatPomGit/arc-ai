@@ -1,3 +1,4 @@
+from scaffold_fixture import copytree_scaffold
 """Public ARC branding: reviewed local programme and project logos only."""
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ class BrandingTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name) / "arc"
-        shutil.copytree(ROOT, self.root, ignore=shutil.ignore_patterns(
+        copytree_scaffold(ROOT, self.root, ignore=shutil.ignore_patterns(
             ".git", "site", "__pycache__", ".venv"))
 
     def tearDown(self):

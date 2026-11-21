@@ -1,3 +1,4 @@
+from scaffold_fixture import copytree_scaffold
 """Compile the generated LaTeX scaffold on a disposable ARC clone."""
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ class LatexCompileTests(unittest.TestCase):
     def test_generated_manuscript_compiles_to_pdf(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp) / "arc"
-            shutil.copytree(ROOT, root, ignore=shutil.ignore_patterns(
+            copytree_scaffold(ROOT, root, ignore=shutil.ignore_patterns(
                 ".git", "site", "__pycache__", ".venv"))
             initialize(root, programme="arc-neuro",
                        repository="MatPomGit/arc-neuro",

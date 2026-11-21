@@ -1,3 +1,4 @@
+from scaffold_fixture import copytree_scaffold
 """Offline E2E tests for ARC initialization, manuscript generation and study plans."""
 from __future__ import annotations
 
@@ -24,7 +25,7 @@ class GeneratorTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)/"arc"
-        shutil.copytree(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -253,7 +254,7 @@ class GeneratorTests(unittest.TestCase):
         for owner in ("true", "- Alice", "0123", 'Alice "Lab"'):
             with self.subTest(owner=owner), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp) / "arc"
-                shutil.copytree(ROOT, root, ignore=shutil.ignore_patterns(
+                copytree_scaffold(ROOT, root, ignore=shutil.ignore_patterns(
                     ".git", "site", "__pycache__"))
                 initialize(root, programme="arc-neuro",
                            repository="MatPomGit/arc-neuro", title="ARC Neuro",

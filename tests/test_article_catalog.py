@@ -1,3 +1,4 @@
+from scaffold_fixture import copytree_scaffold
 """Article Pages must be deterministic and fail closed on unsafe metadata."""
 from __future__ import annotations
 
@@ -17,7 +18,7 @@ class ArticleCatalogTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory()
         self.root=Path(self.temp.name)/"arc"
-        shutil.copytree(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
         self.set_program_visibility("public")
 
     def tearDown(self):
