@@ -1,5 +1,6 @@
 """End-to-end CLI checks on an isolated ARC clone. No network or deployment."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import json
 import shutil
@@ -17,7 +18,7 @@ class ArcCliLifecycleTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name) / "arc"
-        shutil.copytree(ROOT, self.root, ignore=shutil.ignore_patterns(
+        copytree_scaffold(ROOT, self.root, ignore=shutil.ignore_patterns(
             ".git", "__pycache__", ".venv", "site", ".pytest_cache"))
 
     def tearDown(self):

@@ -1,0 +1,10 @@
+# Candidate concept only; not preregistered.
+schema_version: 1
+paper_id: "MSC-AR-P20"
+study_type: "simulation"
+research_question: "When can policies for XR intervention be compared using incompletely observed historical decisions?"
+hypotheses: [{"id":"H1","statement":"The proposed method improves the pre-specified primary outcome against an appropriate baseline: Bias and confidence interval coverage of counterfactual policy-value differences.","status":"proposed"},{"id":"H2","statement":"The measured effect is robust under the predefined independent validation and failure scenarios.","status":"proposed"}]
+design: {"type":"prospective benchmark with explicit no-go gate","unit_of_analysis":"independent scenario, device, participant or household","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Methodological primary outcome","unit":null,"definition":"Bias and confidence interval coverage of counterfactual policy-value differences."},"secondary":[]}
+analysis: {"methods":["Compare against a fixed baseline","Use independently held-out splits and sensitivity analyses","Compute confidence intervals matched to the independent unit"],"validation":"Enforce overlap and logging support; compare against known simulator truth and no-adaptation baseline."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}

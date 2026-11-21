@@ -1,0 +1,10 @@
+# Proposed study; no preregistration or results.
+schema_version: 1
+paper_id: "MSC-AFFECT-P03"
+study_type: "methods"
+research_question: "Can within-person performance be maintained across sessions with fewer recalibration labels than periodic retraining?"
+hypotheses: [{"id":"H1","statement":"Evaluation of drift detection and bounded recalibration cost across days for a personalized, nonclinical workload proxy. The candidate method is expected to improve the specified primary metric over a well-matched baseline.","status":"proposed"},{"id":"H2","statement":"Any improvement remains reproducible under independently held-out evaluation and explicit uncertainty estimates.","status":"proposed"}]
+design: {"type":"prospective reproducible methodological comparison","unit_of_analysis":"independent session","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Pre-specified primary comparison","unit":null,"definition":"Within-person prediction error, latency to recover, labels consumed, drift false alarms, session-level confidence intervals."},"secondary":[]}
+analysis: {"methods":["Grouped or chronological held-out evaluation","Baseline and ablation comparison","Uncertainty intervals and negative controls"],"validation":"Require independent validation, source rights and no participant leakage."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}

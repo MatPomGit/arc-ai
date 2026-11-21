@@ -1,0 +1,10 @@
+# Candidate concept only; not preregistered.
+schema_version: 1
+paper_id: "MSC-AGENT-P01"
+study_type: "simulation"
+research_question: "Can causally versioned state snapshots reduce undetected time-of-check/time-of-use failures in asynchronous agents?"
+hypotheses: [{"id":"H1","statement":"The proposed method improves the pre-specified primary outcome against an appropriate baseline: Undetected stale-premise decision rate and detection latency.","status":"proposed"},{"id":"H2","statement":"The measured effect is robust under the predefined independent validation and failure scenarios.","status":"proposed"}]
+design: {"type":"prospective benchmark with explicit no-go gate","unit_of_analysis":"independent scenario, device, participant or household","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Methodological primary outcome","unit":null,"definition":"Undetected stale-premise decision rate and detection latency."},"secondary":[]}
+analysis: {"methods":["Compare against a fixed baseline","Use independently held-out splits and sensitivity analyses","Compute confidence intervals matched to the independent unit"],"validation":"Deterministic concurrent traces, duplicate/dropped events and correct transaction comparator."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}

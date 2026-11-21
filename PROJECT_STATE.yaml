@@ -1,16 +1,17 @@
 schema_version: 2
 repository_type: research_program
 template_version: 0.1.0
-programme: arc-REPLACE
-scientific_owner: REPLACE_OWNER
-updated: null
-phase: scaffold
+programme: arc-ai
+scientific_owner: Mateusz Pomianek
+updated: 2026-11-21
+phase: planned
 projects_registered: 0
-papers_registered: 0
+papers_registered: 21
 public_catalog_status: not_configured
 pages_status: not_configured
-hardware_validation_status: not_run
+hardware_validation_status: not_applicable
 last_live_audit: null
 known_blockers:
-  - configure_programme_owner_scope_and_projects
-next_action: inventory_primary_msc_repositories
+  - verify_data_licences_and_source_provenance
+  - candidate_publication_scope_not_approved
+next_action: review_manuscript_scope_and_evidence_gates

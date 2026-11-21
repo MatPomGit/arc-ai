@@ -1,5 +1,6 @@
 """Version-contract regression checks for current and legacy ARC metadata."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 
 import json
 import shutil
@@ -27,7 +28,7 @@ class VersionContractTests(unittest.TestCase):
         from scripts.validate_repository import validate
         with tempfile.TemporaryDirectory() as tmp:
             destination = Path(tmp) / "arc"
-            shutil.copytree(ROOT, destination, ignore=shutil.ignore_patterns(".git", "__pycache__", ".venv"))
+            copytree_scaffold(ROOT, destination, ignore=shutil.ignore_patterns(".git", "__pycache__", ".venv"))
             program_path = destination / "program.json"
             state_path = destination / "PROJECT_STATE.yaml"
             program = json.loads(program_path.read_text(encoding="utf-8"))
@@ -56,7 +57,7 @@ class VersionContractTests(unittest.TestCase):
         from scripts.validate_repository import validate
         with tempfile.TemporaryDirectory() as tmp:
             destination = Path(tmp) / "arc"
-            shutil.copytree(ROOT, destination, ignore=shutil.ignore_patterns(".git", "__pycache__", ".venv"))
+            copytree_scaffold(ROOT, destination, ignore=shutil.ignore_patterns(".git", "__pycache__", ".venv"))
             path = destination / "program.json"
             original = json.loads(path.read_text(encoding="utf-8"))
             for invalid in ([], {}, None, 42):
@@ -70,7 +71,7 @@ class VersionContractTests(unittest.TestCase):
         from scripts.migrate_arc import execute
         with tempfile.TemporaryDirectory() as tmp:
             destination = Path(tmp) / "arc"
-            shutil.copytree(ROOT, destination, ignore=shutil.ignore_patterns(".git", "__pycache__", ".venv"))
+            copytree_scaffold(ROOT, destination, ignore=shutil.ignore_patterns(".git", "__pycache__", ".venv"))
             state_path = destination / "PROJECT_STATE.yaml"
             state_path.write_text(
                 state_path.read_text(encoding="utf-8").replace(

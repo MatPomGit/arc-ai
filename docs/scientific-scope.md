@@ -1,3 +1,5 @@
-# REPLACE_PROGRAM_NAME — zakres programu
+# ARC AI: zakres naukowy
 
-Opisz pytania, główny wkład, kryterium przypisania projektów i zakres wyłączeń. Programy ARC są rozdzielane według **głównego rezultatu badania**, nie według samego użycia AI/EEG/XR. Badania wielodyscyplinarne mogą być dodatkowo odsyłane przez inne ARC bez ponownego opublikowania materiałów.
+Badania obejmują modele i metody: odporne na przesunięcia domen i zmiany konfiguracji sensorów, multimodalną kalibrację, uczenie ciągłe, lokalne przetwarzanie o ograniczonym zapisie danych, polityki adaptacji z abstencją, synchronizację zdarzeń, identyfikowalność AAL i bezpieczeństwo decyzji agentów.
+
+Kryterium przynależności jest podstawowy efekt naukowy: nowa metoda obliczeniowa lub formalnie sprawdzona własność algorytmu. Wykorzystanie AI do badania poznania, XR lub robotyki nie wystarcza do przeniesienia takiej pracy do ARC AI. Szkice naukowe mają oddzielone wyniki planowane od rzeczywistych; statusy dowodowe są weryfikowane w rejestrze MSC.

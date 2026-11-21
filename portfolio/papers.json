@@ -1,4 +1,530 @@
 {
   "schema_version": 2,
-  "papers": []
+  "papers": [
+    {
+      "id": "MSC-AAL-P01",
+      "title": "Privacy-Aware Fault-Tolerant Edge AI Architecture for Assisted Living",
+      "area": "aal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AAL-P01/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AAL-P01/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AAL-P03",
+      "title": "Lightweight Temporal Anomaly Detection for Smart-Home Activities of Daily Living",
+      "area": "aal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AAL-P03/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AAL-P03/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AAL-P04",
+      "title": "Safety-Constrained Local Intent Grounding for Ambiguous Smart-Home Commands",
+      "area": "aal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AAL-P04/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AAL-P04/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AAL-P05",
+      "title": "Continual Routine Learning Under Drift and Missing Smart-Home Events",
+      "area": "aal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AAL-P05/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AAL-P05/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AAL-P09",
+      "title": "A Privacy–Utility Frontier for Temporal Coarsening of Smart-Home Events",
+      "area": "edge-privacy",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AAL-P09/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AAL-P09/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AAL-P10",
+      "title": "Identifiability-Aware Minimal Sensor Sets for Reliable ADL Monitoring",
+      "area": "aal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AAL-P10/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AAL-P10/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AAL-P11",
+      "title": "Selective Resident Attribution Under Unidentifiable Multi-Occupant ADL Signals",
+      "area": "aal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AAL-P11/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AAL-P11/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AFFECT-P01",
+      "title": "Sparse-Channel EEG Affect Representation Under Cross-Dataset and Montage Shift",
+      "area": "eeg-ml",
+      "research_state": "planned",
+      "publication_stage": "draft",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AFFECT-P01/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AFFECT-P01/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AFFECT-P02",
+      "title": "Calibrated Multimodal Affect Fusion Under Asynchrony and Missing Sensors",
+      "area": "multimodal",
+      "research_state": "planned",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AFFECT-P02/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AFFECT-P02/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AFFECT-P03",
+      "title": "Longitudinal Drift-Aware Personal Workload Estimation With Label-Efficient Recalibration",
+      "area": "adaptive",
+      "research_state": "planned",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AFFECT-P03/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AFFECT-P03/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AFFECT-P04",
+      "title": "Privacy-Preserving Facial Behaviour Estimation on Commodity RGB Cameras",
+      "area": "edge-privacy",
+      "research_state": "planned",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AFFECT-P04/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AFFECT-P04/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AFFECT-P06",
+      "title": "Uncertainty-Gated Affective Adaptation for Single-User Digital Games",
+      "area": "adaptive",
+      "research_state": "planned",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AFFECT-P06/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AFFECT-P06/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AFFECT-P08",
+      "title": "Deadline-Aware Multimodal Stream Scheduling Under Sensor Faults on Edge Nodes",
+      "area": "edge-privacy",
+      "research_state": "planned",
+      "publication_stage": "draft",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AFFECT-P08/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AFFECT-P08/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AGENT-P01",
+      "title": "Causal Event Provenance and TOCTOU Failures in Asynchronous Assistive Agents",
+      "area": "agents",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AGENT-P01/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AGENT-P01/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AR-P19",
+      "title": "Cross-Cultural Transfer of Affective Models Between Polish and Sri Lankan Contexts",
+      "area": "domain-transfer",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AR-P19/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AR-P19/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-AR-P20",
+      "title": "Counterfactual Evaluation of XR Intervention Policies With Incomplete Interaction Logs",
+      "area": "adaptive",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-AR-P20/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-AR-P20/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-POLICY-P01",
+      "title": "Cost-Calibrated Selective Abstention Across XR, Smart Homes and Simulated HRI",
+      "area": "adaptive",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-POLICY-P01/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-POLICY-P01/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-POLICY-P02",
+      "title": "Intervention-Induced Missingness Bias in Closed-Loop Multimodal Systems",
+      "area": "adaptive",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-POLICY-P02/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-POLICY-P02/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-SYNC-P01",
+      "title": "Smartphone–EEG Clock Drift and Time-Dependent Self-Regulation Metrics",
+      "area": "temporal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-SYNC-P01/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-SYNC-P01/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-SYNC-P02",
+      "title": "Uncertain Android Camera Latency in Mobile Gaze-to-Game Alignment",
+      "area": "temporal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-SYNC-P02/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-SYNC-P02/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
+      "id": "MSC-SYNC-P03",
+      "title": "Telemetry Age and Stale-Information Risk in Simulated Humanoid Safety Decisions",
+      "area": "temporal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-SYNC-P03/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-SYNC-P03/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    }
+  ]
 }

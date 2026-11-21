@@ -1,5 +1,6 @@
 """Negative tests for closed schemas, provenance and submodule trust."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 import json
 import shutil
 import tempfile
@@ -24,7 +25,7 @@ PAPER={"id":"MSC-CR-P05","title":"Hypothesis","area":"ndd",
 class MetadataTests(unittest.TestCase):
     def fixture(self,d):
         root=Path(d)/"arc"
-        shutil.copytree(ROOT,root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
         meta=json.loads((root/"program.json").read_text(encoding="utf-8"))
         meta.update(repository_visibility="public",programme="arc-neuro")
         (root/"program.json").write_text(json.dumps(meta),encoding="utf-8")

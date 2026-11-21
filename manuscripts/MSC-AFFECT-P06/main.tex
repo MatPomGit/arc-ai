@@ -1,0 +1,31 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[hidelinks]{hyperref}
+\title{Uncertainty-Gated Affective Adaptation for Single-User Digital Games}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Does a confidence-gated controller improve a pre-specified game outcome compared with static and random difficulty policies for one player? The manuscript defines a reproducible research design that tests an explicit methodological contribution against appropriate non-adaptive or low-capacity baselines. All comparisons are prospective; no empirical improvement or validated model performance is claimed at this stage.
+\end{abstract}
+\section{Introduction and related methodological problem}
+Does a confidence-gated controller improve a pre-specified game outcome compared with static and random difficulty policies for one player? The scientific goal is to distinguish a genuine computational contribution from gains due to subject overlap, dataset bias, confounded acquisition settings, or favourable synthetic conditions.
+\section{Research objectives and hypotheses}
+Closed-loop difficulty control conditioned on uncertainty/quality and explicit abstention, evaluated against matched non-affective policies. Hypothesis H1 predicts better pre-specified robustness or accuracy than an appropriate baseline under independently held-out evaluation; hypothesis H2 requires that the measured gain remains interpretable after accounting for uncertainty and deployment constraints. Both hypotheses are proposals, not tested findings.
+\section{Materials and data eligibility}
+Unity or lightweight open game; N=1 cross-over blocks, N<=3 optional; webcam/Leap behavioral features, optional licensed Athena; Tobii 5 may only be used interactively within permitted use (no gaze logs). Data usage requires source licensing, stable event/label definitions, and a documented eligibility gate. Any unavailable or incomparable source must be excluded with an explicit reason.
+\section{Methods and experimental design}
+Offline policy replay on public data or synthetic events; randomized/counterbalanced fixed, performance-only, shuffled-input and uncertainty-gated conditions; predefined washout and safety limits. Do not claim emotion detection from game performance alone. Hyperparameters and calibration are selected only from training splits. Evaluation units and confidence intervals must correspond to independent subjects, sessions, devices or scenarios rather than artificially replicated samples.
+\section{Statistical analysis and primary outcomes}
+Task completion, error rate, challenge target deviation, control stability, intervention frequency, p95 feedback latency, self-report as secondary. Every primary comparison will report uncertainty intervals, failure cases, negative controls and the actual sample/split sizes. Planned sensitivity analyses vary missingness, corruption and acquisition conditions.
+\section{Results}
+No empirical dataset analysis or confirmatory comparison has been completed for this manuscript. This section will report results only after authorised data collection or reproducible benchmark execution; planned metrics are not observed effects.
+\section{Discussion, limitations and continuation criteria}
+Strong carryover/learning confounds, implicit leakage from success to game controller and sample limitation. Gated policy stable under missingness; randomized evidence of within-person engineering effect with negative controls, no generalisation claim. A novel method cannot be asserted solely from a different application domain; comparison against current prior art and reproducibility on an independent setting are required.
+\section{Reproducibility and provenance}
+The original research plan is preserved in \texttt{source\_plan.md}; repository and exact source commit are recorded in \texttt{provenance.json}. No sensitive recordings or private credentials are embedded.
+\end{document}

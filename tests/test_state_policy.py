@@ -1,5 +1,6 @@
 """Negative regression tests for ARC project state."""
 from __future__ import annotations
+from scaffold_fixture import copytree_scaffold
 import shutil
 import tempfile
 import unittest
@@ -12,7 +13,7 @@ from validate_repository import validate
 class StateTests(unittest.TestCase):
     def fixture(self,d):
         dest=Path(d)/"arc"
-        shutil.copytree(ROOT,dest,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,dest,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
         return dest
     def changed(self,key,old,new):
         with tempfile.TemporaryDirectory() as d:

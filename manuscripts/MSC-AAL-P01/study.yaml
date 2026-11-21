@@ -1,0 +1,10 @@
+# Candidate concept only; not preregistered.
+schema_version: 1
+paper_id: "MSC-AAL-P01"
+study_type: "methods"
+research_question: "How does a local-first event architecture maintain availability and bounded disclosure during network faults?"
+hypotheses: [{"id":"H1","statement":"The proposed method improves the pre-specified primary outcome against an appropriate baseline: Validated event-loss and recovery-time performance at matched disclosure and functional constraints.","status":"proposed"},{"id":"H2","statement":"The measured effect is robust under the predefined independent validation and failure scenarios.","status":"proposed"}]
+design: {"type":"prospective benchmark with explicit no-go gate","unit_of_analysis":"independent scenario, device, participant or household","population":null,"sample_size":null}
+outcomes: {"primary":{"name":"Methodological primary outcome","unit":null,"definition":"Validated event-loss and recovery-time performance at matched disclosure and functional constraints."},"secondary":[]}
+analysis: {"methods":["Compare against a fixed baseline","Use independently held-out splits and sensitivity analyses","Compute confidence intervals matched to the independent unit"],"validation":"Fault injection, cold restarts, event replay and offline audit; no physical intervention."}
+evidence: {"empirical_results":"not_available","protocol_frozen":false}
