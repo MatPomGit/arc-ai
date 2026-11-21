@@ -7,7 +7,7 @@
   "owner": "Mateusz Pomianek",
   "scope": "Nowe metody uczenia i wnioskowania multimodalnego, odporność na przesunięcia domen, estymacja niepewności, selektywna abstencja, Edge AI, adaptacja i niezawodność systemów asystujących.",
   "default_branch": "main",
-  "license_spdx": "UNDECIDED",
+  "license_spdx": "Apache-2.0",
   "pages_status": "not_configured",
   "pages_url": null,
   "public_catalog_policy": "explicit_opt_in",
