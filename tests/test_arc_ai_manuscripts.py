@@ -1,0 +1,122 @@
+"""Check the complete ARC AI paper inventory and pinned source materials."""
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+MANUSCRIPTS = ROOT / "manuscripts"
+EXISTING = {
+    "MSC-AFFECT-P01", "MSC-AFFECT-P02", "MSC-AFFECT-P03",
+    "MSC-AFFECT-P04", "MSC-AFFECT-P06", "MSC-AFFECT-P08",
+}
+
+
+def blob_sha(path: Path) -> str:
+    data = path.read_bytes()
+    return hashlib.sha1(b"blob " + str(len(data)).encode("ascii") + b"\0" + data).hexdigest()
+
+
+class AiManuscriptTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.registry = json.loads((ROOT / "portfolio/papers.json").read_text(encoding="utf-8"))
+        cls.papers = cls.registry["papers"]
+
+    def test_21_real_msc_packages_and_no_public_approval(self):
+        ids = {p["id"] for p in self.papers}
+        self.assertEqual(len(self.papers), 21)
+        self.assertEqual(len(ids), 21)
+        self.assertEqual(len(EXISTING & ids), 6)
+        self.assertEqual(len(ids - EXISTING), 15)
+        self.assertEqual(
+            ids,
+            {p.name for p in MANUSCRIPTS.iterdir() if p.is_dir() and p.name.startswith("MSC-")}
+        )
+        for p in self.papers:
+            with self.subTest(id=p["id"]):
+                base = MANUSCRIPTS / p["id"]
+                self.assertRegex(p["id"], r"^MSC-[A-Z0-9]+(?:-[A-Z0-9]+)+$")
+                self.assertEqual(p["owner"], {
+                    "mode": "local", "repository": "MatPomGit/arc-ai", "project_id": None
+                })
+                self.assertEqual(p["relation"], "primary")
+                self.assertFalse(p["public_listing"])
+                self.assertIsNone(p["stage_evidence"])
+                self.assertIsNone(p["doi"])
+                self.assertEqual(p["manuscript"], {
+                    "path": f"manuscripts/{p['id']}/main.tex", "format": "latex"
+                })
+                self.assertEqual(p["study_plan"], f"manuscripts/{p['id']}/study.yaml")
+                for name in ("main.tex", "study.yaml", "references.bib",
+                             "README.md", "journal_targets.md"):
+                    file = base / name
+                    self.assertTrue(file.is_file(), file)
+                    self.assertFalse(file.is_symlink(), file)
+                    self.assertGreater(file.stat().st_size, 20, file)
+                tex = (base / "main.tex").read_text(encoding="utf-8")
+                self.assertIn(r"\begin{abstract}", tex)
+                self.assertIn(r"\begin{document}", tex)
+                self.assertIn(r"\end{document}", tex)
+                self.assertIn("No empirical", tex)
+                self.assertIn(p["id"], (base / "README.md").read_text(encoding="utf-8"))
+                targets = (base / "journal_targets.md").read_text(encoding="utf-8")
+                self.assertEqual(len(re.findall(r"(?m)^[123]\. ", targets)), 3)
+
+    def test_candidates_remain_held_and_existing_stages_preserved(self):
+        stages = {p["id"]: p["publication_stage"] for p in self.papers}
+        self.assertEqual(stages["MSC-AFFECT-P01"], "draft")
+        self.assertEqual(stages["MSC-AFFECT-P08"], "draft")
+        for record in self.papers:
+            if record["id"] not in EXISTING:
+                self.assertEqual(record["research_state"], "deferred")
+                self.assertEqual(record["publication_stage"], "concept")
+        self.assertEqual(len([p for p in self.papers if p["publication_stage"] == "draft"]), 2)
+
+    def test_original_scientific_files_preserved_by_git_blob(self):
+        source = json.loads((MANUSCRIPTS / "affective_sources.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(source["records"]), 6)
+        self.assertEqual(
+            {p["id"] for p in source["records"]}, EXISTING
+        )
+        self.assertEqual(source["source_snapshot_sha"],
+                         "0ff5f1531f03270c4f9fdcc7f3af6d2e9aca85dd")
+        for record in source["records"]:
+            with self.subTest(id=record["id"]):
+                copied = MANUSCRIPTS / record["id"] / "source_plan.md"
+                self.assertEqual(blob_sha(copied), record["source_blob_sha"])
+                self.assertEqual(record["source_license_spdx"], "Apache-2.0")
+        expected = {
+            "MSC-AFFECT-P01": "3850b11c3b24f575b112334dce565f04b99bd3aa",
+            "MSC-AFFECT-P08": "4134a2ebcc973d2bb398dbbef4e5d542fba24dfb",
+        }
+        for ident, sha in expected.items():
+            with self.subTest(id=ident):
+                base = MANUSCRIPTS / ident / "original"
+                self.assertEqual(blob_sha(base / "main.tex"), sha)
+                for rel in ("sections/introduction.tex", "sections/methods.tex",
+                            "sections/results.tex", "sections/discussion.tex",
+                            "protocol.md", "references.bib"):
+                    self.assertTrue((base / rel).is_file())
+        self.assertEqual(blob_sha(MANUSCRIPTS / "ORIGINAL_LICENSE_APACHE_2.0"),
+                         "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64")
+
+    def test_study_metadata_correspond_to_registry(self):
+        import yaml
+        from validate_study import validate_study
+        for record in self.papers:
+            with self.subTest(id=record["id"]):
+                plan = MANUSCRIPTS / record["id"] / "study.yaml"
+                study = yaml.safe_load(plan.read_text(encoding="utf-8"))
+                self.assertEqual(study["paper_id"], record["id"])
+                self.assertFalse(study["evidence"]["protocol_frozen"])
+                self.assertEqual(study["evidence"]["empirical_results"], "not_available")
+                self.assertTrue(study["hypotheses"])
+                self.assertEqual(validate_study(ROOT, record["study_plan"], record["id"]), [])
+
+
+if __name__ == "__main__":
+    unittest.main()
