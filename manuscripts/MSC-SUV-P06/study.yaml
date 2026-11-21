@@ -1,0 +1,33 @@
+schema_version: 1
+paper_id: MSC-SUV-P06
+study_type: methods
+research_question: "Czy appearance, motion i context poprawiają predykcję eeriness na nowych postaciach i sekwencjach?"
+hypotheses:
+  - id: H1
+    statement: "Model appearance–motion–context zmniejsza błąd prognozy względem modelu opartego tylko na wyglądzie."
+    status: proposed
+  - id: H2
+    statement: "Model probabilistyczny poprawia kalibrację niepewności w warunkach zmiany domeny."
+    status: proposed
+design:
+  type: "Prospective held-out benchmarking with identity, avatar and scenario isolation"
+  unit_of_analysis: "Independent source identity, avatar and scenario"
+  population: null
+  sample_size: null
+outcomes:
+  primary:
+    name: "Held-out eeriness prediction RMSE"
+    unit: "rating scale units"
+    definition: "Prediction error on disjoint source identities, avatars and scenarios, with blocked uncertainty estimates"
+  secondary:
+    - name: "Predictive uncertainty calibration"
+      unit: null
+      definition: "Coverage and calibration under new stimulus and source domains"
+analysis:
+  methods:
+    - "Compare appearance-only, movement-only, mismatch, interaction and probabilistic models"
+    - "Use blocked hold-out validation, paired uncertainty intervals and pre-specified ablations"
+  validation: "No leakage of clips or alternate renderings across train/test partitions"
+evidence:
+  empirical_results: not_available
+  protocol_frozen: false

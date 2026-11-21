@@ -452,6 +452,31 @@
       "stage_evidence": null
     },
     {
+      "id": "MSC-SUV-P06",
+      "title": "Predicting Social Uncanniness from Appearance, Motion and Contextual Expectation",
+      "area": "multimodal",
+      "research_state": "deferred",
+      "publication_stage": "concept",
+      "relation": "primary",
+      "owner": {
+        "mode": "local",
+        "repository": "MatPomGit/arc-ai",
+        "project_id": null
+      },
+      "manuscript": {
+        "path": "manuscripts/MSC-SUV-P06/main.tex",
+        "format": "latex"
+      },
+      "study_plan": "manuscripts/MSC-SUV-P06/study.yaml",
+      "public_listing": false,
+      "public_summary": null,
+      "doi": null,
+      "preprint_url": null,
+      "preregistration_url": null,
+      "publication_url": null,
+      "stage_evidence": null
+    },
+    {
       "id": "MSC-SYNC-P01",
       "title": "Smartphone–EEG Clock Drift and Time-Dependent Self-Regulation Metrics",
       "area": "temporal",

@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\title{Predicting Social Uncanniness from Appearance, Motion and Contextual Expectation}
+\author{Mateusz Pomianek}
+\date{Concept manuscript 0.1.0, 21 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Appearance realism, motion characteristics and contextual expectation may jointly shape the social uncanny response, but their incremental predictive utility is not established. This proposed computational study compares single-input and interaction-based baselines with a calibrated multivariable model, evaluated on held-out source identities, avatars and social contexts. The primary outcome is out-of-sample prediction error for observer ratings of eeriness. No empirical results are asserted; this paper specifies an evaluation protocol rather than a demonstrated algorithmic advance.
+\end{abstract}
+\section{Introduction}
+Research on perceptual responses to synthetic people and robots requires separating the stimulus dimensions that influence ratings from the individual variability of observers. It is plausible that the same biological movement is evaluated differently depending on whether it appears on a visibly mechanical robot or a photorealistic digital human. Moreover, preceding social context may modify what an observer expects from the next response. Descriptive interactions among these factors do not by themselves establish a predictive model that generalizes to unseen identities.
+
+The shared ST-08 platform is designed to generate controlled appearances and movements while preserving the temporal structure of real social exchanges. Data collection belongs to separate behavioural investigations, MSC-SUV-P02 through P04. The present paper does not duplicate their primary psychological estimands; it asks whether an explicit, uncertainty-aware representation of multiple stimulus dimensions improves out-of-distribution prediction.
+\section{Research question and hypotheses}
+Can a model of appearance realism, movement and contextual expectation predict observer ratings of eeriness for new avatar identities and source behaviours better than appearance-only or simple mismatch models?
+\paragraph{H1.} A model incorporating appearance--movement interaction and context improves held-out prediction accuracy relative to a baseline based only on appearance realism.
+\paragraph{H2.} Modelling uncertainty and contextual expectancy improves calibration under shifts in avatar identity and natural source sequences. The direction and practical significance of any effect will be tested, not assumed.
+\section{Data provenance and eligibility}
+The prospective outcome data are anonymised observer ratings from properly approved and licensed ST-08 experiments. Inputs are stimulus-level descriptions, such as calibrated perceptual appearance realism, motion naturalness, time-structure descriptors and randomized contextual condition. Individual source persons must remain separate from observer records. When these data are unavailable, only labelled synthetic fixtures may be used for software validation and not scientific claims.
+\section{Methods}
+\subsection{Candidate predictors and comparators}
+Let $A$ denote perceived appearance realism, $B$ perceived motion naturalness and $C$ a coded context or expectation condition. Candidate comparators include an $A$-only model, a $B$-only model, a simple $|A-B|$ mismatch model, an interaction model $A\times B$, and a probabilistic model that incorporates contextual compatibility and estimates predictive uncertainty. The simple baselines must be implemented competently and optimized under the same validation budget as the candidate model. No model may use an identity field that is also present in held-out identities.
+\subsection{Splits and leakage prevention}
+Separate training, validation and test sets at the level of source individuals, avatars and scenario families. Frames of the same source clip and alternative renderings of the same sequence cannot occur across training and test partitions. All preprocessing, selection of predictor transformations, hyperparameter tuning and calibration must be fitted on training or validation partitions only. The test set is consulted once after the model and scoring rule have been fixed.
+\subsection{Primary outcome}
+The candidate primary endpoint is held-out root mean squared error of observer eeriness ratings, computed using a prespecified aggregation rule that accounts for repeated observations. For probabilistic predictions, an appropriate proper scoring rule and calibration analysis should additionally be reported. The primary metric and expected minimum useful improvement must be fixed before accessing confirmatory data.
+\section{Analysis and uncertainty}
+Model comparisons will use paired test predictions on the same independent blocks, with confidence intervals produced by resampling complete source-person or scenario units rather than individual frames. A hierarchical baseline will account for observer and stimulus variance. Report performance by avatar realism and social-context strata, including error concentration in rare combinations. A sensitivity analysis will assess whether results survive alternative definitions of naturalness and exclusion of low-quality retargeted sequences.
+\section{Ablations and falsification}
+Remove contextual features, movement descriptors and interaction terms separately. Compare against a correctly trained mixed-effects baseline to determine whether apparent gains are attributable simply to extra parameters. Evaluate generalization when no source individual, avatar appearance or contextual scenario from the test set was seen during model selection. If a more complex model does not outperform the strongest baseline with acceptable uncertainty, the hypothesis of incremental computational contribution is not supported.
+\section{Results}
+No empirical results are available for this concept manuscript. No measured accuracy, benchmark ranking, confidence interval or calibrated predictive uncertainty is claimed. Any future results will be linked to the verified data manifest, exact input partitions, code revision and formal analysis plan.
+\section{Limitations and ethics}
+A predictive association cannot by itself identify a psychological mechanism or justify a diagnosis of a source person. Labels describing neurodivergence, when legitimately available, do not form an ordinal naturalness scale. Limitations include dataset selection, camera occlusion, retargeting artefacts, observer heterogeneity and changes in stimulus rendering. Permission to view archival videos does not automatically confer rights to train a derived model or distribute animated stimuli. The computational work does not require EEG or eye-tracking recordings from observers.
+\section{Discussion}
+The proposed framework makes its own distinct scientific claim only if it generalizes to independent people, avatars and scenes beyond simpler baselines. Any relationship between image appearance and movement must be interpreted in the context of stimulus calibration and licensing. Computational success in predicting ratings does not demonstrate that increased human-like motion always helps or harms the acceptance of a robot.
+\section{Conclusion}
+An experimentally grounded model of appearance--behaviour congruence requires measured observer outcomes, leak-resistant independent validation and transparent uncertainty reporting. The present manuscript fixes a falsifiable computational direction but awaits scientific and technical evidence before any claim of improvement.
+\end{document}
