@@ -1,6 +1,6 @@
 # Manuskrypty i koncepcje ARC AI
 
-Rejestr obejmuje 21 pozycji MSC: sześć planowanych lub rozwijanych manuskryptów z historycznymi źródłami ARC Affective oraz 15 kandydatur metodologicznych. Numery MSC są stałe. Brak dowodów empirycznych, prerejestracji i zatwierdzonych wyników jest jawnie oznaczony. Dla każdej pracy dostępne są LaTeX, plan badania, opis i kandydackie czasopisma. Dokładne źródła P01–P08 zachowano osobno bez modyfikowania historycznych repozytoriów.
+Rejestr obejmuje 21 pozycji MSC: sześć planowanych lub rozwijanych manuskryptów z historycznymi źródłami ARC Affective oraz 15 kandydatur metodologicznych. Numery MSC są stałe. Brak dowodów empirycznych, prerejestracji i zatwierdzonych wyników jest jawnie oznaczony. Dla każdej pracy dostępne są LaTeX, plan badania, opis i kandydackie czasopisma. Plany źródłowe sześciu prac AFFECT zachowano bez zmian. Dla P01 i P08 dodatkowo utrwalono kompletne historyczne szkice LaTeX, bibliografie i protokoły; historycznego repozytorium nie modyfikowano.
 
 ## Istniejące szkice i plany (6)
 
