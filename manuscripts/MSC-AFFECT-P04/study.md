@@ -1,39 +1,30 @@
-# MSC-AFFECT-P04 — plan badania i powiązania
+# MSC-AFFECT-P04 — Nieutrwalająca obrazu twarzy analiza zachowań na urządzeniu
 
-**Temat:** Nieutrwalająca obrazu twarzy analiza zachowań na urządzeniu
+**Program:** `arc-ai` · **obszar:** `privacy-ml` · **rodzaj:** `MANUSCRIPT` · **etap źródłowy:** `PLANNED`.
 
-**Program:** `arc-ai`. **Obszar:** `privacy-ml`. **Typ:** `MANUSCRIPT` (MANUSCRIPT). **Stan źródła:** `PLANNED`. **Tryb integracji:** `LINK_ONLY`.
+## Projekt badania
 
-## Cel, wynik główny i granice badania
+**Przedmiot:** Nieutrwalająca obrazu twarzy analiza zachowań na urządzeniu.
 
-Przedmiot badania: Nieutrwalająca obrazu twarzy analiza zachowań na urządzeniu. Istnieje ślad źródłowego manuskryptu; stan dowodów wymaga weryfikacji.
-
-- **Główny wynik proponowany:** Nieokreślony w rejestrze. Wymaga zdefiniowania metryki, estymandu i jednostki analizy przed rozpoczęciem badania.
-- **Odrębność naukowa:** Należy porównać źródłowy protokół z pokrewnymi manuskryptami przed formalizacją hipotezy.
-- **Uzasadnienie klasyfikacji:** Klasyfikacja wg pytania badawczego: Wkład to algorytmiczno-systemowy kompromis prywatność–trafność–opóźnienie przy analizie lokalnego obrazu twarzy. Status źródła: PLANNED. Nie oznacza zatwierdzonych danych ani gotowości publikacji.
-- **Powiązane rekordy:** Nie zarejestrowano.
+- **Proponowany wynik główny:** Nie określono dotychczas w rejestrze. Należy zdefiniować estymand, miarę i jednostkę analizy przed akwizycją.
+- **Zakres i odrębność:** Wymaga odrębnego przeglądu nowości i porównania ze źródłowym protokołem.
+- **Metodologia:** hipotezy, dobór próby lub scenariuszy, kryteria jakości, plan statystyczny i analiza wrażliwości wymagają potwierdzenia we właściwym projekcie. Ten plik nie potwierdza uzyskania wyników.
+- **Powiązane MSC:** brak jawnego powiązania w rejestrze.
 
 ## Stanowisko badawcze
 
-**Wstępne powiązanie:** `ST-02`. To propozycja na podstawie domeny, a nie potwierdzenie uruchomienia aparatury.
+**`ST-02`**. Klasyfikacja `PROPOSED_BY_SCOPE`; kwalifikacja aparatury `NOT_VERIFIED`. Jest to propozycja organizacyjna, nie dowód gotowości stanowiska.
 
-[Stanowiska ARC](https://github.com/MatPomGit/research-autopilot/blob/main/docs/portfolio/reorganizacja-systemu-badan/shared_research_platforms.md); [inwentarz prywatny `devices`](https://github.com/MatPomGit/devices).
+## Aplikacje
 
-## Powiązane aplikacje APP
+Nie wskazano konkretnej aplikacji w zatwierdzonej do audytu mapie APP–MSC. Implementacja wymaga odrębnej decyzji.
 
-Brak jawnej relacji APP w planistycznej tabeli.
+## Biblioteki
 
-## Powiązane biblioteki LIB
+Nie ma udokumentowanej krawędzi APP→LIB dla tej pracy. Potrzebny przegląd potrzeb technicznych przed dodaniem zależności.
 
-Brak wyprowadzalnych relacji z tabeli APP→LIB.
+## Proweniencja i warunki realizacji
 
-Relacje APP i LIB pochodzą odpowiednio z `app_publication_links.csv` i `component_dependencies.csv`. Są kandydaturami, nie dowodami wykonania prac. Aktualność nazw `lib-signals`, `lib-image` i `lib-llm` wymaga osobnego uzgodnienia z nowymi repozytoriami.
+Źródłowe materiały rozwija publiczny projekt [`arc-affective`](https://github.com/MatPomGit/arc-affective); oryginalny identyfikator `P04`.
 
-## Proweniencja, metodologia i bramki
-
-- **UID źródłowy:** `arc-affective:P04`; repozytorium `MatPomGit/arc-affective`, identyfikator `P04`.
-- **Ścieżka źródłowa:** `manuscripts/P04/plan.md`.
-- **Materiał:** [źródło projektu](https://github.com/MatPomGit/arc-affective/blob/main/manuscripts/P04/plan.md).
-- **Rejestr MSC:** [kanoniczna macierz](https://github.com/MatPomGit/research-autopilot/blob/main/docs/portfolio/reorganizacja-systemu-badan/publication_matrix.csv).
-
-Przed badaniem wymagane są niezależny wynik i plan analizy, źródła literaturowe, ocena nowości, kontrola praw do danych/oprogramowania, ocena bezpieczeństwa i kwalifikacja etyczna, jeżeli dotyczy. Szkic nie zawiera danych empirycznych ani nie potwierdza dostępności stanowiska.
+Przed wykonaniem badania należy sprawdzić prawa do danych, kompletność protokołu, zgodę etyczną (jeżeli dotyczy), bezpieczeństwo aparatury oraz niezależność wyniku wobec innych manuskryptów. Wpisy biblioteczne i aplikacyjne są **planem**, nie deklaracją działającego API. Brak wyników oznacza `NOT_VERIFIED`, a nie wynik zerowy.

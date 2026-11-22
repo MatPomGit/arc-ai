@@ -1,45 +1,36 @@
-# MSC-AR-P20 — plan badania i powiązania
+# MSC-AR-P20 — Kontrfaktyczna wartość interwencji XR przy kontrolowanej dostępności logów
 
-**Temat:** Kontrfaktyczna wartość interwencji XR przy kontrolowanej dostępności logów
+**Program:** `arc-ai` · **obszar:** `counterfactual-adaptation` · **rodzaj:** `IDEA` · **etap źródłowy:** `IDEA_UNREVIEWED`.
 
-**Program:** `arc-ai`. **Obszar:** `counterfactual-adaptation`. **Typ:** `IDEA` (CANDIDATE). **Stan źródła:** `IDEA_UNREVIEWED`. **Tryb integracji:** `INDEX_ONLY_NO_NEW_FOLDER`.
+## Projekt badania
 
-## Cel, wynik główny i granice badania
+**Przedmiot:** Kontrfaktyczna wartość interwencji XR przy kontrolowanej dostępności logów.
 
-Przedmiot badania: Kontrfaktyczna wartość interwencji XR przy kontrolowanej dostępności logów. Kandydatura, bez zatwierdzonego odrębnego protokołu.
-
-- **Główny wynik proponowany:** Błąd oceny wartości alternatywnej polityki w scenariuszach z pełną obserwacją
-- **Odrębność naukowa:** Działanie polityk XR przy kompletnych logach; AI-IDEA-01 bada odrębnie braki pomiaru wywołane interwencją.
-- **Uzasadnienie klasyfikacji:** Metodyczna estymacja kontrfaktyczna i niepewność policy evaluation. XR jako środowisko oceny. AUDYT DUPLIKACJI: sprawdzić, czy po uwzględnieniu selekcji obserwacji temat nie stanie się tym samym pytaniem co AI-IDEA-01. | Proponowane doprecyzowanie zakresu portfolio 2026-11-20, wymaga zatwierdzenia naukowego: Działanie polityk XR przy kompletnych logach; AI-IDEA-01 bada odrębnie braki pomiaru wywołane interwencją. Główny wynik do prerejestracji: Błąd oceny wartości alternatywnej polityki w scenariuszach z pełną obserwacją. Tytuł źródłowy zachowano w original_title_pl.
-- **Powiązane rekordy:** `MSC-POLICY-P02` (arc-ai:AI-IDEA-01)
+- **Proponowany wynik główny:** Błąd oceny wartości alternatywnej polityki w scenariuszach z pełną obserwacją
+- **Zakres i odrębność:** Działanie polityk XR przy kompletnych logach; AI-IDEA-01 bada odrębnie braki pomiaru wywołane interwencją.
+- **Metodologia:** hipotezy, dobór próby lub scenariuszy, kryteria jakości, plan statystyczny i analiza wrażliwości wymagają potwierdzenia we właściwym projekcie. Ten plik nie potwierdza uzyskania wyników.
+- **Powiązane MSC:** `MSC-POLICY-P02`.
 
 ## Stanowisko badawcze
 
-**Wstępne powiązanie:** `ST-03`. To propozycja na podstawie domeny, a nie potwierdzenie uruchomienia aparatury.
+**`ST-03`**. Klasyfikacja `PROPOSED_BY_SCOPE`; kwalifikacja aparatury `NOT_VERIFIED`. Jest to propozycja organizacyjna, nie dowód gotowości stanowiska.
 
-[Stanowiska ARC](https://github.com/MatPomGit/research-autopilot/blob/main/docs/portfolio/reorganizacja-systemu-badan/shared_research_platforms.md); [inwentarz prywatny `devices`](https://github.com/MatPomGit/devices).
+## Aplikacje
 
-## Powiązane aplikacje APP
+- **`app-xr`** (`APP-ARC-07`): rola `OPTIONAL`, decyzja `RESEARCH_GO`; status repozytorium `PLANNED_NOT_CREATED`.
 
-- `app-xr` (`APP-ARC-07`), `OPTIONAL`, profil `unity-openxr`, bramka `RESEARCH_GO`.
+## Biblioteki
 
-## Powiązane biblioteki LIB
+- **`lib-audio`**: status `SCOPE_CONSOLIDATED_PLAN`, proponowana zależność przez `app-xr`. Brak potwierdzonej integracji.
+- **`lib-events`**: status `PLANNED_NOT_CREATED`, proponowana zależność przez `app-xr`. Brak potwierdzonej integracji.
+- **`lib-track`**: status `NEW_SCAFFOLD_EXISTS`, proponowana zależność przez `app-xr`. Brak potwierdzonej integracji.
+- **`lib-unity`**: status `SCAFFOLD_EXISTS`, proponowana zależność przez `app-xr`. Brak potwierdzonej integracji.
+- **`lib-vis`**: status `RENAMED_ARCHITECTURE_ONLY`, proponowana zależność przez `app-xr`. Brak potwierdzonej integracji.
+- **`lib-vlm`**: status `SCAFFOLD_EXISTS`, proponowana zależność przez `app-xr`. Brak potwierdzonej integracji.
+- **`OptiCore`**: status `PRIVATE_REPOSITORY_EXISTS`, proponowana zależność przez `app-xr`. Brak potwierdzonej integracji.
 
-- `lib-asr`: planowana zależność pośrednia przez `app-xr`; brak dowodu integracji.
-- `lib-events`: planowana zależność pośrednia przez `app-xr`; brak dowodu integracji.
-- `lib-image` (historyczna nazwa; wymaga uzgodnienia z `lib-vis`): planowana zależność pośrednia przez `app-xr`; brak dowodu integracji.
-- `lib-unity`: planowana zależność pośrednia przez `app-xr`; brak dowodu integracji.
-- `lib-vlm`: planowana zależność pośrednia przez `app-xr`; brak dowodu integracji.
-- `lib-voice`: planowana zależność pośrednia przez `app-xr`; brak dowodu integracji.
-- `OptiCore`: planowana zależność pośrednia przez `app-xr`; brak dowodu integracji.
+## Proweniencja i warunki realizacji
 
-Relacje APP i LIB pochodzą odpowiednio z `app_publication_links.csv` i `component_dependencies.csv`. Są kandydaturami, nie dowodami wykonania prac. Aktualność nazw `lib-signals`, `lib-image` i `lib-llm` wymaga osobnego uzgodnienia z nowymi repozytoriami.
+Źródłowe materiały rozwija publiczny projekt [`arc-xr`](https://github.com/MatPomGit/arc-xr); oryginalny identyfikator `XR-IDEA-14`.
 
-## Proweniencja, metodologia i bramki
-
-- **UID źródłowy:** `arc-xr:XR-IDEA-14`; repozytorium `MatPomGit/arc-xr`, identyfikator `XR-IDEA-14`.
-- **Ścieżka źródłowa:** `docs/pomysly.md`.
-- **Materiał:** [źródło projektu](https://github.com/MatPomGit/arc-xr/blob/main/docs/pomysly.md).
-- **Rejestr MSC:** [kanoniczna macierz](https://github.com/MatPomGit/research-autopilot/blob/main/docs/portfolio/reorganizacja-systemu-badan/publication_matrix.csv).
-
-Przed badaniem wymagane są niezależny wynik i plan analizy, źródła literaturowe, ocena nowości, kontrola praw do danych/oprogramowania, ocena bezpieczeństwa i kwalifikacja etyczna, jeżeli dotyczy. Szkic nie zawiera danych empirycznych ani nie potwierdza dostępności stanowiska.
+Przed wykonaniem badania należy sprawdzić prawa do danych, kompletność protokołu, zgodę etyczną (jeżeli dotyczy), bezpieczeństwo aparatury oraz niezależność wyniku wobec innych manuskryptów. Wpisy biblioteczne i aplikacyjne są **planem**, nie deklaracją działającego API. Brak wyników oznacza `NOT_VERIFIED`, a nie wynik zerowy.
