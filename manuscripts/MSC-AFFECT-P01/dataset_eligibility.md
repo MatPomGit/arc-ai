@@ -42,3 +42,13 @@
 | Prawdziwa walidacja EEG | NOT_RUN | NOT_RUN |
 
 **Źródła:** https://nemar.org/dataset/nm000112 ; https://www.nature.com/articles/s41597-023-02650-w ; https://data.mendeley.com/datasets/b3pn4kwpmn/3 ; https://data.mendeley.com/datasets/b3pn4kwpmn/5 .
+
+## Kontrakt podziałów indeksowych (implementacja E0)
+
+Moduł `research/p01_splits.py` generuje dwa typy podziałów na podstawie zewnętrznie zweryfikowanego **metadanych prób**, bez odczytu sygnałów EEG:
+
+- `leave_one_participant_out(rows)`: zwraca pełne foldy participant-disjoint z indeksami `train_indices` i `test_indices`. Każda próba uczestnika testowego pozostaje w teście, nigdy w treningu.
+- `participant_stimulus_block(rows, held_out_participant=..., held_out_stimuli=...)`: test obejmuje wyłącznie próby wybranego uczestnika i jawnie wybranego bloku bodźców. Trening wyklucza zarówno tego uczestnika, jak i bodźce testowe; pozostałe przecięcia są zwracane jako `excluded_indices`, a nie używane do szkolenia.
+- Zwracane struktury nie zawierają identyfikatorów osobowych ani tekstowych kluczy prób. **Indeksy wierszy nie są trwałym manifestem**, jeżeli kolejność metadanych może się zmienić. Przed utrwaleniem podziału należy zamrozić wersję i SHA-256 uporządkowanej, zanonimizowanej tabeli wejściowej w chronionym środowisku; nie publikować surowych identyfikatorów ani niesolonych hashy identyfikatorów.
+- Wymagane pola wejściowe: `participant_id`, `trial_id`, `stimulus_id`; unikaty `(participant_id, trial_id)`, brak wartości pustych. Funkcje nie wykrywają samodzielnie rodzinnych powiązań uczestników, sesji współdzielonych przez identyczne osoby między korpusami ani przecieku cech z preprocessingu. Te warunki wymagają niezależnego audytu.
+- **E0 / SYNTHETIC_ONLY:** testy `tests/test_p01_splits.py` sprawdzają izolację, kompletność foldów i błędy metadanych na sztucznych rekordach. Brak rzeczywistych splitów FACED/GAMEEMO i brak modeli wytrenowanych na EEG.
