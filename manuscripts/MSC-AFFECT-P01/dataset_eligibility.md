@@ -1,0 +1,44 @@
+# P01: audyt kwalifikowalności korpusów i bramki przed eksperymentem
+
+**Data przeglądu:** 2026-11-22. **Status:** metadata-only / NOT_RUN dla sygnałów EEG. Żaden plik uczestników nie został pobrany ani przeanalizowany. Niniejszy dokument nie jest prerejestracją i nie zmienia `protocol_frozen: false`.
+
+## Priorytet 1: FACED / NEMAR `nm000112`, wersja `v1.1.4`
+
+- **Źródło kanoniczne:** https://nemar.org/dataset/nm000112?v=v1.1.4 ; DOI https://doi.org/10.82901/nemar.nm000112 .
+- **Metadane wydawcy:** 123 uczestników, 28 filmów, 32 kanały EEG (10-10), samoopisy na 12 wymiarach, w tym walencja i pobudzenie. W publikacji źródłowej skala ocen ma zakres 0–7.
+- **Licencja widoczna u dostawcy:** CC BY 4.0 dla wydania NEMAR. Odróżnić wydanie NEMAR/BIDS od oryginalnego zbioru na Synapse. Sprawdzić licencje poszczególnych materiałów, w szczególności filmów i plików pochodnych.
+- **Wersja i koszty zasobów:** v1.1.4 (19 października 2026); pełen zbiór według portalu ~31,4 GB, archiwum ~22,7 GB. Nie pobierać całości na potrzeby wstępnej kwalifikacji.
+- **Wymagane przed statusem ELIGIBLE:** zarchiwizowane i zahashowane metadane BIDS `dataset_description.json`, `participants.tsv`, `channels.tsv`, `electrodes.tsv`/układ 10-10, pliki zdarzeń i mapowanie self-report do prób. Zweryfikować, czy w wersji BIDS są dostępne oryginalne **oceny walencji uczestnika per film**, a nie jedynie docelowe kategorie emocji przypisane bodźcom.
+- **Bramka:** sam odczyt metadanych nie dowodzi kompletności skali, praw do sygnału, zgodności referencji ani jakości segmentów. Status `METADATA_VERIFIED / EEG_UNAUDITED / NOT_ELIGIBLE_YET`.
+
+## Priorytet 2: GAMEEMO / Mendeley Data, historyczna wersja `v3`
+
+- **Kanoniczna historyczna publikacja:** https://data.mendeley.com/datasets/b3pn4kwpmn/3 ; DOI https://doi.org/10.17632/b3pn4kwpmn.3 .
+- **Metadane wydawcy v3:** 28 uczestników, 14-kanałowy Emotiv EPOC+, cztery gry po ok. pięć minut, SAM po rozgrywce, sygnały surowe i przetworzone w formatach CSV/MAT; licencja wpisu v3: CC BY 4.0.
+- **Istotna zmiana wersji:** serwis pokazuje także **v5 opublikowaną 12 października 2026, objętą embargiem do 13 października 2027**. W P01 nie należy zastępować dostępnej v3 przez v5, zakładać dostępu do plików v5 ani mieszać wersji.
+- **Główne ryzyko metodologiczne:** kilka samoopisowych punktów SAM na uczestnika może nie zapewniać wiarygodnej estymacji CCC (szczególnie przy stałych odpowiedziach). Nie traktować etykiety „boring/calm/horror/funny” jako samoopisu walencji. Najpierw zweryfikować liczbę par ocen, zakres skali, powiązanie z EEG i częstość CCC niezdefiniowanego.
+- **Bramka:** `METADATA_VERIFIED / TRIAL_LABEL_MAPPING_UNAUDITED / NOT_ELIGIBLE_YET`. Ewentualny model kategoryczny tylko jako oddzielne, jawnie zadeklarowane pytanie badawcze.
+
+## Deterministyczny protokół dopuszczenia danych (bez sygnałów w Git)
+
+1. **Provenance/rights:** zapisać wersję, DOI, licencję dostawcy, wymagane atrybucje, warunki ponownego użycia sygnałów i metadanych, sha256 pobieranych artefaktów oraz datę dostępu. Nie zamieszczać danych osobowych.
+2. **Labels:** wyznaczyć dokładny klucz `participant_id + stimulus_id + trial_id`, skalę, kierunek i moment pomiaru walencji. Zweryfikować 1:1 przypisanie do fragmentu EEG i brak wielokrotnego liczenia tej samej oceny z epok jako niezależnych prób.
+3. **Montage:** zweryfikować kanały, pozycje, odniesienie, jednostki i historię przetwarzania. Redukcję elektrod badać najpierw **wewnątrz jednego korpusu**, gdzie referencja jest wspólna. Mapowanie między korpusami wymaga oddzielnego uzasadnienia.
+4. **Splits:** z góry ustalić foldy niezależne od uczestnika; osobno wrażliwość na nowe filmy; żaden uczestnik ani jego epoki nie mogą być w treningu i teście jednocześnie. Selekcja kanałów i hiperparametrów wyłącznie na danych treningowych.
+5. **Feasibility:** policzyć liczbę uczestników z co najmniej dwiema różnymi wartościami walencji oraz liczbę dopasowanych prób dla full/sparse. Uczestnicy z jedną próbą lub stałą walencją zachowują MSE, a CCC jest `undefined`.
+6. **Freeze:** zamrozić konkretne wybory przed analizą predykcyjną. Nie używać wyników testowych do doboru zbioru, progów, elektrod ani modelu. Utrwalać manifest splitów bez rzeczywistych identyfikatorów osobowych.
+7. **Go/no-go:** jeśli prawa, mapowanie lub metadane nie są potwierdzone, zatrzymać benchmark dla danego korpusu jako `UNAVAILABLE` lub `NOT_ESTIMABLE`, a nie wymuszać publikacji wyniku.
+
+## Minimalny pakiet dowodowy do uzupełnienia
+
+| Pole | FACED v1.1.4 | GAMEEMO v3 |
+| --- | --- | --- |
+| Weryfikacja rekordu i DOI | Potwierdzona na stronie dostawcy | Potwierdzona na stronie dostawcy |
+| Licencja wskazana przez dostawcę | CC BY 4.0 | CC BY 4.0 |
+| Pobrane metadane + SHA-256 | NOT_RUN | NOT_RUN |
+| Audyt indywidualnych ocen prób | NOT_RUN | NOT_RUN |
+| Audyt kanałów/referencji | NOT_RUN | NOT_RUN |
+| Kwalifikacja do CCC | NOT_ESTIMABLE_YET | NOT_ESTIMABLE_YET |
+| Prawdziwa walidacja EEG | NOT_RUN | NOT_RUN |
+
+**Źródła:** https://nemar.org/dataset/nm000112 ; https://www.nature.com/articles/s41597-023-02650-w ; https://data.mendeley.com/datasets/b3pn4kwpmn/3 ; https://data.mendeley.com/datasets/b3pn4kwpmn/5 .
