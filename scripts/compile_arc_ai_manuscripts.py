@@ -18,6 +18,18 @@ def main() -> int:
     papers = json.loads((ROOT / "portfolio/papers.json").read_text(encoding="utf-8"))["papers"]
     if not papers or len({p["id"] for p in papers}) != len(papers):
         raise ValueError("Expected a nonempty set of unique MSC manuscripts")
+    registered = {p["id"] for p in papers}
+    manuscript_root = ROOT / "manuscripts"
+    on_disk = {
+        entry.name for entry in manuscript_root.iterdir()
+        if entry.name.startswith("MSC-") and (entry.is_dir() or entry.is_symlink())
+    }
+    if registered != on_disk:
+        missing = sorted(registered - on_disk)
+        unregistered = sorted(on_disk - registered)
+        raise ValueError(
+            f"Manuscript inventory mismatch: missing={missing}, unregistered={unregistered}"
+        )
     for paper in papers:
         source = ROOT / paper["manuscript"]["path"]
         if (source.name != "main.tex" or source.is_symlink()
