@@ -9,23 +9,38 @@
 \date{}
 \begin{document}
 \maketitle
+
 \begin{abstract}
-How does a local-first event architecture maintain availability and bounded disclosure during network faults? This paper proposes a methodological evaluation, not a validated effect. We define a primary outcome, an independent validation strategy and explicit stopping criteria. Results are unavailable; theoretical assumptions and data eligibility must be audited before study activation.
+This concept paper specifies an evaluation framework for local-first event processing in assisted-living environments under network disruption. The proposed comparison concerns event preservation, recovery after faults, and bounded information disclosure, subject to equivalent functional requirements. The architecture, hypotheses, metrics and validation criteria remain proposals. No benchmark results or evidence of clinical utility are available.
 \end{abstract}
-\section{Research problem}
-How does a local-first event architecture maintain availability and bounded disclosure during network faults? The research is framed around a verifiable computational property rather than a change of application context alone. Its technical originality remains a hypothesis requiring a targeted literature review.
-\section{Hypotheses and anticipated contribution}
-H1 proposes that the candidate approach will improve the pre-specified primary outcome relative to a matched, non-trivial baseline. H2 proposes that the improvement, if observed, remains reliable under independent domains, fault conditions or held-out units. Neither hypothesis has been tested.
-\section{Data, materials and eligibility}
-Fault injection, cold restarts, event replay and offline audit; no physical intervention. Data licensing, annotations, task comparability and reproducible split definitions are preconditions. Where authentic data are unavailable, only clearly labelled synthetic experiments are appropriate; simulated outcomes must never be reported as human or clinical measurements.
-\section{Methods}
-Create reproducible virtual smart-home traces, network faults and failover; compare cloud-first and local-first architectures. All model selection and calibration must use training-only data; evaluation must avoid overlap between participants, sessions, households and temporal blocks as appropriate. Fixed seeds, environment manifests and source identifiers are required for repeatability.
-\section{Evaluation protocol and statistics}
-The primary outcome is: Validated event-loss and recovery-time performance at matched disclosure and functional constraints.. Analyses must specify the estimand, comparator, independent unit, confidence interval procedure, failure criteria and sensitivity checks before running confirmatory evaluation. Report both average performance and challenging edge cases.
+
+\section{Research question and scope}
+The research question is whether a local-first event architecture can reduce event loss and recovery time relative to a cloud-first comparator while meeting the same functional and disclosure constraints under defined network faults. The intended contribution is an independently testable systems property, not the deployment of a smart-home application or a clinical intervention. Novelty relative to existing edge, offline-first and fault-tolerant approaches has not yet been established.
+
+\section{Candidate architecture and trust boundaries}
+A candidate architecture comprises local event ingestion, persistent event identifiers, a durable local queue, policy-controlled processing and a synchronization component that resumes after reconnection. A cloud-first comparator would implement the same event semantics and functional obligations. These components are proposed design elements, not verified implementations. The study must specify which events may leave the local trust boundary, permitted metadata, retention periods, access controls and failure behaviour before either architecture can be assessed.
+
+\section{Proposed hypotheses}
+H1: under prespecified fault scenarios, the local-first candidate yields lower event loss and shorter recovery time than a functionally matched cloud-first baseline, conditional on satisfying the same disclosure constraints. H2: any observed advantage persists across independently held-out fault configurations and scenario families. Both hypotheses are untested; the direction and magnitude of any effect are unknown.
+
+\section{Proposed evaluation design}
+An eligible future benchmark would generate reproducible synthetic smart-home event traces and inject network partitions, delayed delivery, restarts and replay. No human monitoring or physical intervention is proposed at this stage. The comparator must receive equivalent workloads, event definitions, storage budgets and failure schedules; otherwise the comparison would be confounded. Scenario generation, seeds, versioned manifests and fault schedules must be fixed before confirmatory evaluation. Synthetic traces must not be described as observations from assisted-living residents.
+
+\section{Outcome definitions and analysis plan}
+Event loss is provisionally defined as the proportion of unique eligible event identifiers not recoverable after a prespecified reconciliation window. Recovery time is the elapsed time from restoration of the required infrastructure to recovery of the predefined service condition. Disclosure should be evaluated against an explicit event-field and destination policy; an architecture that violates the policy is ineligible for the primary comparison. These definitions require operational thresholds, time units, reconciliation windows and a precedence rule between the two outcomes before study activation. The current registry describes the primary objective jointly; it does not yet specify a single estimand or decision rule.
+
+The unit of independent analysis should be the prespecified scenario replicate, with fault families held out in a separate validation set. Before execution, the study must define sample size or scenario coverage, a baseline, uncertainty intervals matched to the unit of replication, missing-run handling, sensitivity analyses and failure criteria. Repeated events within one scenario must not be treated as independent replicates.
+
+\section{Evidence and activation gates}
+The portfolio records this work as a deferred concept with local manuscript ownership in \texttt{MatPomGit/arc-ai}. The protocol is not frozen and empirical results are unavailable. Activation requires (i) a targeted novelty review, (ii) a documented and lawful trace-generation or data pathway, (iii) explicit disclosure and correctness requirements, (iv) a reproducible fault model with a non-trivial baseline, and (v) a frozen estimand and analysis plan. Hardware suitability and any human-subjects approval would require separate verification if the scope expands beyond simulation.
+
 \section{Results}
-No empirical or simulated benchmark has yet been executed for this candidate publication. This section intentionally contains no numerical result, effect size, model comparison or inferred statistical significance.
-\section{Discussion and validity limits}
-SOURCE\_PLANNED\_ARTICLE: a systems architecture alone is insufficient without independent evaluated technical properties. A separate manuscript requires a distinct estimand and independently defendable novelty, not just a renamed application, sensor set or population.
-\section{Conclusions}
-This is a pre-experimental concept manuscript. Research activation requires an evidence-backed novelty decision, a frozen study protocol and an approved data or simulation pathway.
+No experiment or simulated benchmark is reported. Consequently, there are no performance estimates, confidence intervals or significance claims.
+
+\section{Discussion and limitations}
+The proposed local-first design may exchange connectivity dependence for local resource, durability and synchronization risks. Network failures, local storage failures and replay-induced duplicates are distinct failure modes and must be tested separately. A favourable simulation result would not establish household safety, clinical benefit, privacy compliance or generalization to deployed devices. A publishable contribution would require independently evaluated technical properties and demonstrable distinction from prior work.
+
+\section{Conclusion}
+This manuscript documents a deferred research concept and the conditions for its possible evaluation; it does not present a completed study.
+
 \end{document}
