@@ -6,9 +6,9 @@
 
 **Przedmiot:** Odporność niskokanałowych reprezentacji EEG na zmianę montażu i zbioru.
 
-- **Proponowany wynik główny:** Nie określono dotychczas w rejestrze. Należy zdefiniować estymand, miarę i jednostkę analizy przed akwizycją.
-- **Zakres i odrębność:** Wymaga odrębnego przeglądu nowości i porównania ze źródłowym protokołem.
-- **Metodologia:** hipotezy, dobór próby lub scenariuszy, kryteria jakości, plan statystyczny i analiza wrażliwości wymagają potwierdzenia we właściwym projekcie. Ten plik nie potwierdza uzyskania wyników.
+- **Proponowany wynik główny:** CCC Lina między predykcją a ciągłą oceną samoopisową walencji, liczony na poziomie pozostawionego poza treningiem uczestnika i jego prób. Roboczy kontrast: sparowany spadek CCC po redukcji elektrod względem pełnego montażu, przy identycznych próbach i kwalifikowalności. Dla stałych ocen walencji CCC raportuje się jako niezdefiniowany. Drugorzędowo MSE względem średniej treningowej. Decyzje nie są jeszcze zamrożone.
+- **Zakres i odrębność:** proponowany wkład dotyczy identyfikowalności efektu redukcji kanałów przy zmianie montażu, referencji i domeny. Sama klasyfikacja emocji z EEG lub adaptacja domenowa nie stanowi nowości. Konieczny przegląd porównawczy względem aktualnych prac oraz replikacja baseline.
+- **Metodologia:** ocena niezależna od uczestnika (zewnętrzne LOSO i wewnętrzna walidacja grupowa); pełny i z góry określony rzadki montaż; kontrola zgodności współrzędnych, referencji i semantyki ocen; modele średniej treningowej i ridge; permutacje etykiet wyłącznie w treningu oraz baseline bodźcowy. Oddzielne scenariusze nowych bodźców i nowych korpusów. Wnioskowanie populacyjne dopiero po wyborze metody uwzględniającej zależność nakładających się zbiorów treningowych.
 - **Powiązane MSC:** brak jawnego powiązania w rejestrze.
 
 ## Stanowisko badawcze
