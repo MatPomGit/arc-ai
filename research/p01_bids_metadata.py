@@ -78,8 +78,8 @@ def build_trial_metadata(
     person_ids = [_required(row["participant_id"], "participant_id") for row in people]
     if len(person_ids) != len(set(person_ids)):
         raise ValueError("Duplicate participant entry")
-    if not events_tsv_by_participant or not set(events_tsv_by_participant).issubset(set(person_ids)):
-        raise ValueError("Events reference unknown participants or no participants")
+    if set(events_tsv_by_participant) != set(person_ids):
+        raise ValueError("Events must cover exactly the declared participant roster")
     trials: list[dict[str, object]] = []
     seen: set[tuple[str, str]] = set()
     for participant in sorted(events_tsv_by_participant):
