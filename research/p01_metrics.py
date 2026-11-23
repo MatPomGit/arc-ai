@@ -28,16 +28,28 @@ def participant_scores(y_true: Sequence[float], y_pred: Sequence[float]) -> dict
     """
     actual, predicted = _finite_pairs(y_true, y_pred)
     n = len(actual)
-    mse = sum((y - p) ** 2 for y, p in zip(actual, predicted)) / n
+    try:
+        mse = sum((y - p) ** 2 for y, p in zip(actual, predicted)) / n
+    except OverflowError as exc:
+        raise ValueError("MSE arithmetic overflow") from exc
+    if not math.isfinite(mse):
+        raise ValueError("MSE must be finite")
     if n < 2 or min(actual) == max(actual):
         return {"n_trials": n, "ccc": None, "mse": mse}
-    mu_y = sum(actual) / n
-    mu_p = sum(predicted) / n
-    var_y = sum((y - mu_y) ** 2 for y in actual) / n
-    var_p = sum((p - mu_p) ** 2 for p in predicted) / n
-    cov = sum((y - mu_y) * (p - mu_p) for y, p in zip(actual, predicted)) / n
-    denominator = var_y + var_p + (mu_y - mu_p) ** 2
-    ccc = 2 * cov / denominator if denominator > 0 else None
+    try:
+        mu_y = sum(actual) / n
+        mu_p = sum(predicted) / n
+        var_y = sum((y - mu_y) ** 2 for y in actual) / n
+        var_p = sum((p - mu_p) ** 2 for p in predicted) / n
+        cov = sum((y - mu_y) * (p - mu_p) for y, p in zip(actual, predicted)) / n
+        denominator = var_y + var_p + (mu_y - mu_p) ** 2
+        ccc = 2 * cov / denominator if denominator > 0 else None
+    except OverflowError as exc:
+        raise ValueError("CCC arithmetic overflow") from exc
+    if not all(math.isfinite(value) for value in (mu_y, mu_p, var_y, var_p, cov, denominator)):
+        raise ValueError("CCC intermediate quantities must be finite")
+    if ccc is not None and not math.isfinite(ccc):
+        raise ValueError("CCC must be finite")
     return {"n_trials": n, "ccc": ccc, "mse": mse}
 
 
@@ -59,12 +71,18 @@ def paired_montage_scores(
     score_full = participant_scores(true, [full[key] for key in ordered])
     score_sparse = participant_scores(true, [sparse[key] for key in ordered])
     full_ccc, sparse_ccc = score_full["ccc"], score_sparse["ccc"]
+    mse_increase = score_sparse["mse"] - score_full["mse"]
+    if not math.isfinite(mse_increase):
+        raise ValueError("MSE difference must be finite")
+    ccc_loss = None if full_ccc is None or sparse_ccc is None else full_ccc - sparse_ccc
+    if ccc_loss is not None and not math.isfinite(ccc_loss):
+        raise ValueError("CCC difference must be finite")
     return {
         "n_trials": len(ordered),
         "ccc_full": full_ccc,
         "ccc_sparse": sparse_ccc,
-        "ccc_loss": None if full_ccc is None or sparse_ccc is None else full_ccc - sparse_ccc,
+        "ccc_loss": ccc_loss,
         "mse_full": score_full["mse"],
         "mse_sparse": score_sparse["mse"],
-        "mse_increase": score_sparse["mse"] - score_full["mse"],
+        "mse_increase": mse_increase,
     }
