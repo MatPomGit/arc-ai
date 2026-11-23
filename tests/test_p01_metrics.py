@@ -48,6 +48,16 @@ class ParticipantMetricTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     participant_scores(truth, prediction)
 
+    def test_overflow_in_mse_is_rejected(self):
+        with self.assertRaises(ValueError):
+            participant_scores([1e308, -1e308], [1e308, -1e308])
+        with self.assertRaises(ValueError):
+            participant_scores([1e308], [-1e308])
+
+    def test_overflow_in_ccc_is_rejected(self):
+        with self.assertRaises(ValueError):
+            participant_scores([1e308, 1e308 / 2], [1e308, 1e308 / 2])
+
     def test_paired_montage_trial_order_independent(self):
         observed = {"trial_b": 2.0, "trial_a": 1.0, "trial_c": 3.0}
         full = {"trial_c": 3.0, "trial_a": 1.0, "trial_b": 2.0}
