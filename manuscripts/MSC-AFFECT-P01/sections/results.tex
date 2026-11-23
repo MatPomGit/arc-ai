@@ -17,4 +17,37 @@ Held-out corpus & Compatible subset & Not eligible & Not eligible\\
 
 CCC is undefined rather than zero for participants whose observed valence ratings are constant. MSE must be reported for each eligible held-out participant against a training-only mean-response baseline. A categorical analysis (balanced accuracy and Brier score) would require a separate prespecified transformation and is not part of this continuous-outcome table.
 
+\subsection{Prespecified reporting ledger}
+For each dataset and montage, a future results release must report the
+number of source participants, independent test participants, eligible
+test trials, removed trials, electrode coordinates and reference scheme.
+The reporting ledger will state whether participant-only, jointly
+participant--stimulus-disjoint and held-out-corpus evaluations were
+possible. All numbers remain pending until rights and input integrity
+have been verified.
+
+\begin{table}[htbp]
+\caption{Prospective evidence gates; no gate is claimed to have passed}
+\centering
+\begin{tabular}{p{0.39\linewidth}p{0.48\linewidth}}
+\toprule
+Gate & Required record \\
+\midrule
+Rights and provenance & Version, licence, attribution, file checksums \\
+Montage comparability & Coordinates, references, overlap, exclusions \\
+Split integrity & Participant and stimulus IDs, fold-manifest hash \\
+Train-only processing & Fit/transform audit, hyperparameter selection \\
+Model comparisons & Constant, ridge, full and sparse, negative controls \\
+Statistical reporting & CCC eligibility, paired MSE, interval method \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The reporting release must list undefined CCC values separately from
+missing predictions and failed processing runs. A model may beat a
+constant predictor while failing stimulus-only or participant-identity
+controls; such a result cannot be described as transferable neural
+decoding. Cross-corpus rows must not display numeric results if target
+and source measurement scales or montages lack an auditable mapping.
+
 The final report will contain participant-level paired differences and intervals, the exact number of legal datasets and unique participants, montage/reference exclusions, train-only preprocessing audit, loss of utility versus electrode count and a corpus-by-montage comparison only where scientifically identifiable. Negative controls and failure cases must be shown alongside positive results. Any claim unsupported by an actual data and code run will be omitted.

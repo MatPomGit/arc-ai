@@ -11,12 +11,100 @@ Primary target is a valence dimension only if its original scale and timing are 
 Outer evaluation is leave-one-participant-out within each eligible corpus. Training subjects alone determine resampling, referencing, bandpass design, artifact thresholds, feature selection, missing-value imputation, scaling, calibration and hyperparameter search, with group-aware inner folds. Deterministic seeds and exact split manifests are saved. For cross-corpus analysis, the target dataset remains entirely unseen while model selection is performed on source subjects; a target-domain adaptation variant is an explicitly separate transductive analysis, never mixed with inductive transfer.
 
 \subsection{Models and controls}
-For the prospective continuous self-report candidate, comparators include a constant predictor using the training-only mean and a standardized L2 ridge regression on training-only log-bandpower. Categorical label experiments, if separately justified and frozen, use training-only prevalence and ridge or elastic-net logistic regression, with the continuous and binary analyses explicitly separated. A compact convolutional model may be considered only when justified by sample size, and the full-channel measurement remains a comparator. The sparse-channel proposal must be compared with a \emph{capacity-matched} sparse baseline using the same train folds and preprocessing. Negative controls are a within-training-fold label permutation, a training-only stimulus-identity mean-self-report predictor where the same film recurs across people, and a non-EEG participant-prior diagnostic where applicable. In FACED, holding out a participant but retaining their video clips in training tests generalization to a new viewer of familiar stimuli, not to unseen films. A separately preregistered jointly participant-and-film-disjoint sensitivity analysis must discard both cross-cells from training and model selection. An individual participant–film intersection contains one rated trial and cannot support per-fold CCC; an alternative **prespecified multi-film held-out block** gives multiple trial ratings for a held-out participant while excluding both cross-cells. CCC is then mathematically defined only for nonconstant true self-reports. Blocks, sizes and multiplicity rules must be frozen before any outcome review; shared training data across folds preclude naive independence-based inference. The 2026 bioRxiv preprint by Gerster and colleagues (DOI: 10.64898/2026.06.12.731889) directly challenges emotion-decoding interpretations of stimulus-assigned FACED category labels; these external findings must not be mistaken for empirical P01 results. Shared train/test participants in a deliberately leaky diagnostic may demonstrate bias but must never enter the primary result.
+For the prospective continuous self-report candidate, comparators include a constant predictor using the training-only mean and a standardized L2 ridge regression on training-only log-bandpower. Categorical label experiments, if separately justified and frozen, use training-only prevalence and ridge or elastic-net logistic regression, with the continuous and binary analyses explicitly separated. A compact convolutional model may be considered only when justified by sample size, and the full-channel measurement remains a comparator. The sparse-channel proposal must be compared with a \emph{capacity-matched} sparse baseline using the same train folds and preprocessing. Negative controls are a within-training-fold label permutation, a training-only stimulus-identity mean-self-report predictor where the same film recurs across people, and a non-EEG participant-prior diagnostic where applicable. In FACED, holding out a participant but retaining their video clips in training tests generalization to a new viewer of familiar stimuli, not to unseen films. A separately preregistered jointly participant-and-film-disjoint sensitivity analysis must discard both cross-cells from training and model selection. An individual participant–film intersection contains one rated trial and cannot support per-fold CCC; an alternative \emph{prespecified multi-film held-out block} gives multiple trial ratings for a held-out participant while excluding both cross-cells. CCC is then mathematically defined only for nonconstant true self-reports. Blocks, sizes and multiplicity rules must be frozen before any outcome review; shared training data across folds preclude naive independence-based inference. The 2026 bioRxiv preprint by Gerster and colleagues (DOI: 10.64898/2026.06.12.731889) directly challenges emotion-decoding interpretations of stimulus-assigned FACED category labels; these external findings must not be mistaken for empirical P01 results. Shared train/test participants in a deliberately leaky diagnostic may demonstrate bias but must never enter the primary result.
 
 \subsection{Endpoints and inference}
 This is a prospective, \emph{unfrozen} protocol. For datasets with a valid continuous self-report scale (candidate FACED), the preferred working endpoint is participant-level Lin concordance correlation coefficient (CCC) calculated on trial-averaged predictions for valence ratings on the original 0--7 scale. Mean squared error (MSE) is reported for every eligible held-out participant, together with a training-only mean-response baseline. CCC is reported as undefined, not zero, for participants with constant true trial ratings; missingness and eligible participant counts must be explicit. An alternative categorical self-report study would first require a separately justified, predeclared transformation and then uses participant-level balanced accuracy, Brier and prevalence. Targeted stimulus categories are not participant self-report.
 
 Candidate primary contrasts compare full versus admissible sparse electrode sets within the same participant and evaluation fold; no test-driven montage selection is allowed. For descriptive software validation, per-participant paired CCC or MSE differences may be resampled as whole participants. Because outer LOSO models have overlapping training pools, naive bootstrapping of fold scores does not alone establish confirmatory population uncertainty. Before empirical testing, freeze the primary target, rules for undefined CCC, confidence-interval construction (potentially full-pipeline participant resampling or independent cohort), and the multiplicity family. Inferences requiring undocumented coordinate/reference transformations are declared \emph{not estimable}. No clinical or cross-corpus generalization is claimed at this stage.
+
+\subsection{Formal estimands and missingness}
+Let $i$ index a held-out participant, $j$ index an eligible trial and $m$ index a
+predeclared montage. Write $y_{ij}$ for the original-scale self-report and
+$\widehat y_{ijm}^{(-i)}$ for a prediction made by a pipeline fitted without
+participant $i$. All epochs of one trial must yield one prediction, using a
+trial aggregation rule learned or fixed within training data. The
+participant-specific mean squared error is
+\begin{equation}
+ {\rm MSE}_{im}=\frac{1}{n_i}\sum_{j=1}^{n_i}
+ (y_{ij}-\widehat y_{ijm}^{(-i)})^2.
+\end{equation}
+For $n_i\geq2$ and nonconstant observed ratings, the working concordance
+statistic is
+\begin{equation}
+ {\rm CCC}_{im}=
+ \frac{2s_{y\widehat y,im}}
+ {s^2_{y,i}+s^2_{\widehat y,im}
+ +(\overline y_i-\overline{\widehat y}_{im})^2},
+\end{equation}
+where variances and covariance use the same population-denominator
+convention. For the confirmatory reporting contract, participants with
+constant true ratings or fewer than two eligible trials have an undefined
+CCC and remain in MSE reporting where MSE is calculable. A nonzero numerical
+CCC returned by software for a constant target does not override this
+operational eligibility rule.
+
+The candidate primary comparison is the within-person loss of concordance,
+$\Delta_i={\rm CCC}_{i,\mathrm{full}}-
+{\rm CCC}_{i,\mathrm{sparse}}$, with positive values indicating a penalty
+from sparsification; it is defined only where both montages satisfy the
+same eligibility and measurement-compatibility rules. Report the
+participant-weighted mean $\overline\Delta$, the median, dispersion and the
+number of paired eligible participants. These descriptive summaries do
+not define a confirmatory effect until the montage, corpus and inference
+procedure are frozen. MSE differences, in squared rating units, form a
+separate secondary contrast. Report exclusions and missing trial counts
+by corpus, participant and montage; never fill missing EEG predictions
+using test labels. If eligibility depends on EEG quality, describe the
+selection mechanism and compare retained-trial distributions before
+interpreting sparse-versus-full differences.
+
+\subsection{Statistical analysis and sensitivity hierarchy}
+The analysis plan distinguishes three targets of generalization:
+\emph{new participant, familiar stimuli} (participant-disjoint);
+\emph{new participant, unseen stimuli} (joint participant--stimulus
+holdout); and \emph{new acquisition corpus} (source-trained, target-held-out).
+These are different estimands and must never be pooled as a single
+cross-domain score. The participant-disjoint, within-corpus analysis is
+the first executable benchmark. The joint holdout is a prespecified
+sensitivity analysis only if enough multi-trial blocks exist. Cross-corpus
+evaluation is conditional on affirmative rights, self-report-scale
+compatibility and defensible coordinate/reference mapping. A failed
+eligibility gate is recorded as \emph{not estimable}, not as a model failure.
+
+Before opening outcome-bearing test partitions, freeze a protocol version,
+the primary corpus and valence item, the full and sparse electrode sets,
+quality thresholds, trial aggregation, model grid, random seeds and
+undefined-CCC policy. Use a single source-training-only inner selection
+procedure across montages, or declare any montage-specific tuning in
+advance. Distinguish model-ranking variability from sampling uncertainty:
+LOSO folds share training participants and are not independent
+experimental replications. A confidence interval advertised as
+population-level must be justified by a prespecified full-pipeline
+resampling design, an independent cohort or another valid dependence-aware
+method. Otherwise provide participant-level descriptive distributions
+without inferential $p$-values. Correct or explicitly limit multiplicity
+across channel counts, corpora, outcomes and stimulus conditions before
+confirmatory language is used.
+
+Perform paired robustness analyses for: (i) unchanged participants and
+trials across montage conditions; (ii) alternative artifact-retention
+thresholds determined without test labels; (iii) participant-and-film
+holdout when feasible; (iv) label permutations performed entirely inside
+training folds; and (v) stimulus-only and constant-mean baselines. A result
+is considered uninterpretable as evidence of transferable affect
+information if stimulus identity, participant identity, processing
+leakage or label incompatibility explains the apparent gain. Distinguish
+dataset descriptive statistics from prospective model results.
+
+The reference implementation \texttt{research/p01\_metrics.py} implements
+participant-level population-convention CCC and MSE plus strict trial-ID
+pairing for full and sparse montages. Synthetic-only contract tests cover
+perfect agreement, shifted and inverted predictions, constant true ratings,
+single-trial participants, invalid values and missing trial identifiers.
+These tests establish arithmetic and interface behaviour only, not
+neurophysiological validity, preprocessing correctness or actual predictive
+generalization.
 
 \subsection{Reproducibility and stop rules}
 Release preprocessing configurations, source hashes, split assignments that reveal no private identity, feature and model versions, machine/software metadata and figure scripts. Stop cross-corpus claims if montage/reference compatibility or annotation semantics fail. Stop any accuracy claims if complete participant separation or baseline reproduction cannot be demonstrated. No real Muse or Tobii raw streams are part of this study under current access conditions.

@@ -144,9 +144,11 @@ class AiManuscriptTests(unittest.TestCase):
                     self.assertIn(r"\input{sections/" + name + "}", active)
                     current_section = (base / "sections" / (name + ".tex")).read_bytes()
                     historical_section = (base / "original/sections" / (name + ".tex")).read_bytes()
-                    if ident == "MSC-AFFECT-P01" and name == "results":
-                        # Active reporting table corrected in E4; archived bytes remain SHA-pinned.
+                    if ident == "MSC-AFFECT-P01" and name in {"methods", "results"}:
+                        # P01 methods and reporting are actively developed while
+                        # original/ remains a SHA-pinned historical snapshot.
                         self.assertNotEqual(current_section, historical_section)
+                        self.assertGreater(len(current_section), len(historical_section))
                     else:
                         self.assertEqual(current_section, historical_section)
 
