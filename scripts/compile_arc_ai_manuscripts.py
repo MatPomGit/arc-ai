@@ -11,6 +11,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def validate_inventory(papers: list[dict], manuscript_root: Path) -> None:
+    """Reject missing, unregistered, redirected or symlinked MSC packages."""
+    registered = {paper["id"] for paper in papers}
+    on_disk = {
+        entry.name for entry in manuscript_root.iterdir()
+        if entry.name.startswith("MSC-")
+    }
+    if registered != on_disk:
+        raise ValueError(
+            "Manuscript inventory mismatch: "
+            f"missing={sorted(registered - on_disk)}, "
+            f"unregistered={sorted(on_disk - registered)}"
+        )
+    for paper in papers:
+        package = manuscript_root / paper["id"]
+        expected = Path("manuscripts") / paper["id"] / "main.tex"
+        if (package.is_symlink() or not package.is_dir()
+                or Path(paper["manuscript"]["path"]) != expected):
+            raise ValueError("Unsafe manuscript package: " + paper["id"])
+
+
 def main() -> int:
     if not shutil.which("latexmk") or not shutil.which("pdflatex"):
         print("LaTeX toolchain required; refusing to claim success", file=sys.stderr)
@@ -18,6 +39,7 @@ def main() -> int:
     papers = json.loads((ROOT / "portfolio/papers.json").read_text(encoding="utf-8"))["papers"]
     if not papers or len({p["id"] for p in papers}) != len(papers):
         raise ValueError("Expected a nonempty set of unique MSC manuscripts")
+    validate_inventory(papers, ROOT / "manuscripts")
     for paper in papers:
         source = ROOT / paper["manuscript"]["path"]
         if (source.name != "main.tex" or source.is_symlink()
