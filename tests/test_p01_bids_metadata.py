@@ -60,6 +60,10 @@ class P01BIDSTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             run(events={"sub-01": EVENTS_1 + "30\t10\tt1\tfilm3\t3\n"})
 
+    def test_missing_participant_events_rejected(self):
+        with self.assertRaisesRegex(ValueError, "cover exactly"):
+            run(events={"sub-01": EVENTS_1})
+
     def test_unknown_participant_rejected(self):
         with self.assertRaises(ValueError):
             run(events={"sub-03": EVENTS_1})
