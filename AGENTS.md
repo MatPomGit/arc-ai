@@ -45,3 +45,7 @@ W przypadku niejednoznaczności wybierz wyższe ryzyko. Niezależne review i for
 ## Dokumentacja i limity
 
 Korzystaj z [mapy dokumentacji](docs/documentation.md), [konfiguracji limitów](config/documentation-policy.json) i `python scripts/validate_documentation.py`. Główna [ARCHITECTURE.md](ARCHITECTURE.md) opisuje kontekst ARC, szczegóły w `docs/architecture/`, decyzje techniczne w `docs/adr/`, a historia projektów i dowodów w kanonicznych rejestrach portfolio. Nie utrzymuj dwóch niezależnych kopii rejestru. Aktualizuj odpowiedni dokument wraz ze zmianą kodu lub źródła faktów. Budżety dotyczą dokumentacji administracyjnej, **nie** pełnych manuskryptów, danych lub źródeł w repozytoriach `msc-*`.
+
+## Właściciel naukowy wszystkich własnych publikacji
+
+Każda publikacja, szkic manuskryptu i pozycja portfolio przygotowywana w ramach własnych badań programu musi jawnie wskazywać **Mateusza Pomianka (`MatPomGit`) jako właściciela naukowego** (`scientific_owner`). Kontroluj to podczas zakładania nowej pracy i jej przeglądu w README, metadanych oraz właściwym pliku źródłowym. W deklaracji autorów uwzględnij Mateusza Pomianka, gdy jest rzeczywistym autorem publikacji; zachowaj potwierdzonych współautorów. Nie zmieniaj autorstwa prac zewnętrznych, nie dopisuj fikcyjnych współautorów i nie utożsamiaj właściciela naukowego z lokalizacją kanonicznego repozytorium, prawami autorskimi czy wyłącznym autorstwem. Pusty rejestr portfolio nie jest dowodem braku właściciela. Nie publikuj ani nie zgłaszaj prac bez odrębnych wymaganych zgód.
