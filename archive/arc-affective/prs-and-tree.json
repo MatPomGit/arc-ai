@@ -1,0 +1,1096 @@
+{
+  "format_version": 1,
+  "source_repository": "MatPomGit/arc-affective",
+  "source_main_sha": "876f1d4e71b41cac0d415f2d262824480ccbf607",
+  "source_file_count": 118,
+  "source_tree": [
+    {
+      "path": ".github/workflows/docs.yml",
+      "blob_sha": "a6881ae53c1205b7d42e9a5cf14d7fd2640991bc",
+      "size": 7959
+    },
+    {
+      "path": ".gitignore",
+      "blob_sha": "ebda154b8ec884869524570d93d849d174c140ea",
+      "size": 471
+    },
+    {
+      "path": "AGENTS.md",
+      "blob_sha": "2937daa7b88786d4e252add5f246ef72cee02eab",
+      "size": 21677
+    },
+    {
+      "path": "CITATION.cff",
+      "blob_sha": "2d88fa93d251a4e6d94feee5cddd4bbde71b6745",
+      "size": 453
+    },
+    {
+      "path": "config/pages-policy.json",
+      "blob_sha": "3123a674221ee62a981b42791ed0d2f1626190a8",
+      "size": 412
+    },
+    {
+      "path": "data/.gitkeep",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "docs/architecture.md",
+      "blob_sha": "0cd9d59893d7e23a3d4310c94fda5f800af6f120",
+      "size": 4533
+    },
+    {
+      "path": "docs/datasets.md",
+      "blob_sha": "bdba1046c7eb51e74b364aec9db1ed85e1e6f5f7",
+      "size": 3785
+    },
+    {
+      "path": "docs/development/agent-workflow.md",
+      "blob_sha": "cf423971d9fe9046bfdb3f5a64ff6f2905441b92",
+      "size": 2561
+    },
+    {
+      "path": "docs/discipline-map.md",
+      "blob_sha": "45ed742ee9b498858d3a7119361c4fe9dc6bfbe2",
+      "size": 1955
+    },
+    {
+      "path": "docs/governance.md",
+      "blob_sha": "20361bc741c7a51b1f9ffcf3f3f34050d6dc9d6c",
+      "size": 1695
+    },
+    {
+      "path": "docs/hardware.md",
+      "blob_sha": "5f01236f5a2ce7c42146644fb2d131f2ee4ea5c0",
+      "size": 15057
+    },
+    {
+      "path": "docs/index.md",
+      "blob_sha": "9f955364b956d555297f8fe980765030a9806ffd",
+      "size": 3436
+    },
+    {
+      "path": "docs/issue-operating-procedure.md",
+      "blob_sha": "1ccf4db0d8243aed582e99f06eaa24f7481f608d",
+      "size": 3615
+    },
+    {
+      "path": "docs/methodology.md",
+      "blob_sha": "35b495da8012b409a8805da755abc4569985c69d",
+      "size": 3328
+    },
+    {
+      "path": "docs/operations/contributing.md",
+      "blob_sha": "9dd9731d3bcaa91c45362950efa74c09f1603595",
+      "size": 1389
+    },
+    {
+      "path": "docs/operations/pages.md",
+      "blob_sha": "698a717a59ed3ec0088836fc4850933d9be3310f",
+      "size": 3751
+    },
+    {
+      "path": "docs/pages.md",
+      "blob_sha": "15dcc3d67895127815565fd3ff9c1f3383bb6d99",
+      "size": 1265
+    },
+    {
+      "path": "docs/portfolio.md",
+      "blob_sha": "eca41760ef965d341865ecac0806ec7e876ebcb6",
+      "size": 3513
+    },
+    {
+      "path": "docs/publication-milestones.md",
+      "blob_sha": "8cfc44c5e25e9f8bfac928a65cd29a703af17b5b",
+      "size": 8991
+    },
+    {
+      "path": "docs/research-dependencies.md",
+      "blob_sha": "cf42885624f37d890465b5de05ada8bd77c8e2b4",
+      "size": 3216
+    },
+    {
+      "path": "docs/research-schedule.md",
+      "blob_sha": "1559f588edfed4b987b655fe105cff88ad1d56af",
+      "size": 2587
+    },
+    {
+      "path": "docs/roadmap.md",
+      "blob_sha": "ca9019331ad91ed7135146a70b8e0bd80a4394f8",
+      "size": 2278
+    },
+    {
+      "path": "docs/start.md",
+      "blob_sha": "ff4f96715cc1bed99c481477ba0da0c6d277f910",
+      "size": 1904
+    },
+    {
+      "path": "docs/stylesheets/extra.css",
+      "blob_sha": "2d7c59e3cfc153cb0c2c641b5316ac1939c44331",
+      "size": 844
+    },
+    {
+      "path": "LICENSE",
+      "blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "size": 11357
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0.txt",
+      "blob_sha": "a5e3d2c6a4ffcb6b6c3f11ec7de31e94d3bcefeb",
+      "size": 18645
+    },
+    {
+      "path": "LICENSING.md",
+      "blob_sha": "c36edcabb63555bf46d59cd2ddb9d668a6a460d9",
+      "size": 1485
+    },
+    {
+      "path": "manuscripts/P01/main.tex",
+      "blob_sha": "3850b11c3b24f575b112334dce565f04b99bd3aa",
+      "size": 1397
+    },
+    {
+      "path": "manuscripts/P01/plan.md",
+      "blob_sha": "42ae10b86cf137234c51f1446a5a95868b0db8e5",
+      "size": 7958
+    },
+    {
+      "path": "manuscripts/P01/protocol.md",
+      "blob_sha": "2e01e5fff48851c352dd32e2c65df2eceea0aa49",
+      "size": 13275
+    },
+    {
+      "path": "manuscripts/P01/references.bib",
+      "blob_sha": "00e894c8c7c75110a5cddf923c4e2f3f6116cb50",
+      "size": 3122
+    },
+    {
+      "path": "manuscripts/P01/sections/discussion.tex",
+      "blob_sha": "d4594337cbe8f70db829ea4cab3c6c3c30b3f51e",
+      "size": 1368
+    },
+    {
+      "path": "manuscripts/P01/sections/introduction.tex",
+      "blob_sha": "ef19ddad59d7f68a805a1bcf4a49faf078d32833",
+      "size": 2048
+    },
+    {
+      "path": "manuscripts/P01/sections/methods.tex",
+      "blob_sha": "94b64ff2730a49b6ecc29694487f415db7a776a5",
+      "size": 7410
+    },
+    {
+      "path": "manuscripts/P01/sections/results.tex",
+      "blob_sha": "b0b73f2dd0512affd32f484745c5002e2d47506a",
+      "size": 1068
+    },
+    {
+      "path": "manuscripts/P02/plan.md",
+      "blob_sha": "093060fde5b411cd42d12aa6f5ad63ec47fda1e8",
+      "size": 2053
+    },
+    {
+      "path": "manuscripts/P03/plan.md",
+      "blob_sha": "ad560c2a6aceb9a95290876014259815d16b02df",
+      "size": 2049
+    },
+    {
+      "path": "manuscripts/P04/plan.md",
+      "blob_sha": "9af6adf8c0ebc8ff20bec91c70b47e977671fcc5",
+      "size": 2010
+    },
+    {
+      "path": "manuscripts/P05/plan.md",
+      "blob_sha": "92791dd60a5c9d2f3e6f702a7bb54453668fc5b4",
+      "size": 2037
+    },
+    {
+      "path": "manuscripts/P06/plan.md",
+      "blob_sha": "0fdf89d220801415ddc1f5086780677ead1645c0",
+      "size": 2166
+    },
+    {
+      "path": "manuscripts/P07/plan.md",
+      "blob_sha": "92d7c570f926f4160ca7093c2b4b3acf6756aec2",
+      "size": 2174
+    },
+    {
+      "path": "manuscripts/P08/main.tex",
+      "blob_sha": "4134a2ebcc973d2bb398dbbef4e5d542fba24dfb",
+      "size": 1388
+    },
+    {
+      "path": "manuscripts/P08/plan.md",
+      "blob_sha": "96ef01fca7d2f0a88db469b967e54eb49a355f84",
+      "size": 2851
+    },
+    {
+      "path": "manuscripts/P08/protocol.md",
+      "blob_sha": "46c1293a4c02d8b7623cc60e2b38edd701dd8a17",
+      "size": 2811
+    },
+    {
+      "path": "manuscripts/P08/references.bib",
+      "blob_sha": "fe779b3f8ee776c754e1a4294c792762d80a204d",
+      "size": 1158
+    },
+    {
+      "path": "manuscripts/P08/sections/discussion.tex",
+      "blob_sha": "d7b923df288221972a50ae0539f0d6b21a764c66",
+      "size": 1195
+    },
+    {
+      "path": "manuscripts/P08/sections/introduction.tex",
+      "blob_sha": "1478a468d129e0135be792e4934701a52827e74a",
+      "size": 1379
+    },
+    {
+      "path": "manuscripts/P08/sections/methods.tex",
+      "blob_sha": "cf170dd7cc6bf01315810201a47847bc6c62545d",
+      "size": 4354
+    },
+    {
+      "path": "manuscripts/P08/sections/results.tex",
+      "blob_sha": "9948b78c578ebd133eee585406e5d361e2c7d8b3",
+      "size": 906
+    },
+    {
+      "path": "manuscripts/README.md",
+      "blob_sha": "a7c8a23bc053033c1b21a2d3e1bf85ddec37adfb",
+      "size": 2832
+    },
+    {
+      "path": "migration/affective_to_arc.json",
+      "blob_sha": "04a74c61068f91f55fa75f4c103dc76c473e4ede",
+      "size": 24067
+    },
+    {
+      "path": "migration/README.md",
+      "blob_sha": "68614a2c7aee82811db4cc8708a8b47598b9d021",
+      "size": 3516
+    },
+    {
+      "path": "mkdocs.public.yml",
+      "blob_sha": "9584bddeb38d94c8c6221a625d0f15aba48859af",
+      "size": 563
+    },
+    {
+      "path": "mkdocs.yml",
+      "blob_sha": "85be5ca51aa86c2c0d99c6a75b77a02738672050",
+      "size": 2915
+    },
+    {
+      "path": "pages/index.md",
+      "blob_sha": "27d3de45a96d545a3239f90caafb136ff23e7232",
+      "size": 1577
+    },
+    {
+      "path": "pyproject.toml",
+      "blob_sha": "8d487bdee87dfd49d4bf820cbe65156d1dba2c9f",
+      "size": 367
+    },
+    {
+      "path": "README.md",
+      "blob_sha": "17f5ede6b67b58de1fe5cc48866ac0e4a20254a2",
+      "size": 7939
+    },
+    {
+      "path": "reports/P01-bids-metadata-qa.md",
+      "blob_sha": "5c8511f8f297ac3e13adb96d3a25910d53d32adb",
+      "size": 6845
+    },
+    {
+      "path": "reports/P01-continuous-inference-qa.md",
+      "blob_sha": "c8a31b90b7157911f7bf0a6ff58912c514dcbcd5",
+      "size": 2761
+    },
+    {
+      "path": "reports/P01-continuous-qa.md",
+      "blob_sha": "3a42acba3f91ae84abdac46d7d9533ba1a864b9a",
+      "size": 3295
+    },
+    {
+      "path": "reports/P01-controls-qa.md",
+      "blob_sha": "acaff5a5522d4a0b4b196714f258ca7b2f812e65",
+      "size": 2420
+    },
+    {
+      "path": "reports/P01-converter-qa.md",
+      "blob_sha": "2763e56bb4e5a19eaa2c08d45b73372c96b389e3",
+      "size": 4710
+    },
+    {
+      "path": "reports/P01-data-audit.md",
+      "blob_sha": "311605eebc2fb8ab1c8f52db44743a06ccf85784",
+      "size": 9105
+    },
+    {
+      "path": "reports/P01-endpoint-decision.md",
+      "blob_sha": "bac4b9e050601d321fbd30a575994640b3b3b7e5",
+      "size": 5548
+    },
+    {
+      "path": "reports/P01-evaluation-qa.md",
+      "blob_sha": "f3d59a63980dd07c0724d8368c3187390ca64fa7",
+      "size": 3466
+    },
+    {
+      "path": "reports/P01-event-linkage-qa.md",
+      "blob_sha": "2cb81b7694e2e3576438c2f5590ecb7bf319c83c",
+      "size": 6382
+    },
+    {
+      "path": "reports/P01-faced-preprocessed-order-qa.md",
+      "blob_sha": "dbcf9f16942f1a2aa2cd1aa3aaa7af39fb30cdc6",
+      "size": 5318
+    },
+    {
+      "path": "reports/P01-faced-provenance-qa.md",
+      "blob_sha": "208b93e5faa5fc5dae19999c8598631f75b5d87f",
+      "size": 11872
+    },
+    {
+      "path": "reports/P01-manifest-gate.md",
+      "blob_sha": "69bce00adf6999c238c1e11edc189b5db4fbd3c5",
+      "size": 1574
+    },
+    {
+      "path": "reports/P01-montage-review-qa.md",
+      "blob_sha": "a8c7bdfcd759d8a00a144cb72fcd43c3c8d9ef9c",
+      "size": 3400
+    },
+    {
+      "path": "reports/P01-source-recording-qa.md",
+      "blob_sha": "2a3d7cf695ea6c1dddad776f39092a49714e95db",
+      "size": 5448
+    },
+    {
+      "path": "reports/P01-statistics-qa.md",
+      "blob_sha": "e031008ef0b1cf16edefa0952eccc9ec770729a3",
+      "size": 2536
+    },
+    {
+      "path": "reports/P01-stimulus-confound-qa.md",
+      "blob_sha": "289dccf197bd0378a7e7e221713979f81228cade",
+      "size": 8025
+    },
+    {
+      "path": "reports/P08-data-qa.md",
+      "blob_sha": "40dd65dd2f393ad3762dfeb7b25609fb93ba50a4",
+      "size": 2320
+    },
+    {
+      "path": "requirements-docs.txt",
+      "blob_sha": "6db7b142318d1f1dfec84dac5ff690caa6e75600",
+      "size": 202
+    },
+    {
+      "path": "RESEARCH.md",
+      "blob_sha": "f95758dbd9bb1f9c6dd3fd6564587da6cf94e9ed",
+      "size": 2473
+    },
+    {
+      "path": "scripts/sync_mkdocs.py",
+      "blob_sha": "d8d982874183c0df0a7615884b1e42a4ca98bd9b",
+      "size": 4672
+    },
+    {
+      "path": "scripts/validate_public_pages.py",
+      "blob_sha": "6626912fb2bc242ba2313d46390601d749938b42",
+      "size": 3923
+    },
+    {
+      "path": "src/arc_affective/__init__.py",
+      "blob_sha": "626ab7f36cc723f53d98cbdba18eef2b0f7f0dae",
+      "size": 104
+    },
+    {
+      "path": "src/arc_affective/cli.py",
+      "blob_sha": "1dbf525d9435a380c1716cd2799c2322341c2a06",
+      "size": 618
+    },
+    {
+      "path": "src/arc_affective/events.py",
+      "blob_sha": "c37ab06a7f5898df0464f976ed496afaa78e4f48",
+      "size": 2617
+    },
+    {
+      "path": "src/arc_affective/p01_bids_qc.py",
+      "blob_sha": "e60672d1521b90ca72a81f87fb3ee764e2392bfd",
+      "size": 11071
+    },
+    {
+      "path": "src/arc_affective/p01_continuous_inference.py",
+      "blob_sha": "6ba4dadc20fffc8da9c1f1f24d98b4418c3d23ed",
+      "size": 5318
+    },
+    {
+      "path": "src/arc_affective/p01_continuous.py",
+      "blob_sha": "ecfe64423aede779c8d2ebaa7685db76733cbbca",
+      "size": 12619
+    },
+    {
+      "path": "src/arc_affective/p01_controls.py",
+      "blob_sha": "dab6c1d8ce7955439f436446acf64b41d8260584",
+      "size": 6026
+    },
+    {
+      "path": "src/arc_affective/p01_converter_qc.py",
+      "blob_sha": "9af8142c8c9dc86b5af6ad0eecf760756ffd2825",
+      "size": 7481
+    },
+    {
+      "path": "src/arc_affective/p01_evaluation.py",
+      "blob_sha": "dab4ea3069795fe1a2bb1c4c0f188f46d58d6768",
+      "size": 12723
+    },
+    {
+      "path": "src/arc_affective/p01_event_linkage.py",
+      "blob_sha": "9be70645fbc6dc6c56dd2518e490da347abd9785",
+      "size": 9284
+    },
+    {
+      "path": "src/arc_affective/p01_faced_preprocessing_order.py",
+      "blob_sha": "10411bff5172dfc0ffc95955f2cc44762fa6bde0",
+      "size": 8588
+    },
+    {
+      "path": "src/arc_affective/p01_faced_provenance.py",
+      "blob_sha": "3323b85788a7842509df0e67cca3655595d2b8b2",
+      "size": 14629
+    },
+    {
+      "path": "src/arc_affective/p01_montage_review.py",
+      "blob_sha": "2ab6cb66fec8455aae2460de4df5b0fdc2515663",
+      "size": 3675
+    },
+    {
+      "path": "src/arc_affective/p01_registry.py",
+      "blob_sha": "bf2322165305f4dd0661216acc97d0801efb4df1",
+      "size": 3923
+    },
+    {
+      "path": "src/arc_affective/p01_source_recording_reconcile.py",
+      "blob_sha": "b3e5369a5c9d88cf28a1e83c24af3c417c91cb3d",
+      "size": 6940
+    },
+    {
+      "path": "src/arc_affective/p01_stimulus_control.py",
+      "blob_sha": "34c36c9e133584f67c9bc8f3c2b72cc0e62a7ae2",
+      "size": 13556
+    },
+    {
+      "path": "src/arc_affective/p01_uncertainty.py",
+      "blob_sha": "ef7447a681a4c8c3de541c4e0619b02aad1a0e6b",
+      "size": 4587
+    },
+    {
+      "path": "src/arc_affective/p08_benchmark.py",
+      "blob_sha": "e4332fc69fdc34331cfbfbb0683355b8606e0337",
+      "size": 8763
+    },
+    {
+      "path": "src/arc_affective/synthetic.py",
+      "blob_sha": "f26e15a038aa9356541c67bf47559b08b90bb63c",
+      "size": 573
+    },
+    {
+      "path": "tests/test_docs.py",
+      "blob_sha": "346b33d8790af2154239ead97f951152da98a395",
+      "size": 2979
+    },
+    {
+      "path": "tests/test_events.py",
+      "blob_sha": "bc0ec7caf3508f17351e0ef9bf08a505ecd76a79",
+      "size": 1994
+    },
+    {
+      "path": "tests/test_manuscripts.py",
+      "blob_sha": "06a1a2976f23bf358309115afb24cc76113b2af0",
+      "size": 2752
+    },
+    {
+      "path": "tests/test_migration.py",
+      "blob_sha": "f1ceccf2054b31febd74dbc1d8e81ff474c62f03",
+      "size": 3191
+    },
+    {
+      "path": "tests/test_p01_bids_qc.py",
+      "blob_sha": "71a12b8a687fb314c501173c1af1362a0efc3d3b",
+      "size": 7987
+    },
+    {
+      "path": "tests/test_p01_continuous_inference.py",
+      "blob_sha": "1aeb44c5a7a7d210be613351d5c71b2b68d5fc71",
+      "size": 4947
+    },
+    {
+      "path": "tests/test_p01_continuous.py",
+      "blob_sha": "dc2437019113d0e39dfc8ce4a26dcaa6e00067c9",
+      "size": 6903
+    },
+    {
+      "path": "tests/test_p01_controls.py",
+      "blob_sha": "38e37fa7c30663b63173ce57a3d06cc0182204a7",
+      "size": 4844
+    },
+    {
+      "path": "tests/test_p01_converter_qc.py",
+      "blob_sha": "966bde6e21fc775bda940f3e272cb432a753bdf4",
+      "size": 5841
+    },
+    {
+      "path": "tests/test_p01_evaluation.py",
+      "blob_sha": "1aaa40dcc9a4f41748527ec653fecf82b0f32abe",
+      "size": 6668
+    },
+    {
+      "path": "tests/test_p01_event_linkage.py",
+      "blob_sha": "e7dc44187fee25208aa652945263fac352f666da",
+      "size": 7699
+    },
+    {
+      "path": "tests/test_p01_faced_preprocessing_order.py",
+      "blob_sha": "8470b658b23e6c3e9d615d3c3bd5fa4256236b96",
+      "size": 5681
+    },
+    {
+      "path": "tests/test_p01_faced_provenance.py",
+      "blob_sha": "b016e93c1db5290ddf8ba595547e0d4c9618fe46",
+      "size": 11420
+    },
+    {
+      "path": "tests/test_p01_montage_review.py",
+      "blob_sha": "c4ee166f5c0e8ff7090ae3bbd181590f5346a9e7",
+      "size": 3636
+    },
+    {
+      "path": "tests/test_p01_registry.py",
+      "blob_sha": "d617204c39400b96b52d155ac4c2842e110839a0",
+      "size": 3106
+    },
+    {
+      "path": "tests/test_p01_source_recording_reconcile.py",
+      "blob_sha": "a9362ae2609b3cac75b261a96e91101de37db985",
+      "size": 6680
+    },
+    {
+      "path": "tests/test_p01_stimulus_control.py",
+      "blob_sha": "b4f1cb9da6d8f12867d92fb744b166737491c392",
+      "size": 13686
+    },
+    {
+      "path": "tests/test_p01_uncertainty.py",
+      "blob_sha": "6de829dc5c9adad9eb173c4f4b31d25764fb6d89",
+      "size": 3443
+    },
+    {
+      "path": "tests/test_p08_benchmark.py",
+      "blob_sha": "1e1ace85775c457b4b927d7983d19dc516584903",
+      "size": 3337
+    },
+    {
+      "path": "tests/test_public_pages_policy.py",
+      "blob_sha": "de21e118363ee8c31f37ee4d48da63d05294f9fc",
+      "size": 3714
+    }
+  ],
+  "closed_pull_requests": [
+    {
+      "number": 13,
+      "title": "Establish ARC Affective: eight engineering research tracks and offline foundation",
+      "body": "## Scope\n- Build repository architecture, sensor/licence risk controls and reproducible methods.\n- Eight distinct research proposals P01–P08, all mapped to engineering/computer-science disciplines, own prospective N<=3 (default N=0–1).\n- 12 issues: #1–#4 common foundations, #5–#12 publication tracks; each step scoped to one JRA execution.\n- Minimal versioned synthetic event core (no device I/O and no inference model) and offline standard-library tests.\n\n## Scientific and legal gates\n- Tobii Eye Tracker 5: consumer gaming interaction only; do not capture eye-tracking data without required permission.\n- Muse S Athena: authorized research data access required; zero paid service dependencies; all optional streams blocked until verified.\n- Licensed public datasets for population-level evaluation, no sensitive recordings in Git.\n- Subject-disjoint splits, session uncertainty, baselines, preregistration, N-of-1 limitations and ethics review.\n\n## Validation\n- Five standard-library offline unit tests passed on a local reconstruction of the corresponding source files; direct Git checkout of branch was unavailable in this environment. GitHub-hosted CI intentionally not configured to honor zero-spend requirement.\n- Document/hardware integration is *planned*, not executed.\n\nCloses no research issue: issue acceptance requires empirical results, not only plans.",
+      "author": "MatPomGit",
+      "head_sha": "32f62c62d8d88e387be7872c83f47e539301e271",
+      "merge_commit_sha": "419e46f061b4668ec1e5bc6a9cbe59835d7f44e4",
+      "merged_at": "2026-10-29T07:30:48Z",
+      "closed_at": "2026-10-29T07:30:48Z",
+      "created_at": "2026-10-29T07:30:20Z",
+      "updated_at": "2026-10-29T07:30:51Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/13",
+      "base": "main",
+      "head": "feat/research-portfolio-foundation-20261029"
+    },
+    {
+      "number": 74,
+      "title": "docs: comprehensive milestones and 56 issues for ARC Affective publication portfolio",
+      "body": "## Implemented plan\n- Created 56 canonical detailed paper-stage issues: eight distinct papers (P01–P08) × seven stage gates (M0–M6).\n- Updated all eight parent epics (#5–#12) with milestone checklists, wave priorities, legal/data/ethics dependencies.\n- Linked cross-cutting foundation issues #1–#4 and documented safe component reuse.\n- Closed duplicated #34–#37 (canonical P01–P04/M2 are #30–#33) and corrected M3 issue references.\n- Added source-of-truth docs: full issue matrix, evidence acceptance gates, dependency graph, conditional waves and JRA operations.\n- Updated README, AGENTS and roadmap to link new execution docs.\n\n## Audit\n- 8 changed Markdown files; no production code, data collection or compute workflows.\n- Automated consistency check: 56 unique milestone issue numbers, 8 umbrella links, 68 internal issue references (68 match their URLs), no duplicate milestone IDs.\n- Native GitHub milestone objects could not be created using connected actions; stages are represented as issues/checklists and this limitation is explicit.\n\n## Publication safeguards\nNo human-study sample >3; no unlicensed Tobii gaze acquisition or Muse research data. Zero paid compute/services. Baseline/split/ethics/negative controls required before evidence claims. No research issue automatically closed for an outline.",
+      "author": "MatPomGit",
+      "head_sha": "1aa4ca6aa18b8e4754066980be10c0f5802493be",
+      "merge_commit_sha": "fe26cf083a14c16709d965ac2c71ebfad5db9c33",
+      "merged_at": "2026-10-29T15:38:28Z",
+      "closed_at": "2026-10-29T15:38:28Z",
+      "created_at": "2026-10-29T15:38:15Z",
+      "updated_at": "2026-10-29T15:38:30Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/74",
+      "base": "main",
+      "head": "docs/publication-issue-milestones-20261029"
+    },
+    {
+      "number": 75,
+      "title": "docs: MkDocs Material documentation and GitHub Pages deployment",
+      "body": "## Documentation site\n- Add MkDocs Material (Polish navigation, light/dark mode, search, native Mermaid diagrams, academic CSS).\n- Reuse existing research files in `docs/`; generate eight publication pages from canonical `papers/` without changing the research protocols. Add issue/milestone links.\n- Add overview, getting started, researcher workflow and GitHub Pages setup instructions.\n- Add reproducible dependency pins, generated-path exclusions and offline documentation link/index tests.\n- Add CI: strict MkDocs build on PR, automatic publication from `main` using public-repo standard GitHub-hosted runners (GitHub documents these as free). No research data, device drivers or paid APIs involved.\n\n## Status and constraints\n- Python package download not available in local container, so actual `mkdocs build --strict` to be confirmed by GitHub workflow.\n- Docs publication requires **Settings → Pages → Build and deployment → GitHub Actions** to be selected once; current connector does not support editing Pages settings.\n- Target URL `https://matpomgit.github.io/arc-affective/` is a planned address, not a verified live site.\n- The generated mirror `docs/papers/` and built `site/` are gitignored. Original papers remain the source of truth.\n\n## Validation commands\n```bash\npython -m pip install -r requirements-docs.txt\npython scripts/sync_mkdocs.py\npython -m unittest discover -s tests -p 'test_docs.py' -v\nmkdocs build --strict\n```\n",
+      "author": "MatPomGit",
+      "head_sha": "2139b2b3aca5d40f10b158f230c242a9528db4e4",
+      "merge_commit_sha": "0a958c103cf47e3a135fccd60dc43a4d10ebf992",
+      "merged_at": "2026-10-29T15:50:18Z",
+      "closed_at": "2026-10-29T15:50:18Z",
+      "created_at": "2026-10-29T15:48:06Z",
+      "updated_at": "2026-10-29T15:50:20Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/75",
+      "base": "main",
+      "head": "feat/mkdocs-github-pages-20261029"
+    },
+    {
+      "number": 76,
+      "title": "docs(hardware): identify Ultraleap Leap Motion Controller 2 and document specifications",
+      "body": "## Zmiana\n- Identyfikacja kontrolera na podstawie zdjęć urządzenia i opakowania: Ultraleap Leap Motion Controller 2 (LMC2).\n- Specyfikacja producenta: stereowizja IR 850 nm, 10–110 cm, 160°×160°, 1024²@88 fps / 512²@120 fps, USB 3.0-C, 5 V / 500 mA, 84×20×12 mm, 29 g; link do arkusza danych Issue 15 i Hyperion/LeapC.\n- Aktualizacja README, spisu aparatury MkDocs i bramek P05/P07/P06/P08.\n\n## Ograniczenia\nIdentyfikacja modelu potwierdzona wizualnie; nie potwierdzono podłączenia, wersji firmware/SDK, częstotliwości strumienia pozy dłoni ani uprawnień do rejestracji danych. Nie zapisano numerów seryjnych ani danych biometrycznych.\n\n## Walidacja\nDokumentacja sprawdzona pod kątem zgodności ze specyfikacją Ultraleap. Testy runtime, real-data acquisition i integracja z urządzeniem **NOT RUN**. Brak zmian kodu/produkcji.\n\nPowiązanie: #1.",
+      "author": "MatPomGit",
+      "head_sha": "ee48d04c23c3227fad4ca5b286be6e25d3ed8331",
+      "merge_commit_sha": "d2826df503367c66d25728cf4e5eb886aa0f92f3",
+      "merged_at": "2026-10-30T06:47:46Z",
+      "closed_at": "2026-10-30T06:47:46Z",
+      "created_at": "2026-10-30T06:47:01Z",
+      "updated_at": "2026-10-30T06:47:48Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/76",
+      "base": "main",
+      "head": "docs/leap-motion-controller-2-spec-20261030"
+    },
+    {
+      "number": 77,
+      "title": "docs(sensors): add Tobii 5 and Slayo Mike S9 dual-microphone acquisition gates",
+      "body": "## Zakres\n- Dodałem do inwentarza sprzętu udokumentowane na zdjęciach **Tobii Eye Tracker 5 pod monitorem** (identyfikacja zgodna z wcześniejszym stanem, PID wymaga odczytu) oraz **zestaw 2 × Slayo Mike S9 + jeden odbiornik USB-C**.\n- Specyfikacja Tobii: IS5 NIR 850 nm, FoV 40°×40°, 45–95 cm, 285×15×8,2 mm, USB 2; rozdzielenie obrazu 133 Hz i nominalnych 33 Hz spojrzenia.\n- Oficjalna licencja Tobii 5 **zabrania rejestrowania danych eye-tracking do analiz** przy zwykłej licencji. Nie odblokowuję adaptora ani dostępu do danych.\n- Slayo: 2,4 GHz, omni, USB-C, do 6 h, bateria 65 mAh, reklamowany zasięg (20 m na pudełku vs 30 m na otwartym obszarze/15 m wewnątrz na stronie producenta).\n- Procedura warunkowa dla dwóch mikrofonów: sprawdzenie mono/stereo, mapowanie L/R, stabilność synchronizacji, AGC/DSP, test akustyczny bez głosów, walidacja przed użyciem do badań.\n- Uzgodnienie `README.md`, `docs/index.md`, `docs/architecture.md`, `docs/methodology.md`; bez zmian kodu i bez uruchamiania zbierania danych.\n\n## Krytyczna granica metodologiczna\nDwa nadajniki współdzielą jeden odbiornik. **Nie ma dowodu niezależnych kanałów L/R.** Nie deklarować stereo, azymutu/TDOA, przestrzennej lokalizacji ani pomiaru stanów afektywnych bez potwierdzonych kanałów, synchronizacji i walidacji.\n\n## Walidacja\nSprawdzono źródła producentów i pięć plików dokumentacji pod kątem spójności. Próby z prawdziwym urządzeniem: NOT RUN. Testy MkDocs/CI do sprawdzenia na HEAD przed scaleniem.\n\nPowiązane: #1.",
+      "author": "MatPomGit",
+      "head_sha": "8944da22f43f545d57cf2f756069d002ec080168",
+      "merge_commit_sha": "59ba7309e95db9ef495d092ec604d6066e988828",
+      "merged_at": "2026-10-30T06:57:04Z",
+      "closed_at": "2026-10-30T06:57:05Z",
+      "created_at": "2026-10-30T06:56:24Z",
+      "updated_at": "2026-10-30T06:57:06Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/77",
+      "base": "main",
+      "head": "docs/tobii-slayo-audio-inventory-20261030"
+    },
+    {
+      "number": 78,
+      "title": "research(P01/P08): IEEE manuscript drafts, protocols and novelty boundaries",
+      "body": "## Scope\n- Draft two substantive, distinct IEEEtran manuscripts: P01 sparse EEG under montage/domain shift, P08 real-time fault-aware multimodal scheduling.\n- Add per-paper methods, results reporting contracts and BibTeX sources.\n- Add candidate protocols `papers/P01-protocol.md`, `papers/P08-protocol.md` and link them from canonical proposals.\n- Preserve existing paper epics and milestone issue tracking, no result fabrication or human data collection.\n\n## Scientific review notes\n- P01 must differentiate against Pandilova et al. (Sensors 2026, DOI 10.3390/s26175327) and other cross-dataset EEG comparisons; aim is factorial electrode/reference/corpus compatibility, not generic leakage checks.\n- P08 novelty over existing deadline-aware/adaptive stream schedulers remains to be demonstrated on real hardware. Goodput accounting prevents claiming latency improvements achieved by dropping all difficult events.\n- Both M1 plans intentionally remain **DRAFT/unfrozen**. No dataset rights, full benchmarks, participant sampling, preregistration, hardware measurements or submission claimed.\n\n## Validation\n- Remote file read-back: 14 manuscript/protocol files present.\n- Structural checks: 2/2 IEEEtran main inputs, section brace balance, citation-to-BibTeX keys, results pending and explicit non-preregistration flags PASS.\n- **Not run**: full `pdflatex + bibtex` compilation, `python scripts/sync_mkdocs.py`, local `test_docs.py` and strict MkDocs build (this session has no Git checkout); do not merge until these are checked or the equivalent is independently verified.\n- No paid CI, runner installation or unlicensed data used.\n\nRefs: #14 #21 #22 #29 #66 #73.\n\n## Latest validation (exact head)\n- Head SHA: `fa3579a061c879b5589b1bea4d0f6f8b5ff6aa36`.\n- [Docs / MkDocs CI #41089647958](https://github.com/MatPomGit/arc-affective/actions/runs/41089647958): **SUCCESS** for `sync_mkdocs.py`, `test_docs.py`, new `test_manuscripts.py` and `mkdocs build --strict`.\n- LaTeX `pdflatex/bibtex` binary compilation and independent manuscript peer-review are still outstanding. No physical EEG or edge benchmark undertaken.\n\n## 2026-10-30 continuation: executable P08 and P01 data-rights mitigation\n- Added `src/arc_affective/p08_benchmark.py` with deterministic, virtual single-server scheduling and explicit attempted=processed+dropped+evicted+invalid accounting for FIFO, bounded FIFO, latest-only and a candidate deadline/quality policy.\n- Added synthetic fault profiles (dropout, reconnect, delay, low-quality and duplicates); ran new invariant test suite in docs CI (E0 only, **not** measured host latency).\n- Added `reports/P08-data-qa.md` and supporting reproducibility instructions; M2 #41 remains open pending real monotonic measurements.\n- Audited DEAP, DREAMER and AMIGOS access status in `reports/P01-data-audit.md`. DREAMER is restricted; original DEAP/AMIGOS endpoints are unverified/unresponsive in this check.\n- Identified and documented open-license fallback candidates: [GAMEEMO v3](https://data.mendeley.com/datasets/b3pn4kwpmn/3) (CC BY 4.0; 28 participants) and [FACED v1.1.4](https://nemar.org/dataset/nm000112?v=v1.1.4) (CC BY 4.0; 123 participants and BIDS metadata). Both remain candidates until original signal metadata and validation are inspected.\n- Updated P01 manuscript Methods and references to cite all five EEG dataset sources; preserved no unlicensed raw-data handling, no fake results and no human collection.\n- [CI for P08 implementation](https://github.com/MatPomGit/arc-affective/actions/runs/41092523034): **success**. [CI for P01 fallbacks](https://github.com/MatPomGit/arc-affective/actions/runs/41093083859): **success**. Final citation-only commit validation pending at time of description update.\n\n**Still required before marking ready:** independent scientific review, actual legal-data verification, LaTeX compilation (pdflatex/bibtex) and independent physical-node timing. This PR intentionally remains a draft; no research milestone closure or publication claim.\n\n**Exact final CI verification:** [Docs / MkDocs run #41093171136](https://github.com/MatPomGit/arc-affective/actions/runs/41093171136) completed **SUCCESS** for head `2f77d31094485349ac75dd71ea654dd41c50c122`, including new `test_p08_benchmark.py` as well as documentation/manuscript structural tests. This success does not constitute pdflatex/bibtex compilation, physical benchmark, legal dataset verification or independent manuscript review.\n\n\n## Continuation: P01 local dataset provenance gate\n- Added `src/arc_affective/p01_registry.py`, `tests/test_p01_registry.py`, `reports/P01-manifest-gate.md`; workflow now tests the validator.\n- Enforces declared approved research use, explicit license, mandatory acquisition metadata, unique electrodes and local optional SHA-256; rejects unsafe paths/duplicate files. No raw EEG data is processed beyond local checksum streaming.\n- Six synthetic local unit tests **PASS**. [Docs CI #41096582918](https://github.com/MatPomGit/arc-affective/actions/runs/41096582918) **SUCCESS** at SHA `eadc88f7679c8689d8bdd98ef0eb1c26d2e7c117`.\n- This is a metadata gate only. Dataset rights, electrode coordinates/reference equivalence, original signals, LaTeX compilation and independent scientific review remain outstanding; keep milestone #30 open.\n",
+      "author": "MatPomGit",
+      "head_sha": "23e17ccbc4111bdfb46459fe87ab248f388cbeda",
+      "merge_commit_sha": "e9f8b2bc4a75707cc51e99137cd14c823364f828",
+      "merged_at": "2026-10-30T17:33:27Z",
+      "closed_at": "2026-10-30T17:33:27Z",
+      "created_at": "2026-10-30T16:23:33Z",
+      "updated_at": "2026-10-30T17:33:30Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/78",
+      "base": "main",
+      "head": "feat/p01-p08-manuscript-methods-20261030"
+    },
+    {
+      "number": 80,
+      "title": "feat(P01): participant-disjoint nested LOSO and synthetic reference baselines",
+      "body": "## Scope\n- Implement deterministic outer participant-disjoint LOSO evaluation on **synthetic-derived feature fixtures only**.\n- Add participant-grouped inner alpha selection, train-only z-scored L2 logistic baseline, training-prevalence comparator, participant-level Brier and conditional balanced accuracy.\n- Verify absence of participant/trial window leakage, outer-test-invariant training, trial label consistency, single-class holdout semantics and explicitly non-identifying output. Add eight regression tests.\n- Documentation: `reports/P01-evaluation-qa.md`, P01 proposal update, CI test integration.\n\n## Research boundary\n**E0 simulation/software only.** No real EEG, licensed corpus, sample-level EEG accuracy, inferred psychological state, empirical confidence interval, frozen M1 protocol or completion of #30/#42 is claimed. The simulator rejects non-synthetic rows. Physical montage and legal access must be independently audited. Keep milestone issues open.\n\n## Validation contract\n`python -m unittest discover -s tests -p test_p01_evaluation.py -v`\n`python -m unittest discover -s tests -p test_docs.py -v`\n`mkdocs build --strict`\nFull tests must pass on exact head before merge. No paid dependencies. \nRefs: #2 #22 #30 #42 #5.\n\n\n## Review correction: trial-labelled observations (2026-10-30)\n- Changed Brier/BA to average predicted probabilities within each participant-trial before scoring; one trial is one target observation, one participant is one outer test cluster.\n- Applied equal per-trial aggregate training weights to logistic loss and z-scoring; training prevalence and inner grouped selection are trial based.\n- Fixed invalid-row validation ordering and added three checks: window pseudo-replication, exact training invariance under trial replication, non-Observation input handling. **11** tests now defined.\n- Updated papers/protocol evidence note; **no empirical EEG data or genuine confidence intervals**. PR remains a draft until exact-head CI succeeds.\n- Head: `b4937ad1b2cb95947fe9a377e29638175ea04e3a`; [CI run #41101665504](https://github.com/MatPomGit/arc-affective/actions/runs/41101665504).\n",
+      "author": "MatPomGit",
+      "head_sha": "b4937ad1b2cb95947fe9a377e29638175ea04e3a",
+      "merge_commit_sha": "e78621bdf28ada121fa7c9a68021ab3abff950c5",
+      "merged_at": "2026-10-30T18:00:45Z",
+      "closed_at": "2026-10-30T18:00:45Z",
+      "created_at": "2026-10-30T17:37:51Z",
+      "updated_at": "2026-10-30T18:00:47Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/80",
+      "base": "main",
+      "head": "feat/p01-grouped-evaluation-20261030"
+    },
+    {
+      "number": 81,
+      "title": "feat(P01): paired participant-bootstrap confidence interval utility",
+      "body": "## Scientific engineering unit\n- Add `p01_uncertainty.py` to compute paired, equal-subject-weight 95% percentile bootstrap intervals for trial-aggregated Brier differences.\n- Keep both methods' predictions paired within the same participant and refuse duplicated participant IDs, invalid scores and samples too small for even a preliminary analysis.\n- Add seven synthetic, deterministic regression tests and reproducibility documentation; wire CI.\n- Does not change P01 outer LOSO code or claim empirical improvement.\n\n## Scientific limits\n- No actual EEG observations, physical montage validation, dataset-rights approval or human studies.\n- The CLI demonstrates **E0 synthetic test data only**. Final P01 comparisons require the same held-out trials for reference and candidate, predeclared primary contrasts and multiplicity strategy. Bootstrap cannot repair a biased protocol or unrepresentative cohort.\n- M3 #42 and M5 #58 remain open.\n\n## Acceptance\n1. Tests on exact head SHA: `python -m unittest discover -s tests -p test_p01_uncertainty.py -v` and existing P01 regressions.\n2. Documentation generation and strict MkDocs must pass; no private/real signal data.\n3. Merge after verification; clean up branch.\nReferences #42 #58 #5.\n\n\n## Updated manuscript and validation status\n- P01 Methods now specifies trial-aggregated paired Brier score differences, participant-resampled confidence bounds, fixed seed and reproducible reporting. This is a *planned* statistical analysis; no EEG result exists.\n- Exact head SHA `2fbc9274dff2cbe8ec99ac5d99ad8825b7e136c6`.\n- [Docs CI run #41103701342](https://github.com/MatPomGit/arc-affective/actions/runs/41103701342) is queued at time of this update. Keep draft until exact-head validation.\n- A percentile bootstrap over held-out subjects does not address correlation induced by overlapping cross-validation training sets, especially at small sample sizes. Independent replication and/or full training-pipeline resampling may be required for confirmatory claims; this E0 utility is preliminary.\n",
+      "author": "MatPomGit",
+      "head_sha": "2fbc9274dff2cbe8ec99ac5d99ad8825b7e136c6",
+      "merge_commit_sha": "6c7fea23801f35a0c77b7c35058d5493456a5263",
+      "merged_at": "2026-10-30T18:17:34Z",
+      "closed_at": "2026-10-30T18:17:34Z",
+      "created_at": "2026-10-30T18:03:07Z",
+      "updated_at": "2026-10-30T18:17:37Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/81",
+      "base": "main",
+      "head": "feat/p01-participant-uncertainty-20261030"
+    },
+    {
+      "number": 82,
+      "title": "feat(P01): synthetic train-only permutation controls and feature sensitivity",
+      "body": "## Scope\n- Implement synthetic-only negative control: whole-trial label permutation *within outer training participants*, keeping every window of each trial aligned and each participant's prevalence fixed. Outer test subjects and labels remain untouched.\n- Run fully nested train-only model fitting on permuted trials and score held-out participants with original test labels.\n- Add exhaustive leave-one-synthetic-feature-out evaluation, without choosing a test-set winner or conflating abstract features with physical EEG montages.\n- Add **seven** deterministic invariant tests, documentation and a GitHub Actions workflow step.\n- Link from the canonical P01 proposal; refs #42 #50 #5.\n\n## Strict scientific limits\nEvidence **E0 synthetic software only**. No permission to raw EEG is asserted; no p-values, real signal results, clinical interpretations, montage ablation or real external validation. The within-subject trial-label shuffle is only one conditional null; it may be invalid for exchangeability-constrained real EEG designs. M3/M4 remain open.\n\n## Acceptance gate\nCheck exact head SHA, run new `test_p01_controls.py`, existing P01 unit tests, docs links and `mkdocs build --strict` before merging. No paid actions or proprietary datasets.\n",
+      "author": "MatPomGit",
+      "head_sha": "173ce4016e03c7fb7edc05734d7fcf62457fdddf",
+      "merge_commit_sha": "0ae6924645c26b452e1ee7a67385bcfa0bb35211",
+      "merged_at": "2026-10-30T18:20:42Z",
+      "closed_at": "2026-10-30T18:20:42Z",
+      "created_at": "2026-10-30T18:19:54Z",
+      "updated_at": "2026-10-30T18:20:44Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/82",
+      "base": "main",
+      "head": "feat/p01-negative-controls-20261030"
+    },
+    {
+      "number": 83,
+      "title": "feat(P01): BIDS sidecar QC and conservative montage comparability gate",
+      "body": "## Implementation\n- Add `p01_bids_qc.py`: local-only BIDS JSON/TSV sidecar inspection for sampling rate, names/units, documented EEG reference, event timing and valence column availability.\n- Validate optional electrode positions and coordinate units/frame; comparisons are **candidate metadata matches only**, never proven physical montage/reference equivalence.\n- Add 11 synthetic unit tests, reproducibility notes, canonical P01 proposal linkage and CI integration. Ensure reports/manuscript changes trigger docs workflow.\n- Public metadata desk check: FACED NEMAR v1.1.4 / DOI 10.82901/nemar.nm000112; catalogue states 123 participants, 32 channels, 250/1000 Hz and CC BY 4.0 (source https://nemar.org/dataset/nm000112?v=v1.1.4 and source BIDS README https://github.com/nemarDatasets/nm000112).\n\n## Evidence and stop rules\n**E0 metadata/software QA only**. No actual FACED signal, participants, actual sidecar files, license acceptance, acquisition reference or physical coordinates verified here. No performance results. No automatic downloads or paid tools. The reported shared-coordinate threshold is a preliminary technical filter, not proof that two BIDS coordinate frames are physically registered. Human analysis must confirm rights, original release versions, EEG reference, label semantics and event alignment, then freeze M1 before running actual analysis.\n\n## Verification\nRun `python -m unittest discover -s tests -p test_p01_bids_qc.py -v`, all existing docs/manuscript/EEG tests and `mkdocs build --strict` at exact head. Keep #14/#22/#30 and related gates open pending empirical checks.\n",
+      "author": "MatPomGit",
+      "head_sha": "7fa43f639364a06494b4a37e1d5501c4f083ab64",
+      "merge_commit_sha": "5879e566d56e2e208d86f0950561154b1f01426e",
+      "merged_at": "2026-10-30T18:29:04Z",
+      "closed_at": "2026-10-30T18:29:04Z",
+      "created_at": "2026-10-30T18:28:18Z",
+      "updated_at": "2026-10-30T18:29:07Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/83",
+      "base": "main",
+      "head": "feat/p01-bids-metadata-qc-20261030"
+    },
+    {
+      "number": 84,
+      "title": "research(P01): FACED public BIDS reference blocker and sidecar QC corrections",
+      "body": "## Direct source audit\nRead only the publicly accessible text sidecars from `nemarDatasets/nm000112` at pinned commit `2577b0bbc089b49e828cd98d80445133634b6d34`, sub-000. Actual `_eeg.json`: EEGReference and EEGGround are **n/a**, SamplingFrequency 1000, EEGChannelCount 32. The 32 EEG channel rows use µV. Actual `_events.tsv`: 33 rows, 28 numeric Valence and video_index, 5 technical entries without ratings. No `electrodes.tsv` or `coordsystem.json` found in nontruncated source Git tree.\nSource: https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34/sub-000/eeg\n\n**Consequence:** no physical EEG reference or cross-corpus montage equivalence claim justified. These facts apply only to this upstream source revision / one subject, not a fully checksum-verified release.\n\n## Implementation\n- Strengthen BIDS QC: compare `EEGChannelCount` to channels.tsv, optional per-channel sampling frequency, accept negative event onsets and missing `n/a` durations as allowed by BIDS.\n- Add 3 new synthetic regression tests (14 total for the sidecar module) and update source-pinned audit report and P01 proposal.\n- No raw EEG signals or individual numerical ratings were copied/downloaded.\n\n## Gates\nRequire exact-head unit tests, strict MkDocs and workflow success before merging. M0/M1/M2 remain open pending rights, true reference and event-rating alignment verification.\nRefs: #14 #22 #30 #5.\n",
+      "author": "MatPomGit",
+      "head_sha": "2a50ab4c98d31ffd7337b033585a1965801a048c",
+      "merge_commit_sha": "6a3501477a961b9d8b85e447781fe9b9d93885c8",
+      "merged_at": "2026-10-30T18:33:37Z",
+      "closed_at": "2026-10-30T18:33:38Z",
+      "created_at": "2026-10-30T18:32:40Z",
+      "updated_at": "2026-10-30T18:33:40Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/84",
+      "base": "main",
+      "head": "feat/p01-faced-metadata-audit-20261030"
+    },
+    {
+      "number": 85,
+      "title": "research(P01): validate FACED stimulus/event joins and resolve endpoint decision gate",
+      "body": "## Source-pinned metadata verification\n- Audited public `sub-000/eeg/*_events.tsv` and `stimuli/stimuli.tsv` of `nemarDatasets/nm000112` at commit `2577b0bbc089b49e828cd98d80445133634b6d34`. One-to-one 28/28 video ID mapping, 28 rated events and five technical events, maximum matched video-duration discrepancy 0.361 s and exact sample/onset consistency at 1000 Hz. This is **metadata only**, not verified raw EEG signal alignment.\n- Reviewed upstream conversion notes: BDF event triggers index 1–28, onset 101, offset 102 and rating import from `After_remarks.mat`. Stimulus `targeted_valence` must not be substituted for self-reported `Valence`.\n- New local stdlib `p01_event_linkage.py`: validates stimulus IDs, rating coverage/range, optional sampling clock, trial overlap, source durations including documented alternate variant, no leaking any trial ratings or participant IDs in output. Reports `analysis_ready=false` in every case.\n- Ten synthetic tests plus GitHub Actions integration.\n- New `reports/P01-endpoint-decision.md`: openly documents issue #22's macro-F1/CCC vs manuscript BA discrepancy, evaluates continuous CCC vs categorical BA as alternative **prospective** endpoints; **does not freeze** any endpoint or claim results.\n\n## Scientific safeguards\nEvidence limited to public text metadata. No original EEG/BDF, individual labels in repository, source reference/montage equivalence, clinical estimates, data rights attestation or preregistration. M0/M1/M2 remain open. The BIDS `binary_label` describes targeted stimulus category, not actual self-reported valence.\n\n## Merge gate\nCheck exact-head SHA, all 10 new tests, existing P01 unit tests and `mkdocs build --strict` in GitHub Actions (zero spend). Refs #14 #22 #30 #5.",
+      "author": "MatPomGit",
+      "head_sha": "b394a7f28c26d37f12788941c8afeb9e0ad785d7",
+      "merge_commit_sha": "1391ac273acc41203459c6ed512d86ef14bdda28",
+      "merged_at": "2026-10-30T18:45:16Z",
+      "closed_at": "2026-10-30T18:45:16Z",
+      "created_at": "2026-10-30T18:44:20Z",
+      "updated_at": "2026-10-30T18:45:18Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/85",
+      "base": "main",
+      "head": "feat/p01-faceds-stimulus-linkage-20261030"
+    },
+    {
+      "number": 86,
+      "title": "feat(P01): synthetic continuous-valence LOSO ridge baseline and CCC",
+      "body": "## Scope\n- Add deterministic, standard-library-only **E0 synthetic** continuous-regression research QA on trial-level `Valence` in [0,7]. This is candidate A only; it cannot read real EEG.\n- Participant-disjoint outer LOSO with participant-disjoint inner selection by held-out MSE. Train-only z-scoring, subject/trial/window-balanced ridge, train-only mean comparator and trial-aggregated predictions. Report CCC with constant-true-target folds marked undefined, subject-average CCC/MSE and test-range extrapolation count.\n- Add **12** unit regressions for metric edge cases, train/test independence, trial pseudo-replication, duplicate-trial training invariance, input gates and evidence honesty.\n- Document technical QA and clarify endpoint decision report. **Do not change M1's DRAFT status** or silently overwrite manuscript's categorical BA hypothesis.\n- Wire tests into existing free CI and ensure exact-sha verification.\n\n## Limits\nNo original FACED EEG or individual ratings loaded, no physical electrode reference, no preregistered or frozen endpoints, no scientific performance/inference. FACED stimulus targeted category `binary_label` is not the per-participant continuous `Valence`.\n\n## Acceptance\n`python -m unittest discover -s tests -p test_p01_continuous.py -v` and existing P01 tests; `mkdocs build --strict`, all on exact HEAD. Close none of #14/#22/#30/#42.\n",
+      "author": "MatPomGit",
+      "head_sha": "713c623c733477fbc7b73581684416f63674fa14",
+      "merge_commit_sha": "06abc503c6bae4306835e39a13e6004902252896",
+      "merged_at": "2026-10-30T19:03:26Z",
+      "closed_at": "2026-10-30T19:03:26Z",
+      "created_at": "2026-10-30T18:59:09Z",
+      "updated_at": "2026-10-30T19:03:28Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/86",
+      "base": "main",
+      "head": "feat/p01-continuous-ccc-20261030"
+    },
+    {
+      "number": 87,
+      "title": "research(P01): prospective continuous CCC endpoint and descriptive paired uncertainty",
+      "body": "## Rationale\nThe manuscript and P01 protocol still described a categorical primary endpoint even though issue #22 identifies continuous CCC as a candidate. This change **aligns working candidate A** (original continuous self-report Valence 0-7) while explicitly maintaining M1 as **DRAFT, not frozen or preregistered**. BA/Brier remain possible independently justified categorical alternatives; do not mistake stimulus target categories for self-report.\n\n## Implementation\n- Add a standalone, E0 synthetic-only paired participant-percentile bootstrap for CCC and MSE from held-out grouped-LOSO folds.\n- Keep ridge and mean-training comparator scores paired within each participant. A positive change means higher CCC or lower MSE for ridge.\n- If any participant has undefined CCC, **block the CCC interval** rather than silently removing that participant. MSE remains available.\n- Mark all intervals descriptive only, with no p-value, no confirmatory population inference: LOSO folds share many training participants and standard naive fold bootstrap does not correct this dependence.\n- 9 deterministic tests (missingness, invalid scores, pairing direction, zero/constant differences, exact output honesty).\n- Update prospective protocol, Methods, decision register and CI. No fabricated EEG results.\n\n## Acceptance\nExact SHA tests `python -m unittest discover -s tests -p test_p01_continuous_inference.py -v`, all previous P01 test groups, manuscript QA and `mkdocs build --strict`. Merge only after GitHub Actions success on exact head.\nOpen issues #22, #42, #58 remain open pending real acquisition reference, original EEG rights, verified self-report mapping and pre-analysis freeze.\n",
+      "author": "MatPomGit",
+      "head_sha": "5a9a73f795d557662dbf32d0924f72bdb86b0936",
+      "merge_commit_sha": "2a913fbc41bb449c1b004aeee38d97663e8a8e68",
+      "merged_at": "2026-10-30T19:09:48Z",
+      "closed_at": "2026-10-30T19:09:48Z",
+      "created_at": "2026-10-30T19:08:39Z",
+      "updated_at": "2026-10-30T19:09:51Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/87",
+      "base": "main",
+      "head": "feat/p01-continuous-inference-20261030"
+    },
+    {
+      "number": 88,
+      "title": "research(P01): reconcile FACED source reference with contradictory BIDS metadata",
+      "body": "## New primary-source evidence\nThe original [Chen et al. FACED paper, Scientific Data 2023](https://doi.org/10.1038/s41597-023-02650-w) states the acquisition equipment was **Neuracle NeuSen.W32** and acquired EEG was referenced to **CPz**, with **AFz** ground. This corrects the previous assumption that even the original acquisition reference was unknown.\n\nThe publicly version-pinned [nemarDatasets/nm000112 derivative](https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34), however, labels its manufacturer **Biosemi** and marks EEGReference/EEGGround **n/a**. Verified public text metadata from sub-000 and sub-061 each list 32 channels with just 26 names in common. Unique sub-000 names: T3,T4,T5,T6,A1,A2; unique sub-061 names: T7,T8,P7,P8,HEOR,HEOL. The source article says six names differ between cohorts; equivalence of specific electrodes must be proven from Supplementary Tables S2/S3 and original converter, not guessed.\n\n## Implementation\n- New read-only FACED-specific `src/arc_affective/p01_faced_provenance.py` gate. Detect source-vs-derivative manufacturer/reference/ground conflict, 32-channel inventory inconsistencies and six-name cohort differences.\n- Do not automatically replace metadata, map apparent electrode synonyms or apply an unverified reference transform. A comparison remains **blocked** even if all textual names match.\n- Add 9 deterministic, synthetic-only regression tests; wire exact-head GitHub Actions.\n- Update original P01 metadata audit, proposal and protocol to distinguish documented **acquisition CPz/AFz** from unverified derivative referencing.\n- No raw EEG, original `evt.bdf`, positional sensor measurements or subject signal bytes accessed. No scientific model results.\n\n## Acceptance\nExact-head CI must pass all new and existing unit tests, strict MkDocs and manuscript source tests. Keep #14/#22/#30 open until legal source access and actual signal processing checks.\n",
+      "author": "MatPomGit",
+      "head_sha": "c373dc986ade15a5f88a1e40d6ffdf27af5a210b",
+      "merge_commit_sha": "31df19a4c3a4474064b5b62d8b0223851546bb63",
+      "merged_at": "2026-10-30T19:14:18Z",
+      "closed_at": "2026-10-30T19:14:18Z",
+      "created_at": "2026-10-30T19:13:21Z",
+      "updated_at": "2026-10-30T19:14:20Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/88",
+      "base": "main",
+      "head": "feat/p01-faceds-acquisition-conflict-20261030"
+    },
+    {
+      "number": 89,
+      "title": "research(P01): pinned FACED BIDS converter and unit-header audit",
+      "body": "## Research clarification\nVerified directly from the public converter source at [nemarDatasets/nm000112 code/faced.py](https://github.com/nemarDatasets/nm000112/blob/2577b0bbc089b49e828cd98d80445133634b6d34/code/faced.py), commit `2577b0bbc089b49e828cd98d80445133634b6d34`, **Git blob SHA** `cced146163b93fd51d277d66cb7eee6bea55f983`:\n- The BIDS converter reads BDF with `mne.io.read_raw_bdf`, generates event/ratings annotations and calls `write_raw_bids`, with **no explicit** `set_eeg_reference`, `set_montage` or `rename_channels`.\n- It repairs corrupted BDF **header unit labels** `?V` to `uV` in a temporary copy before MNE reads them. Code comments say 33/123 affected, but the underlying headers have **not** been independently checked here. A unit label correction is not validated amplitude calibration.\n- The original [Chen et al. FACED paper](https://doi.org/10.1038/s41597-023-02650-w) describes **common-average rereferencing for the author's preprocessed dataset** and 250 Hz resampling, a separate processing path from this BIDS converter.\n- Original physical reference CPz/ground AFz; derived metadata Biosemi/reference n/a. The original supplementary S2/S3 electrode correspondence remains **unverified**; no automatic mapping.\n\n## Implementation\nNew offline `src/arc_affective/p01_converter_qc.py`: static AST, exact Git blob fingerprint, call-structure and explicit mutation checks; BDF *header-only* byte parser for unit-label review without reading EEG sample bytes. 10 synthetic regression tests; docs and workflow updated. No patient data or original EEG processed. The QC cannot verify implicit library behaviour or signal identity.\n\n## Merge gate\nVerify exact-head CI with all P01 regression tests, strict MkDocs and manuscript checks. M0/M1/M2 must stay open. No paid CI or data download.\n",
+      "author": "MatPomGit",
+      "head_sha": "af9cdd68e63cea5d508d71f1702eef36b6c4fe18",
+      "merge_commit_sha": "581f1084b4ad412d9a1b8340f96951b0db884302",
+      "merged_at": "2026-10-30T19:28:00Z",
+      "closed_at": "2026-10-30T19:28:00Z",
+      "created_at": "2026-10-30T19:27:07Z",
+      "updated_at": "2026-10-30T19:28:03Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/89",
+      "base": "main",
+      "head": "feat/p01-faceds-converter-verification-20261030"
+    },
+    {
+      "number": 90,
+      "title": "research(P01): document six candidate FACED preprocessing index links, not electrode equivalence",
+      "body": "## Evidence discovery\nA public **third-party mirror** `Rmin-cmd/FACED_Code`, pinned [commit `8aa55c1`](https://github.com/Rmin-cmd/FACED_Code/blob/8aa55c1b6d503d92b5db5a87b576a361115a6a02/Preprocessing/Preprocessing.py), blob `d59f503029cc75451284040f3adfe3ca3f95c63f`, contains the original-style preprocessed-EEG software path. It uses `set_eeg_reference('average')`, permutes cohort-1 channel positions and relabels cohort-2 last two channels to `A2`, `A1`.\n\nUsing *only public sidecar names* of [NEMAR BIDS sub-000/sub-061](https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34) plus source code's 33-index permutation (32 EEG + event marker), the following **candidate array-index pairs** emerge:\n`T3/T7`, `T4/T8`, `T5/P7`, `T6/P8`, `A2/HEOR`, `A1/HEOL`. Four temporal electrode names remain different after original preprocessing; only *positions in arrays* align.\n\n## Safeguards\n- This mirror **has not been authenticated** against the original Synapse Code files, and original paper Supplementary Tables S2/S3 or `Electrode_Location.xlsx` are not yet inspected.\n- Pairs are **NOT** scientifically validated electrode identities or admissible aliases in raw/BIDS EEG. EOG-like channel naming differences require scrutiny.\n- The independent BIDS converter does not apply this original preprocessing reorder or common-average reference; mixing the paths is prohibited.\n- No sample-level data, EOG/EEG files or subject ratings accessed.\n\n## Implementation\n- Add pinned, inert Python AST inspector and strict expected public sidecar channel-name lists. Refuse mismatched source hash, invalid order, unapproved names and direct use for signal mapping.\n- Add 9 synthetic regression tests and strict docs workflow coverage.\n- Update provenance report and P01 protocol, maintain M0/M1/M2 open.\n\n## CI gate\nMerge only after all P01 tests and MkDocs strict succeed on the exact PR head SHA, using zero-spend Actions. Refs #14 #22 #30.\n",
+      "author": "MatPomGit",
+      "head_sha": "f363cbe2c9853919d74cc6e651c2c4cff099cf0d",
+      "merge_commit_sha": "84aab7fab64a86e15350f7d2c930aa4d044121e7",
+      "merged_at": "2026-10-30T19:35:46Z",
+      "closed_at": "2026-10-30T19:35:46Z",
+      "created_at": "2026-10-30T19:34:51Z",
+      "updated_at": "2026-10-30T19:35:48Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/90",
+      "base": "main",
+      "head": "feat/p01-preprocessed-channel-evidence-20261030"
+    },
+    {
+      "number": 91,
+      "title": "research(P01): 2/4/8-channel proposal gate without unverified physical electrode aliasing",
+      "body": "## Completed evidence review\nThe original [FACED article](https://doi.org/10.1038/s41597-023-02650-w) states that its two acquisition cohorts used physically equivalent locations despite six naming differences, but its supplemental `41597_2023_2650_MOESM1_ESM.docx` and `Electrode_Location.xlsx` could not be retrieved for direct verification. The pinned [NEMAR source](https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34) shows 26 common named channels in two cohort recordings, but this is **name-only** evidence. The third-party [FACED_Code mirror](https://github.com/Rmin-cmd/FACED_Code/blob/8aa55c1b6d503d92b5db5a87b576a361115a6a02/Preprocessing/Preprocessing.py) yields index-level candidate links, not physical equivalence. An independent [downstream implementation](https://github.com/loopin51/eeg-state-event/blob/5f43afc33428675cfc10bb3052b572ec139035f4/src/ese/data/montage.py) assumes `HEOR→A2`/`HEOL→A1`; this assumption is **not independent empirical confirmation**.\n\n## Changes\n- New `src/arc_affective/p01_montage_review.py`: conservative standard-library audit of an explicitly supplied 2/4/8 montage family, exact labels against two BIDS cohort channel inventories, flag unknown and cohort-specific names, report whether proposed sets are nested.\n- Even full *name-level* coverage is marked `text_only_not_approved`, not physical mapping. All `eeg_analysis_allowed` and `physical_montage_approved` flags are **false** until primary source S2/S3 and actual reference transformations are proven.\n- 10 synthetic tests, CI path filters, report `reports/P01-montage-review-qa.md`, prospective P01 protocol clarification. No original EEG was read or processed; no prechosen montage became a valid result.\n\n## Gate\nExact-head CI must pass new tests, all existing P01 regression suites and `mkdocs build --strict`. M0/M1/M2 stay open.\nRefs #14 #22 #30.",
+      "author": "MatPomGit",
+      "head_sha": "0a4402cb724f41875c3065e01d5e9fc68a0b3a6b",
+      "merge_commit_sha": "6ad9817b8d37b88c78c8ae7a1a2c9aed721a49c8",
+      "merged_at": "2026-10-30T19:43:24Z",
+      "closed_at": "2026-10-30T19:43:24Z",
+      "created_at": "2026-10-30T19:42:22Z",
+      "updated_at": "2026-10-30T19:43:27Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/91",
+      "base": "main",
+      "head": "feat/p01-physical-montage-review-gate-20261030"
+    },
+    {
+      "number": 92,
+      "title": "research(P01): extend FACED cohort metadata QC beyond two example recordings",
+      "body": "## Primary goal\nReduce overgeneralization from one subject per cohort while keeping source S2/S3 and physical montage gates blocked.\n\nRead back **six actual public BIDS text metadata pairs** from source-pinned [NEMAR/nm000112](https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34): sub-000, sub-030, sub-060, sub-061, sub-090, sub-122. All have 32 EEG-typed channels and cohort-consistent name/order; manufacturer Biosemi, EEGReference/EEGGround n/a in all six. Observed 250 Hz as well as 1000 Hz **within cohort 1**. Cohort 2 metadata types **HEOR and HEOL as EEG**, which does not independently verify physical channel identity.\n\n## Deliverables\n- Extend `src/arc_affective/p01_faced_provenance.py` with `audit_recording_sample` for bounded 1..123 metadata-only observations: strict sidecar pairs, 32-name ordering by cohort, unit label and frequency validation, aggregate counts only, no subject IDs exported.\n- New `--cohort-manifest-json` CLI mode for explicitly authorized local sidecars, without modifying existing two-sidecar CLI. 123/123 named cohort census possible if files provided, but no signal access/approval.\n- Eight new synthetic tests including duplicate ID refusal, mixed sample rates, wrong cohort, missing unit labels, full-census labeling and hard-fail structural validation. Existing tests and MkDocs strict remain required.\n- Versioned data-derived aggregate report (6/123 only, **not a census**). S2/S3 and `Electrode_Location.xlsx` were not obtained.\n\n## Interpretation\nNo actual BDF, personal ratings or signal-level inferences. Sample does not resolve Neuracle/CPz source versus Biosemi/n/a derivative discrepancy or EOG/mastoid anatomical roles. M0/M1/M2 stay open.\n\n## Merge gate\nExact HEAD green GitHub Actions `test_p01_faced_provenance.py` and other P01 tests and `mkdocs build --strict`, zero paid services. Refs #14 #22 #30.",
+      "author": "MatPomGit",
+      "head_sha": "410db962e045c5d217608e21e3b3e959d1189136",
+      "merge_commit_sha": "27e4d63b4d5cfb8bdb11a541df8677434d68fec7",
+      "merged_at": "2026-10-30T19:52:29Z",
+      "closed_at": "2026-10-30T19:52:29Z",
+      "created_at": "2026-10-30T19:51:29Z",
+      "updated_at": "2026-10-30T19:52:31Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/92",
+      "base": "main",
+      "head": "feat/p01-faceds-multisubject-sidecar-audit-20261030"
+    },
+    {
+      "number": 93,
+      "title": "research(P01): complete 123-record FACED BIDS sidecar census exposes frequency-count conflict",
+      "body": "## New actual-source evidence\n\nRead and parsed **all 246 public text sidecars** (`123 × _eeg.json` and `123 × _channels.tsv`) from the immutable [NEMAR nm000112 Git tree](https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34), commit `2577b0bbc089b49e828cd98d80445133634b6d34`. All 123 pairs exist and were individually checked. This is a **full public BIDS metadata census, not a raw EEG analysis or a census of original Synapse BDF headers**.\n\nActual BIDS-sidecar distribution:\n- Cohort 1 (61 records): 55 at 250 Hz, 6 at 1000 Hz.\n- Cohort 2 (62 records): 0 at 250 Hz, 62 at 1000 Hz.\n- Total **55 at 250 Hz and 68 at 1000 Hz**.\n- Expected cohort-specific **32-channel name/order matched 123/123**. All 123 still say `Manufacturer=Biosemi`, `EEGReference=n/a`, `EEGGround=n/a`, channels typed EEG, µV/uV text unit and per-channel frequency consistent with recording JSON. Cohort 2 labels HEOR/HEOL as EEG (not proof of physical type).\n\n**Source-level discrepancy**: the [README.md](https://github.com/nemarDatasets/nm000112/blob/2577b0bbc089b49e828cd98d80445133634b6d34/README.md) (blob `55b05cc3c3b6d92acbf216a4bc1bfa6eb66f3305`) and pinned `code/faced.py` at that **same commit** claim 92 at 1000 Hz and 31 at 250 Hz. Difference **24 recordings in either rate category**. This establishes a documentary/derived-sidecar conflict, **not verified signal error**: original `Recording_info.csv` and BDF sample rate have NOT been inspected.\n\n## Code and QA\n\n- Extend `audit_recording_sample` to compare published README rate counts **only for a validated complete 123-record census**, label partial samples as non-comparable, expose per-cohort aggregate frequency counts and detect per-channel frequency discrepancy. Never export per-record participants or signal values.\n- Four new synthetic regression tests, including two complete-census rate distributions, partial-census behavior and per-channel frequency mismatch.\n- Add reproducible, source-pinned full census report to `reports/P01-faced-provenance-qa.md` and protocol caveat to `papers/P01-protocol.md`.\n- No data downloaded to repository; no original EEG/BDF samples, event ratings, sensor coordinates or S2/S3 obtained.\n\n## Merge gate\nExact-head CI all regression tests, manuscript validation and `mkdocs build --strict`. Keep M0/M1/M2 open. Subsequent empirical analysis blocked until real recording metadata/reference and physical sensor mapping are reconciled. Refs #14 #22 #30.",
+      "author": "MatPomGit",
+      "head_sha": "af180f3d6eada040e9e2bab43c8775edab176b20",
+      "merge_commit_sha": "4677c7642cc428f6f47a26b2b919744954e49de3",
+      "merged_at": "2026-10-30T20:07:23Z",
+      "closed_at": "2026-10-30T20:07:23Z",
+      "created_at": "2026-10-30T20:04:35Z",
+      "updated_at": "2026-10-30T20:07:25Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/93",
+      "base": "main",
+      "head": "research/p01-123-bids-sidecar-census-20261030"
+    },
+    {
+      "number": 94,
+      "title": "research(P01): reconcile original FACED Recording_info.csv rates with pinned NEMAR metadata",
+      "body": "## Evidence and scope\n- Source `Recording_info.csv` remains unavailable through the inspected public channels. The primary [FACED article](https://doi.org/10.1038/s41597-023-02650-w) identifies it in the original Synapse dataset; the [pinned NEMAR converter](https://github.com/nemarDatasets/nm000112/blob/2577b0bbc089b49e828cd98d80445133634b6d34/code/faced.py) explicitly uses columns `sub`, `Sample_rate`, `Unit`, `Gender`, `Age`.\n- Our independently audited 123/123 BIDS metadata rate pattern is 250 Hz in sub006–sub060 (55) and 1000 Hz in sub000–sub005/sub061–sub122 (68), which conflicts with the pinned converter's README narrative 31/92. Do NOT assume which is true in original BDF without source metadata.\n- Converter comments clarify `Unit` describes **upstream** recording units, not BDF physical dimensions or a numerical rescaling instruction. 33 corrupt `?V` header reports remain unverified against original BDF headers.\n\n## Changes\n- Add `p01_source_recording_reconcile.py`: read-only, standard-library local-source CSV parser with strict IDs/columns, bounded input, SHA256, per-cohort frequency and mismatch direction counts against the **exact Git-pinned BIDS metadata pattern**; global README comparison only if all 123 valid source rows are present.\n- No subject IDs, ages, genders, row-level ratings, original CSV or EEG data committed or exported. All output is aggregated metadata and an input digest.\n- 9 deterministic synthetic tests, exact-head CI, reproducibility/limitations report and prospective protocol note.\n- **Not a completed reconciliation**: original CSV not accessed, raw BDF headers/reference/montage not verified; M0/M1/M2 remain open.\n\n## Verify\n`python -m unittest discover -s tests -p test_p01_source_recording_reconcile.py -v`, previous P01 tests and `mkdocs build --strict`. Merge only on exact SHA with successful CI. Refs #14 #22 #30.\n",
+      "author": "MatPomGit",
+      "head_sha": "dc4026843d34901c4ab872c374e68949d84bd50c",
+      "merge_commit_sha": "8b0e806cfd29a2b55c63d08635062328022e86c5",
+      "merged_at": "2026-10-30T20:44:16Z",
+      "closed_at": "2026-10-30T20:44:16Z",
+      "created_at": "2026-10-30T20:41:45Z",
+      "updated_at": "2026-10-30T20:44:19Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/94",
+      "base": "main",
+      "head": "feat/p01-original-recording-info-bridge-20261030"
+    },
+    {
+      "number": 95,
+      "title": "research(P01): stimulus-identity baseline and dual participant-film split guard",
+      "body": "## New scientific evidence\n\n[Gerster et al., bioRxiv June 16, 2026](https://doi.org/10.64898/2026.06.12.731889), with [public reproduction code](https://github.com/moritz-gerster/faced-stimulus-confound), report a substantial **stimulus-identity confound** in FACED 9-class decoding: subject-held-out accuracy need not imply decoding subjective emotion and films are repeated across people. Their 9-class results **do not directly estimate** the risk in our prospective continuous self-reported valence protocol, but they require stronger controls.\n\n## Implementation\n- **E0 synthetic-only** `src/arc_affective/p01_stimulus_control.py`, trial-level `StimulusTrial` with explicit independent participant/trial/film ID and 0–7 self-report, rejecting real EEG/data and duplicate trials, same-film duplicates, malformed IDs and labels.\n- An **EEG-free, train-only per-film self-report mean** comparator evaluated in subject LOSO, with a training-only overall mean fallback; reports synthetic trial MSE, seen-film coverage and no inferential p-values.\n- Dual subject-plus-film-disjoint holdout: only the rectangular complement is trainable; intersection is held out and **both cross cells excluded** from fitting, normalization, calibration and model selection. One rated trial per intersection **cannot yield CCC**; this is a distinct sensitivity estimand.\n- 12 regression tests, prospective manuscript Methods/protocol/endpoint decision changes and report `reports/P01-stimulus-confound-qa.md`. Workflow path + test gate updated.\n\n## Boundaries\nThe new source was reviewed as a **preprint**, no original EEG, raw FACED signals or Synapse recording CSV were retrieved, and no empirical emotion-decoding or generalization performance is claimed. Acquisition/reference/rights/S2/S3 gates remain BLOCKED. P01-M1 is still DRAFT.\n\n## Verify\nRequire successful GitHub Actions on exact PR head: `python -m unittest discover -s tests -p test_p01_stimulus_control.py -v`, existing P01 test groups, manuscript QA and `mkdocs build --strict`. No paid services.\n\nRefs #14 #22 #30 #42.",
+      "author": "MatPomGit",
+      "head_sha": "cbaddad6deb56ed76f727a9f06d1e2176345e12d",
+      "merge_commit_sha": "7a222bcb82faa254a097778d119a9a4fc565fb50",
+      "merged_at": "2026-10-30T21:27:58Z",
+      "closed_at": "2026-10-30T21:27:58Z",
+      "created_at": "2026-10-30T21:26:46Z",
+      "updated_at": "2026-10-30T21:28:00Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/95",
+      "base": "main",
+      "head": "feat/p01-stimulus-confound-splits-20261030"
+    },
+    {
+      "number": 96,
+      "title": "research(P01): multi-film participant-and-stimulus holdout without CCC singleton error",
+      "body": "## Problem\nPR #95 correctly identified stimulus identity as a confound and provided two-axis participant-and-single-video splits. But one held-out (person,film) intersection is only one self-report trial, so it **cannot support participant CCC**. That limitation must be resolved without relaxing train/test boundaries or selecting film blocks after looking at target outcomes. Related issues #22, #30, #42.\n\n## Scope and implementation\n- Extend the existing E0 synthetic-only `src/arc_affective/p01_stimulus_control.py` with `blocked_joint_disjoint_splits`, taking an **explicit externally prespecified partition of film IDs**. No automatic test-based selection of film groups or targets.\n- Every fold holds out one participant and one block with **at least 2 film trials**. Training is strictly *other participants × other films*; the remaining two cross-cells are excluded, not repurposed as training/validation.\n- Validate complete nonoverlapping block partitions, exact trial test coverage once, no duplicate or unknown films, at least two independent training people and films. Reject blocks without enough ratings.\n- `audit_blocked_stimulus_control` reports only aggregate synthetic train-mean MSE, number of folds where mathematical CCC is defined, cross-cell exclusion and immutable non-inferential flags. **No EEG, CI, claims of emotion decoding or validity of population inference**.\n- Nine new regression tests, including a synthetic 28-film/4-subject example (7 groups × 4 films), incomplete participant-film coverage, constant-target CCC undefined, no participant/film leakage and test-target perturbation invariance.\n- Update source-method description and prospective M1 protocol. Film-group size 4 is an *illustrative option*, **not preregistration**, and category-balanced blocks remain to be justified.\n\n## Scientific boundaries\nGerster et al., bioRxiv (2026), DOI [10.64898/2026.06.12.731889](https://doi.org/10.64898/2026.06.12.731889), report a stimulus-identity confound in FACED category classification. Their conclusions must not be treated as an empirical result from P01. M1 is DRAFT, no source BDF reference, rights or S2/S3 reconciliation.\n\n## Merge gate\nExact head SHA CI: `test_p01_stimulus_control.py`, existing regressions, manuscript QA and `mkdocs build --strict` must pass. No releases or raw participant data. Refs #14 #22 #30 #42.",
+      "author": "MatPomGit",
+      "head_sha": "87ae67f62973b163b70fe692029953b7a9d78101",
+      "merge_commit_sha": "fb8306fc5dccc48f074257f53bacd6bb03af99fa",
+      "merged_at": "2026-10-30T21:35:27Z",
+      "closed_at": "2026-10-30T21:35:27Z",
+      "created_at": "2026-10-30T21:34:16Z",
+      "updated_at": "2026-10-30T21:35:29Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/96",
+      "base": "main",
+      "head": "feat/p01-multifilm-heldout-blocks-20261030"
+    },
+    {
+      "number": 97,
+      "title": "fix(P01): correct four FACED participant sampling-rate assignments despite unchanged 55/68 totals",
+      "body": "## Audited defect in merged PR #94\nThe original-to-BIDS CSV reconciliation used `frozenset(range(6,61))` for the 55 250-Hz participants. At [pinned NEMAR Git commit `2577b0bbc089b49e828cd98d80445133634b6d34`](https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34), actual `_eeg.json` values instead show:\n- `sub-000`–`003` **1000 Hz**\n- `sub-004`–`005` **250 Hz**\n- `sub-006`–`007` **1000 Hz**\n- `sub-008`–`060` **250 Hz**\n- `sub-061`–`122` **1000 Hz**\n\nThe old mapping had equal total numbers (250:55, 1000:68) but **misassigned 4 individual records**. Therefore it could silently give misleading source CSV versus derivative comparisons even with green aggregate-count tests.\n\n## Scoped repair\n- Use exact pinned 250-Hz set `{4,5} ∪ {8..60}`, preserving the public output schema and original source-CSV privacy safeguards.\n- Add *two* deterministic regression tests to prevent future subject-index mapping from being inferred from cohort/count totals, including record-level 004–007 matches and inverted-rate mismatch directions.\n- Correct the evidence report `reports/P01-source-recording-qa.md` and prospective P01 protocol.\n- Existing README-to-BIDS **31/92 vs 55/68 totals do not change**. No original CSV or BDF was read. No montage or reference gate unlocked.\n\n## Validation\nExact-head GitHub CI, all prior regression groups, manuscripts and `mkdocs build --strict`; no production/release side-effects. Refs #14 #22 #30. Branch deletion after verified squash merge.",
+      "author": "MatPomGit",
+      "head_sha": "61e9f0c0efb00a683b79b65fefca14fc33751fb9",
+      "merge_commit_sha": "cd8b38504340a15aea699328d7fdb41d41e11f40",
+      "merged_at": "2026-10-30T21:46:47Z",
+      "closed_at": "2026-10-30T21:46:47Z",
+      "created_at": "2026-10-30T21:45:22Z",
+      "updated_at": "2026-10-30T21:46:49Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/97",
+      "base": "main",
+      "head": "fix/p01-faceds-subject-rate-index-20261030"
+    },
+    {
+      "number": 98,
+      "title": "fix(P01): flag excessive non-video FACED event markers without excluding rated trials",
+      "body": "## New observed source-metadata anomaly\nDirect inspection of selected `events.tsv` files at [NEMAR `2577b0b...`](https://github.com/nemarDatasets/nm000112/tree/2577b0bbc089b49e828cd98d80445133634b6d34) shows that **sub-059 contains 1199 event rows, sub-060 contains 1473**, yet both have exactly 28 distinct rated video-linked trials (`Valence` present). Extra **unlinked** event rows: 1171 / 1445; adjacent sub-058/061 have 9. The extra `trial_type` codes may be technical or conversion artifacts, but this has NOT been verified against original `evt.bdf`.\n\n## Code and evidence\n- Extend existing `audit_event_linkage()` to flag `technical_event_review_required` when unlinked events exceed a conservative **operational QA threshold** of `2 * expected_clips` (56 for 28 films).\n- This is intentionally a **manual-review stop flag** (`status=blocked`), **not a preregistered exclusion criterion or proof of EEG corruption**. Never automatically delete these participants, their 28 rated trials, or raw EEG.\n- Two new synthetic regression tests cover boundary behavior, retaining rated film counts, very large unlinked event lists and no auto exclusion.\n- Document actual selected public sidecars in `reports/P01-event-linkage-qa.md` and update prospective protocol.\n\n## Nonclaims\nThis is a **selected recording sample**, NOT a 123/123 event census. Original `evt.bdf`, actual EEG sampling/reference, independent rating origin and S2/S3 remain unverified; M0/M1/M2 still open. No raw EEG retrieved.\n\n## Gates\nRun `python -m unittest discover -s tests -p test_p01_event_linkage.py -v`, all previous P01 regression/QA jobs and `mkdocs build --strict` at exact HEAD SHA before squash merge. Zero spend. Refs #14 #22 #30.",
+      "author": "MatPomGit",
+      "head_sha": "b4d2cd5424f525f03beb24c0ea000d6109d3efb9",
+      "merge_commit_sha": "7fc874f8be18169e50070e68ceea3fdc5db5a040",
+      "merged_at": "2026-10-30T21:51:37Z",
+      "closed_at": "2026-10-30T21:51:37Z",
+      "created_at": "2026-10-30T21:50:04Z",
+      "updated_at": "2026-10-30T21:51:38Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/98",
+      "base": "main",
+      "head": "fix/p01-event-technical-marker-burden-20261030"
+    },
+    {
+      "number": 99,
+      "title": "docs(P01): reconcile FACED metadata evidence and unresolved gates",
+      "body": "Refs #5 #14 #22 #30.\n\nCorrect stale statements in P01 proposal: inspected 123 public FACED EEG JSON/channel TSV sidecars and selected event metadata, while original BDF signals, source events, source ratings, physical electrode mapping and reference remain unverified. Summarize merged PR #97/#98. Manual-review alert is not automatic exclusion.\n\nDocumentation only; no inclusion/exclusion or code changes. Commit `5dbc8982a082722533026f63a5a2dabf1f3a962a`.\n\nRequired: review full diff and exact-head documentation CI (sync, docs unittest, strict MkDocs). These checks are not yet reported as passing. No raw EEG retrieved; no production changes.",
+      "author": "MatPomGit",
+      "head_sha": "9403aa5fdc6cb3110c74661e0658d6c786d97de5",
+      "merge_commit_sha": "7bda82b60f924aec71e1b2dffb330c7168fc344b",
+      "merged_at": "2026-10-30T21:57:08Z",
+      "closed_at": "2026-10-30T21:57:08Z",
+      "created_at": "2026-10-30T21:53:59Z",
+      "updated_at": "2026-10-30T21:57:11Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/99",
+      "base": "main",
+      "head": "docs/p01-reconcile-faced-evidence-20261030"
+    },
+    {
+      "number": 100,
+      "title": "docs(agents): naukowe bramki autonomicznej pracy",
+      "body": "Rozszerza istniejące AGENTS.md o odsyłacz do pełnego cyklu; zachowuje politykę etyczną i istniejącą procedurę Issues. Zmiany: AGENTS.md, README.md, docs/development/agent-workflow.md, mkdocs.yml. SHA: `7f118685ee8cc744d7307e0289f5c42394374223`.\n\n**PASS:** zakres źródeł i wstępna kontrola tekstu. **NOT_RUN:** MkDocs strict, testy pełne, GitHub CI i niezależne review dla HEAD. Źródła bez zmian algorytmicznych lub danych, PR niescalony i brak wdrożenia.",
+      "author": "MatPomGit",
+      "head_sha": "003b406dd1eb04f5f66a893a24160d39d65882ae",
+      "merge_commit_sha": "f15b8ff8d45895370cbdad7dbb97e5c14e5398fc",
+      "merged_at": "2026-10-31T01:00:19Z",
+      "closed_at": "2026-10-31T01:00:19Z",
+      "created_at": "2026-10-31T00:35:07Z",
+      "updated_at": "2026-10-31T01:00:21Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/100",
+      "base": "main",
+      "head": "docs/agent-governance-20261031"
+    },
+    {
+      "number": 101,
+      "title": "refactor: unify manuscripts/P01–P08 and register Synapse project",
+      "body": "## Scope\n- Register the external Synapse project `syn78760374` (`https://www.synapse.org/Synapse:syn78760374`) in the root README and research site homepage, without asserting dataset access.\n- Consolidate 8 publication plans and 2 candidate protocols from the root `papers/` directory into canonical `manuscripts/P01`–`P08` alongside existing P01/P08 LaTeX sources; preserve contents and scientific status.\n- Update repository governance, README, endpoint decision report, MkDocs synchronizer, docs maintenance instructions and unit tests. Generated `docs/papers/` and page URLs remain unchanged for backward compatibility.\n- Update CI trigger paths and add a regression assertion that root `papers/` is absent.\n\n## Validation\n- Git tree inspected on feature branch: 8 plans + 2 protocols present, root `papers/` absent.\n- GitHub compare confirms 10 renames and 12 edited files; LaTeX sources unchanged.\n- Automated Python tests and strict MkDocs build must pass in the existing `Docs / MkDocs` GitHub Actions workflow on the PR before merge.\n\n## Constraints\n- No subject data or new scientific result; no external Synapse data downloaded.\n- Related to #79 (canonical manuscripts and documentation previews); does not close a scientific milestone.",
+      "author": "MatPomGit",
+      "head_sha": "9b4b8be5f0e7aceea8f77656716d3be9fe206539",
+      "merge_commit_sha": "ece220579196287e37b6c8f9084885332f03e12d",
+      "merged_at": "2026-11-19T08:10:42Z",
+      "closed_at": "2026-11-19T08:10:42Z",
+      "created_at": "2026-11-19T08:09:57Z",
+      "updated_at": "2026-11-19T08:10:45Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/101",
+      "base": "main",
+      "head": "chore/unify-manuscripts-synapse-20261119"
+    },
+    {
+      "number": 102,
+      "title": "security(affective): isolate public Pages from agent workflow and internal docs",
+      "body": "## P0: izolacja publicznego ARC Affective Pages\n\nDotychczasowy `mkdocs.yml` wskazywał `docs/` jako źródło publicznej strony, z pozycjami `development/agent-workflow.md`, `operations/contributing.md` i `issue-operating-procedure.md`. Workflow `.github/workflows/docs.yml` automatycznie publikował artefakt z całego wygenerowanego `site/` po push do main.\n\n### Zmiany\n\n- Odrębny `pages/index.md`, neutralny opis programu i ośmiu kierunków badań, **bez instrukcji agentowych, danych aparatury i uwag redakcyjnych**.\n- `mkdocs.public.yml` buduje wyłącznie `pages/` do `_public_site/`; dotychczasowy `mkdocs.yml` i `docs/` nadal służą **niepublikowanej** wewnętrznej walidacji naukowej i ośmiu stron manuskryptów. Nie zmieniono ich kodu i testów.\n- `config/pages-policy.json`, `scripts/validate_public_pages.py` i osiem testów negatywnych: pojedynczy jawnie dopuszczony plik, blokada nieautoryzowanych zasobów, symlinków, instrukcji agentowych i uwag edytorskich.\n- `.github/workflows/docs.yml`: zachowuje istniejącą walidację oprogramowania, testów i wewnętrznego MkDocs; **usuwa automatyczne publikowanie Pages**, buduje niezależny podgląd i udostępnia go jedynie jako artefakt workflow do przeglądu. Nie dotyka produkcyjnego stanu Pages.\n- `AGENTS.md`, `docs/pages.md`, `README.md`: zasady widoczności, oddzielenia publicznych i wewnętrznych plików, w szczególności dla przyszłych repo prywatnych.\n\n### Świadoma zmiana i brak wdrożenia\n\nProponowana publiczna strona jest skromniejsza od dotychczasowej rozbudowanej dokumentacji MkDocs. Poprzednie 8 szczegółowych stron publikacji i cały zestaw roboczych planów **zachowano w repo**, ale nie zostaną automatycznie wystawione na nowej stronie. Dalszą publiczną projekcję pozycjonowaną pod odbiorców należy dodać osobnym, zaaprobowanym rozszerzeniem allowlisty. Po merge istniejąca publiczna strona nie znika automatycznie, jedynie przyszłe wdrożenia nie będą wykonywane tym workflow.\n\n**Klasa R3 / DRAFT**: finalną zmianę zakresu witryny i zasad publikowania musi odrębnie zaakceptować właściciel po obejrzeniu podglądu. Nie wykonano deploy, nie modyfikowano ustawień GitHub Pages, nie ujawniano danych. \n\nBase: `ece220579196287e37b6c8f9084885332f03e12d`; HEAD: `23786988bd9eaf216a3048bb94ad79db61b18530`. CI i testy do weryfikacji przed decyzją o integracji.\n\n### Potwierdzenie CI na końcowym SHA\n\n[GitHub Actions #44817019209](https://github.com/MatPomGit/arc-affective/actions/runs/44817019209): **SUCCESS**. Wszystkie **18 zestawów testowych (łącznie 181 testów)** zakończone OK, w tym 8 testów nowej granicy publicznej witryny. `ARC Affective public Pages: PASS`, istniejący wewnętrzny MkDocs zbudowany, oddzielny `mkdocs.public.yml` zbudowany w trybie strict. Artefakt służy wyłącznie do podglądu, bez deploy. Wyniki nie poświadczają ręcznego przeglądu opublikowanego HTML ani decyzji właściciela.\n\n**Stan:** `WAITING_FOR_OWNER_REVIEW`, pozostaje DRAFT.",
+      "author": "MatPomGit",
+      "head_sha": "23786988bd9eaf216a3048bb94ad79db61b18530",
+      "merge_commit_sha": "0ff5f1531f03270c4f9fdcc7f3af6d2e9aca85dd",
+      "merged_at": "2026-11-20T21:07:01Z",
+      "closed_at": "2026-11-20T21:07:01Z",
+      "created_at": "2026-11-20T21:04:19Z",
+      "updated_at": "2026-11-20T21:07:03Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/102",
+      "base": "main",
+      "head": "fix/public-pages-boundary-20261120"
+    },
+    {
+      "number": 103,
+      "title": "research: etapowa migracja arc-affective do ARC Neuro, Robo i AI",
+      "body": "## Migracja ARC Affective — zapis stanu i bezpieczne przekazanie\n\nWprowadzono [manifest 8 pozycji z dokładnymi Git blob SHA](migration/affective_to_arc.json), [plan przeniesienia, warunki wycofania i odbioru](migration/README.md) oraz testy integralności. Repozytorium źródłowe **nie zostało wyczyszczone ani zarchiwizowane**.\n\n| Pozycje MSC | Repo docelowe | Stan |\n| --- | --- | --- |\n| MSC-AFFECT-P05 | `arc-neuro` | [PR #10](https://github.com/MatPomGit/arc-neuro/pull/10), plan w `papers/affect/MSC-AFFECT-P05/`; czeka na merge |\n| MSC-AFFECT-P07 | `arc-robo` | [PR #2](https://github.com/MatPomGit/arc-robo/pull/2), plan obok manuskryptu; czeka na merge |\n| MSC-AFFECT-P01–P04, P06, P08 | `arc-ai` | **BLOCKED:** GitHub nie ma jeszcze tego repo; brak autoryzowanego punktu docelowego |\n\nSzczególnie ważny zakres: **P01/P08 mają działające pakiety `src/arc_affective/`, 19 testów, raporty QC, protokoły i źródła LaTeX**. `software_inventory` obejmuje 56 plików z przypiętymi blob SHA; kopiowanie samego `plan.md` nie jest migracją metod. Stare repo zachowuje bieżące źródła kanoniczne do czasu przeniesienia i wykonania walidacji.\n\n### Ochrona historii\nNie usunięto kodu, danych, GitHub Issues, stron Pages ani wcześniejszych raportów. Nie zmieniono statusów badań, nie wykonano nowych pomiarów i nie uruchomiono nieautoryzowanego sprzętu. Aparatura należy do prywatnego rejestru urządzeń; identyfikatorów nie kopiowano do publicznych ARC.\n\n### Kryteria odbioru\n- `python -m unittest discover -s tests -v` + obecny docs/Page policy CI na exact HEAD;\n- źródłowy Git blob SHA zgodny dla każdego planu i 56 plików zależnych;\n- pomyślny CI w każdym repo docelowym i spójne odnośniki w nowej lokalizacji;\n- utworzenie `arc-ai` przed jakąkolwiek migracją sześciu prac i działającego kodu; po migracji P01/P08 powtórzenie testów, kompilacji IEEEtran i kontroli metadanych danych;\n- dopiero po **8/8** zakończonych i niezależnej recenzji można rozważyć archiwizację źródła.\n\nStan: **partial migration staged, not a completed transfer**.\n\n## Zwalidowany etap źródłowy — exact SHA\n\n**HEAD `4985faed6df9f891598ab759116e04c3d797d823`**. [Workflow #44874975076](https://github.com/MatPomGit/arc-affective/actions/runs/44874975076) zakończył się **SUCCESS**. Dodano obowiązkowe wywołanie `test_migration.py` do workflow, wraz ze ścieżkami wyzwalającymi dla `migration/**`. **3/3** testy migracji PASS: 8 unikatowych właścicieli w zgodzie z centralnym rejestrem; wszystkie historyczne Git blob SHA planów, testów, kodu i raportów zachowane; **6** blokad nieistniejącego `arc-ai` oraz **2** otwarte PR. Dotychczasowe testy P01/P08 i izolowany build publicznych Pages również PASS.\n\n**Weryfikacja repozytoriów docelowych:** [ARC Neuro CI](https://github.com/MatPomGit/arc-neuro/actions/runs/44874548020) SUCCESS po naprawie lokalizacji planu poza `papers/`; [ARC Robo CI](https://github.com/MatPomGit/arc-robo/actions/runs/44874473940) SUCCESS. Żaden PR nie został scalony.\n\n**Bloker do automatycznej dalszej realizacji:** prywatne [Research Autopilot #489](https://github.com/MatPomGit/research-autopilot/issues/489), obejmujące utworzenie `arc-ai`, przeniesienie 6 manuskryptów wraz z pełnym kodem/testami P01/P08 i dowodami, a następnie osobną zmianę rejestru. Nie przedstawiać tego jako wykonanej migracji.\n\n\n**Kontrola licencji i integralności:** oba plany P05/P07 zachowują dokładnie tę samą treść naukową co w `arc-affective@0ff5f15` po jedynej transformacji czterech względnych odnośników do dokumentacji na przypięte URL. Oba importy zawierają **identyczną kopię oryginalnej licencji Apache-2.0** w pliku `ORIGINAL_LICENSE`, obok SHA źródła. Kod, testy i raporty P01/P08 pozostają bez zmian. Szczegółowy inwentarz i manifest posiadają pola `source_license_spdx`.\n\n\n**Uzgodniona lokalizacja P05 po zmianie standardu:** [papers/affect/MSC-AFFECT-P05/plan.md](https://github.com/MatPomGit/arc-neuro/pull/10) w jednym katalogu z `main.tex` i oryginalną licencją. Wszystkie 63 artykuły ARC Neuro mają obecnie katalogi nazwane własnym MSC. [Mapa autopilota PR #490](https://github.com/MatPomGit/research-autopilot/pull/490) odpowiada tym ścieżkom.\n",
+      "author": "MatPomGit",
+      "head_sha": "4985faed6df9f891598ab759116e04c3d797d823",
+      "merge_commit_sha": "f8d53f8ae6e854c65c84c96d7a2a6de87236172d",
+      "merged_at": "2026-11-21T09:33:11Z",
+      "closed_at": "2026-11-21T09:33:11Z",
+      "created_at": "2026-11-21T06:15:20Z",
+      "updated_at": "2026-11-21T09:33:14Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/103",
+      "base": "main",
+      "head": "migrate/affective-programme-handover-20261121"
+    },
+    {
+      "number": 104,
+      "title": "Provenance: potwierdź integrację sześciu manuskryptów w ARC AI",
+      "body": "Synchronizacja historycznego manifestu po scaleniu [MatPomGit/arc-ai#1](https://github.com/MatPomGit/arc-ai/pull/1). Aktualizuje stany sześciu MSC do `TARGET_MANUSCRIPT_INTEGRATED_CODE_PENDING` z docelowym SHA i PR. P05/P07 mają zweryfikowany stan `TARGET_PLAN_INTEGRATED` i SHA scalonych PR. Przepisywane są tylko metadane i opisy; wszystkie źródła, kody, testy i raporty QC P01/P08 pozostają w ARC Affective. Testy migracji dostosowano do faktycznych statusów. Nie deklaruje to ukończenia transferu oprogramowania ani badań. Bez Release, Pages i niezależnego review.",
+      "author": "MatPomGit",
+      "head_sha": "0d10c4dba183c62c0aa493b067c19c59632fd3e7",
+      "merge_commit_sha": "1c1f0ab1410205df98f2b7f5160f74ed31542442",
+      "merged_at": "2026-11-21T14:20:46Z",
+      "closed_at": "2026-11-21T14:20:46Z",
+      "created_at": "2026-11-21T14:19:39Z",
+      "updated_at": "2026-11-21T14:20:49Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/104",
+      "base": "main",
+      "head": "docs/arc-ai-source-handover-20261121"
+    },
+    {
+      "number": 105,
+      "title": "Define research-content licensing while retaining Apache-2.0 software",
+      "body": "## Zakres\n- Zachowano Apache-2.0 dla oprogramowania.\n- Dodano pełną licencję CC BY 4.0 i `LICENSING.md` dla oryginalnych treści naukowych, do których autorzy posiadają prawa.\n- Wyłączono automatyczne objęcie licencją danych uczestników, nagrań, materiałów cudzych i wydawniczych.\n- Istniejące licencje i historia źródeł pozostają ważne.\n\nZmiana tylko w dokumentacji prawnej, bez zmiany kodu, CI, Pages i Release.",
+      "author": "MatPomGit",
+      "head_sha": "a128e9c267053b0ad196bd7ef560869f8c963267",
+      "merge_commit_sha": "99cd2ad3e450f839780cf65a02a1a8acd1da662c",
+      "merged_at": "2026-11-21T14:59:55Z",
+      "closed_at": "2026-11-21T14:59:55Z",
+      "created_at": "2026-11-21T14:59:13Z",
+      "updated_at": "2026-11-21T14:59:58Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/105",
+      "base": "main",
+      "head": "policy/license-scope-20261121"
+    },
+    {
+      "number": 106,
+      "title": "Provenance: potwierdź migrację wykonywalnego pakietu E0 P01/P08 do ARC AI",
+      "body": "Synchronizuje manifest i dokumentację źródłowego `arc-affective` po scaleniu [ARC-AI #6](https://github.com/MatPomGit/arc-ai/pull/6).\n\n- P01 i P08: status `TARGET_EXECUTABLE_E0_INTEGRATED` zamiast `CODE_PENDING`; pozostałe cztery prace ARC-AI nadal mają tylko przeniesione pakiety manuskryptów.\n- Dowody: dokładnie 52 historyczne pliki (19 modułów Python, 15 testów, 17 raportów QA i konfiguracja) i ich Git blob SHA, CI [`44916947379`](https://github.com/MatPomGit/arc-ai/actions/runs/44916947379) PASS; commit docelowy `a4aff7b4d216b4a34ef767a3eb8ef01b5b316209`.\n- Osobno odnotowane 4 testy oryginalnego projektu niekopiowane do ARC-AI. Źródłowe pliki i historia pozostają nienaruszone.\n- Test kontraktu migracji obejmuje zaktualizowane statusy i zakaz deklarowania wyników rzeczywistego EEG lub benchmarku sprzętowego.\n\nBrak Release, Pages, archiwizacji i wymogu niezależnego review. Scalić tylko przy zielonym CI.",
+      "author": "MatPomGit",
+      "head_sha": "e540adf246d5bbdc4fc062bf002b6de8465fd8cd",
+      "merge_commit_sha": "876f1d4e71b41cac0d415f2d262824480ccbf607",
+      "merged_at": "2026-11-21T15:06:34Z",
+      "closed_at": "2026-11-21T15:06:34Z",
+      "created_at": "2026-11-21T15:04:57Z",
+      "updated_at": "2026-11-21T15:06:36Z",
+      "original_url": "https://github.com/MatPomGit/arc-affective/pull/106",
+      "base": "main",
+      "head": "docs/affective-executable-handover-p01-p08-20261121"
+    }
+  ],
+  "notes": "PR metadata and file inventory only. Git commit objects, review threads and full Git history are NOT backed up by this file."
+}
