@@ -1,0 +1,29 @@
+# Candidate dataset registry — access must be audited
+
+| Dataset | Relevant modalities | Use | Access risk / audit |
+|---|---|---|---|
+| DEAP | EEG + physiological; facial videos under separate access conditions | P01, potential P02 | Official non-commercial/request conditions; inspect subject IDs and video rights |
+| DREAMER | EEG + ECG, emotion self-assessment | P01 | Zenodo record is access-restricted; obtain permission, do not scrape mirrors |
+| AMIGOS | EEG/ECG/GSR; face video reported in paper | P01/P02 conditional | Confirm which synchronized video and raw data actually distributed and licence |
+| GAMEEMO v3 | Emotiv EPOC+ EEG and SAM valence/arousal | P01 candidate fallback | Provider lists CC BY 4.0; version pin DOI 10.17632/b3pn4kwpmn.3; inspect raw files and channel reference before use |
+| FACED NEMAR v1.1.4 | 32-channel EEG, BIDS, affect self-reports | P01 candidate fallback | Provider lists CC BY 4.0, 123 participants; public metadata verified but raw files and event alignment not yet checked |
+| MAHNOB-HCI | EEG, gaze, physiological, video | P02 conditional | Access presently uncertain; do not design a mandatory dependency |
+| Aff-Wild2 | Face video, frame-level valence/arousal/AU annotations | P04 | Request dataset access; verify redistributability and splits |
+| AFEW-VA | Facial video with affect annotations | P04 alternative | Verify current availability/terms; external evaluation only |
+
+Sources: https://www.eecs.qmul.ac.uk/mmv/datasets/deap/ ; https://zenodo.org/records/546113 ; https://ipatras.github.io/code-and-datasets/ ; https://ibug.doc.ic.ac.uk/resources/aff-wild2/ ; https://ibug.doc.ic.ac.uk/resources/afew-va-database/
+
+## Datasets are NOT committed
+
+Maintain private `data/registry.local.json` with `name, version, citation, access_date, licence, approved_use, download_hash, subjects, sessions, labels, signal_channels, sample_rates, timestamps, exclusions`. Version analysis split definitions in Git only if they contain no personal identifiers.
+
+Each paper must demonstrate: accessible legally obtained original data; modalities actually released, compatible synchronized ground truth, subject-disjoint splits, preprocessing exclusively fitted on train, test-independent hyperparameter search, no per-window subject leakage, bootstrapped uncertainty at **subject or session level** (not correlated windows). Dataset identity is a possible confound; cross-dataset transfer claims require equivalent labels and explicit harmonization.
+
+A dataset named in a plan is only a *candidate*. If its rights, content or timing do not fit, switch to an audited dataset and update the preregistered protocol before any final testing.
+
+## P01 desk audit update, 2026-10-30
+
+[Detailed evidence, metadata compatibility and acquisition blockers](https://github.com/MatPomGit/arc-affective/blob/main/reports/P01-data-audit.md): DEAP access link was unreachable in this check, DREAMER has an explicit restricted Zenodo request, and the AMIGOS author listing is available while its original download link was unresponsive. **No dataset is marked legally acquired**, no original file hash or rights agreement has been inspected, and none of these candidates can yet be used for a reproducible P01 experiment. A third-party registry also labels DEAP service unavailable; this does not establish permanent deprecation.
+
+
+**Open fallback audit (2026-10-30):** GAMEEMO and FACED were located with public provider-declared CC BY 4.0 terms. [Detailed P01 report](https://github.com/MatPomGit/arc-affective/blob/main/reports/P01-data-audit.md). This substantially improves the feasibility pathway but **does not certify the raw datasets, acquisition schema or transfer validity**. Prioritize version-pinned metadata QA, not automatic bulk downloading.
