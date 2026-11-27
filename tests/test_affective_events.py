@@ -4,7 +4,7 @@ import sys
 import tempfile
 import unittest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research" / "affective" / "src"))
 from arc_affective.events import Event, save_jsonl
 from arc_affective.synthetic import generate
 
