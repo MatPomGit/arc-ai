@@ -255,7 +255,7 @@ class GeneratorTests(unittest.TestCase):
             with self.subTest(owner=owner), tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp) / "arc"
                 copytree_scaffold(ROOT, root, ignore=shutil.ignore_patterns(
-                    ".git", "site", "__pycache__"))
+                    ".git", "build", "__pycache__"))
                 initialize(root, programme="arc-neuro",
                            repository="MatPomGit/arc-neuro", title="ARC Neuro",
                            owner=owner, scope="Study of cognition",

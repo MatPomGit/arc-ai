@@ -19,7 +19,7 @@ class ArcCliLifecycleTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name) / "arc"
         copytree_scaffold(ROOT, self.root, ignore=shutil.ignore_patterns(
-            ".git", "__pycache__", ".venv", "site", ".pytest_cache"))
+            ".git", "__pycache__", ".venv", "build", ".pytest_cache"))
 
     def tearDown(self):
         self.temp.cleanup()
