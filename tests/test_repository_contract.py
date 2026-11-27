@@ -42,7 +42,7 @@ class ARCContractTests(unittest.TestCase):
     def test_private_project_never_in_public_pages(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
-            (root/"portfolio").mkdir()
+            (root/"config").mkdir()
             (root/"config/projects.json").write_text(json.dumps({"schema_version":2,"projects":[{
                 **candidate(),"public_listing":True,"pages_url":"https://internal.example/private"
             }]}),encoding="utf-8")
@@ -53,7 +53,7 @@ class ARCContractTests(unittest.TestCase):
     def test_public_catalog_is_written_only_to_pages(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp)
-            for folder in ("portfolio", "pages", "docs", "config"):
+            for folder in ("site", "docs", "config"):
                 (root/folder).mkdir()
             (root/"config/projects.json").write_text(
                 json.dumps({"schema_version":2,"projects":[]}), encoding="utf-8")
@@ -67,7 +67,7 @@ class ARCContractTests(unittest.TestCase):
     def test_public_catalog_is_blocked_without_allowlist(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp)
-            for folder in ("portfolio", "pages", "config"):
+            for folder in ("site", "config"):
                 (root/folder).mkdir()
             (root/"config/projects.json").write_text(
                 json.dumps({"schema_version":2,"projects":[]}), encoding="utf-8")

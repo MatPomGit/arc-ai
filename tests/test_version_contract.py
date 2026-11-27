@@ -16,13 +16,19 @@ ROOT = Path(__file__).resolve().parents[1]
 class VersionContractTests(unittest.TestCase):
     def test_schema_two_accepts_current_and_legacy_template_metadata(self):
         schema = json.loads((ROOT / "schemas/program.v2.schema.json").read_text(encoding="utf-8"))
-        program = json.loads((ROOT / "program.json").read_text(encoding="utf-8"))
+        program = json.loads((ROOT / "config/program-v2.json").read_text(encoding="utf-8"))
         self.assertEqual(program["schema_version"], 2)
         self.assertEqual(program["template_version"], "0.1.0")
         for value in ("0.1.0", "2.0.0"):
             with self.subTest(template_version=value):
                 candidate = dict(program, template_version=value)
                 Draft202012Validator(schema).validate(candidate)
+
+    def test_active_v3_program_schema(self):
+        schema = json.loads((ROOT / "schemas/program.v3.schema.json").read_text())
+        program = json.loads((ROOT / "program.json").read_text())
+        Draft202012Validator(schema).validate(program)
+        self.assertEqual(program["schema_version"], 3)
 
     def test_validators_accept_legacy_v2_without_rewriting(self):
         from scripts.validate_repository import validate
@@ -38,9 +44,9 @@ class VersionContractTests(unittest.TestCase):
             state_path.write_text(state.replace("template_version: 0.1.0", "template_version: 2.0.0"), encoding="utf-8")
             from scripts.migrate_arc import execute
             tracked = [
-                "program.json", "PROJECT_STATE.yaml", "areas/index.json",
-                "portfolio/projects.json", "portfolio/papers.json",
-                "portfolio/dependencies.json",
+                "program.json", "PROJECT_STATE.yaml", "config/research-lines.json",
+                "config/projects.json", "config/papers-v2.json",
+                "config/dependencies-v2.json",
             ]
             before = {name: (destination / name).read_bytes() for name in tracked}
             problems = validate(destination)
@@ -81,7 +87,7 @@ class VersionContractTests(unittest.TestCase):
             self.assertTrue(any("PROJECT_STATE mismatch: template_version" in x
                                 for x in validate(destination)))
             before = {name: (destination / name).read_bytes()
-                      for name in ("program.json", "PROJECT_STATE.yaml", "portfolio/papers.json")}
+                      for name in ("program.json", "PROJECT_STATE.yaml", "config/papers-v2.json")}
             for mode in ("plan", "apply"):
                 result = execute(destination, mode=mode)
                 self.assertEqual(result["status"], "BLOCKED", result)

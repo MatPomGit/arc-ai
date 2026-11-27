@@ -207,7 +207,7 @@ class RegistryV2Tests(unittest.TestCase):
             for path in ("config/projects.json","config/papers-v2.json","config/dependencies-v2.json"):
                 obj=json.loads((root/path).read_text())
                 obj["schema_version"]=1
-                if path.endswith("papers.json"):
+                if path.endswith("papers-v2.json"):
                     obj["papers"]=[]
                 self.write(root,path,obj)
             state=root/"PROJECT_STATE.yaml"
@@ -319,7 +319,7 @@ class RegistryV2Tests(unittest.TestCase):
         dependencies=json.loads((ROOT/"schemas/dependencies.v2.schema.json").read_text())
         dep_fields=set(dependencies["properties"]["tools"]["items"]["properties"])
         self.assertEqual(dep_fields,DEP_FIELDS)
-        program=json.loads((ROOT/"program.json").read_text())
+        program=json.loads((ROOT/"config/program-v2.json").read_text())
         cfg=json.loads((ROOT/"schemas/program.v2.schema.json").read_text())
         self.assertEqual(set(program),set(cfg["required"]))
 
