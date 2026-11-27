@@ -25,7 +25,7 @@ class GeneratorTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name)/"arc"
-        copytree_scaffold(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,self.root,ignore=shutil.ignore_patterns(".git","build","__pycache__"))
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -70,7 +70,7 @@ class GeneratorTests(unittest.TestCase):
         self.assertEqual([],validate(self.root))
         path="manuscripts/MSC-ADHD-P01/study.yaml"
         self.assertEqual([],validate_study(self.root,path,"MSC-ADHD-P01"))
-        papers=json.loads((self.root/"portfolio/papers.json").read_text())["papers"]
+        papers=json.loads((self.root/"config/papers-v2.json").read_text())["papers"]
         self.assertEqual(len(papers),1)
         self.assertEqual(papers[0]["owner"]["project_id"],None)
         self.assertEqual(papers[0]["owner"]["mode"],"local")
@@ -82,19 +82,19 @@ class GeneratorTests(unittest.TestCase):
         self.assertTrue(preview)
         self.assertFalse((self.root/"manuscripts").exists())
         self.new()
-        old=(self.root/"portfolio/papers.json").read_bytes()
+        old=(self.root/"config/papers-v2.json").read_bytes()
         self.assertEqual([],self.new())
-        self.assertEqual(old,(self.root/"portfolio/papers.json").read_bytes())
+        self.assertEqual(old,(self.root/"config/papers-v2.json").read_bytes())
 
     def test_conflict_and_unregistered_area_fail_without_mutation(self):
         self.init()
         self.new()
-        old=(self.root/"portfolio/papers.json").read_bytes()
+        old=(self.root/"config/papers-v2.json").read_bytes()
         with self.assertRaisesRegex(ValueError,"already in use"):
             self.new(title="Inny tytuł")
         with self.assertRaisesRegex(ValueError,"Unregistered"):
             self.new(ident="MSC-ADHD-P02",area="unknown")
-        self.assertEqual(old,(self.root/"portfolio/papers.json").read_bytes())
+        self.assertEqual(old,(self.root/"config/papers-v2.json").read_bytes())
 
     def test_manuscript_path_and_invalid_metadata(self):
         self.init()
@@ -136,7 +136,7 @@ class GeneratorTests(unittest.TestCase):
 
     def test_invalid_paper_register_is_blocked_before_write(self):
         self.init()
-        register=self.root/"portfolio/papers.json"
+        register=self.root/"config/papers-v2.json"
         register.write_text(json.dumps({"schema_version":2,"papers":["invalid-record"]}))
         with self.assertRaisesRegex(ValueError,"Invalid paper records"):
             self.new()
@@ -171,7 +171,7 @@ class GeneratorTests(unittest.TestCase):
                 self.init() if not (self.root/"manuscripts").exists() else None
                 if not (self.root/"manuscripts/MSC-ADHD-P01").exists():
                     self.new()
-                reg=self.root/"portfolio/papers.json"
+                reg=self.root/"config/papers-v2.json"
                 data=json.loads(reg.read_text())
                 row=data["papers"][0]
                 if mutation=="owner":

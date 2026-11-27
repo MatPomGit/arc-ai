@@ -36,7 +36,7 @@ def main() -> int:
     if not shutil.which("latexmk") or not shutil.which("pdflatex"):
         print("LaTeX toolchain required; refusing to claim success", file=sys.stderr)
         return 2
-    papers = json.loads((ROOT / "portfolio/papers.json").read_text(encoding="utf-8"))["papers"]
+    papers = json.loads((ROOT / "config/papers-v2.json").read_text(encoding="utf-8"))["papers"]
     if not papers or len({p["id"] for p in papers}) != len(papers):
         raise ValueError("Expected a nonempty set of unique MSC manuscripts")
     validate_inventory(papers, ROOT / "manuscripts")

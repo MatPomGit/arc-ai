@@ -48,6 +48,8 @@ jobs:
           command -v pdflatex
       - name: Validate scaffold and verified repository visibility
         run: python3 -B scripts/validate_repository.py --phase scaffold --repo-visibility "$REPO_VISIBILITY" --repo-full-name "$GITHUB_REPOSITORY"
+      - name: Validate v3 programme and manuscript records
+        run: python3 -B scripts/validate_v3_metadata.py
       - name: Validate documentation character budgets
         run: python3 -B scripts/validate_documentation.py
       - name: Verify optional programme branding is synchronized
@@ -71,7 +73,7 @@ jobs:
           set -euo pipefail
           python3 -B scripts/build_public_catalog.py
           python3 -B scripts/build_article_catalog.py
-          git diff --exit-code -- pages/projects.md pages/articles.md
+          git diff --exit-code -- site/projects.md site/articles.md
           python3 -B scripts/validate_pages.py
           python3 -B scripts/validate_documentation.py
       - name: Build reviewed public HTML with pinned MkDocs

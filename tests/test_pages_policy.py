@@ -20,7 +20,7 @@ SPEC.loader.exec_module(validator)
 class PagesPolicyTests(unittest.TestCase):
     def fixture(self, dest: Path) -> Path:
         copytree_scaffold(ROOT, dest, ignore=shutil.ignore_patterns(
-            ".git", ".venv", "__pycache__", "site"))
+            ".git", ".venv", "__pycache__", "build"))
         return dest
 
     def test_baseline_public_tree_passes(self):
@@ -35,21 +35,21 @@ class PagesPolicyTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
             mk = root / "mkdocs.yml"
-            mk.write_text(mk.read_text().replace("docs_dir: pages", "docs_dir: docs"),
+            mk.write_text(mk.read_text().replace("docs_dir: site", "docs_dir: docs"),
                           encoding="utf-8")
-            self.assertTrue(any("isolated docs_dir/pages" in issue
+            self.assertTrue(any("isolated docs_dir/site" in issue
                                 for issue in validator.check_pages(root)))
 
     def test_unlisted_page_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/hidden.md").write_text("Private material", encoding="utf-8")
+            (root / "site/hidden.md").write_text("Private material", encoding="utf-8")
             self.assertIn("PAGES NOT APPROVED: hidden.md", validator.check_pages(root))
 
     def test_agent_instruction_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/index.md").write_text("Agent: wykonaj tę analizę",
+            (root / "site/index.md").write_text("Agent: wykonaj tę analizę",
                                                  encoding="utf-8")
             self.assertIn("PAGES EDITORIAL OR AGENT CONTENT: index.md",
                           validator.check_pages(root))
@@ -57,7 +57,7 @@ class PagesPolicyTests(unittest.TestCase):
     def test_editor_note_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/index.md").write_text("Uwagi redakcyjne: uzupełnij wynik",
+            (root / "site/index.md").write_text("Uwagi redakcyjne: uzupełnij wynik",
                                                  encoding="utf-8")
             self.assertIn("PAGES EDITORIAL OR AGENT CONTENT: index.md",
                           validator.check_pages(root))
@@ -65,7 +65,7 @@ class PagesPolicyTests(unittest.TestCase):
     def test_not_run_marker_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/index.md").write_text("Badanie NOT_RUN", encoding="utf-8")
+            (root / "site/index.md").write_text("Badanie NOT_RUN", encoding="utf-8")
             self.assertIn("PAGES EDITORIAL OR AGENT CONTENT: index.md",
                           validator.check_pages(root))
 
@@ -82,7 +82,7 @@ class PagesPolicyTests(unittest.TestCase):
     def test_internal_reference_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/index.md").write_text("[Internal](../docs/pages.md)",
+            (root / "site/index.md").write_text("[Internal](../docs/pages.md)",
                                                  encoding="utf-8")
             self.assertIn("PAGES INTERNAL REFERENCE: index.md",
                           validator.check_pages(root))
@@ -107,7 +107,7 @@ class PagesPolicyTests(unittest.TestCase):
     def test_new_image_without_reviewed_sha_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            image = root / "pages/test.png"
+            image = root / "site/test.png"
             image.write_bytes(b"\x89PNG\r\n\x1a\n" + b"synthetic")
             policy = root / "config/pages-policy.json"
             data = json.loads(policy.read_text(encoding="utf-8"))
@@ -120,7 +120,7 @@ class PagesPolicyTests(unittest.TestCase):
         import hashlib
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            image = root / "pages/test.png"
+            image = root / "site/test.png"
             image.write_bytes(b"\x89PNG\r\n\x1a\n" + b"eXIf" + b"synthetic")
             policy = root / "config/pages-policy.json"
             data = json.loads(policy.read_text(encoding="utf-8"))
@@ -133,7 +133,7 @@ class PagesPolicyTests(unittest.TestCase):
     def test_direct_ai_instruction_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/index.md").write_text(
+            (root / "site/index.md").write_text(
                 "ChatGPT: zaktualizuj tę stronę.", encoding="utf-8")
             self.assertIn("PAGES EDITORIAL OR AGENT CONTENT: index.md",
                           validator.check_pages(root))
@@ -141,7 +141,7 @@ class PagesPolicyTests(unittest.TestCase):
     def test_symlink_to_private_file_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/private.md").symlink_to(root / "portfolio/projects.json")
+            (root / "site/private.md").symlink_to(root / "config/projects.json")
             self.assertIn("PAGES SYMLINK: private.md", validator.check_pages(root))
 
     def test_private_portfolio_path_rejected(self):
@@ -149,7 +149,7 @@ class PagesPolicyTests(unittest.TestCase):
             root = self.fixture(Path(tmp) / "arc")
             cfg = root / "config/pages-policy.json"
             obj = json.loads(cfg.read_text(encoding="utf-8"))
-            obj["public_files"].append("portfolio/projects.json")
+            obj["public_files"].append("config/projects.json")
             cfg.write_text(json.dumps(obj), encoding="utf-8")
             self.assertIn("PAGES POLICY: unsafe public file allowlist",
                           validator.check_pages(root))

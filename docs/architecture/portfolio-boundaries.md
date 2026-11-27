@@ -1,6 +1,6 @@
 # Granice portfolio i odpowiedzialności
 
-`arc-*` utrzymuje linie badawcze i rejestry: `areas/index.json`, `portfolio/projects.json`, `portfolio/papers.json`, `portfolio/dependencies.json`. Własność pojedynczego manuskryptu, protokołu i analizy może pozostawać w lokalnym ARC (`local`) albo w kanonicznym zewnętrznym `msc-*`/historycznym repozytorium (`external`). Lokalny plan artykułu zewnętrznego nie jest drugim kanonicznym manuskryptem. `app-*` i `lib-*` zachowują własne wersjonowane źródła i kontrakty.
+`arc-*` utrzymuje linie badawcze i rejestry: `config/research-lines.json`, `config/projects.json`, `config/papers-v2.json`, `config/dependencies-v2.json`. Własność pojedynczego manuskryptu, protokołu i analizy może pozostawać w lokalnym ARC (`local`) albo w kanonicznym zewnętrznym `msc-*`/historycznym repozytorium (`external`). Lokalny plan artykułu zewnętrznego nie jest drugim kanonicznym manuskryptem. `app-*` i `lib-*` zachowują własne wersjonowane źródła i kontrakty.
 
 Jedna publikacja ma jednego kanonicznego właściciela (lokalne ARC lub zewnętrzny projekt), a przypisania innych programów służą wyłącznie jako `related`. ARC może odsyłać do submodułów, lecz nie może zastąpić zamrożonych gitlinków bieżącym SHA podczas reprodukcji. Zmiany nazw i repozytoriów wymagają mapy kompatybilności i decyzji właściciela.
 

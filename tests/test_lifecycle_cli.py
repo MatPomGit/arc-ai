@@ -80,12 +80,12 @@ class ArcCliLifecycleTests(unittest.TestCase):
                  "--repo-full-name", "MatPomGit/arc-ai")
         self.cli("build_public_catalog.py")
         self.cli("build_article_catalog.py")
-        catalog = self.root / "pages" / "articles.md"
+        catalog = self.root / "site" / "articles.md"
         body = catalog.read_text(encoding="utf-8")
         self.assertNotIn(NEW_ID, body)
         self.assertIn("Brak zatwierdzonych", body)
         self.cli("validate_pages.py")
-        register = json.loads((self.root / "portfolio/papers.json").read_text())
+        register = json.loads((self.root / "config/papers-v2.json").read_text())
         self.assertEqual(len(register["papers"]), 1)
         paper = register["papers"][0]
         self.assertEqual(paper["publication_stage"], "concept")
@@ -93,11 +93,11 @@ class ArcCliLifecycleTests(unittest.TestCase):
         self.assertFalse(paper["public_listing"])
         self.assertEqual(paper["owner"]["mode"], "local")
         self.assertIn(r"\author{}", tex.read_text(encoding="utf-8"))
-        before_registry = (self.root / "portfolio/papers.json").read_bytes()
+        before_registry = (self.root / "config/papers-v2.json").read_bytes()
         before_catalog = catalog.read_bytes()
         self.assertIn("ALREADY_EXISTS", self.manuscript("--apply"))
         self.cli("build_article_catalog.py")
-        self.assertEqual(before_registry, (self.root / "portfolio/papers.json").read_bytes())
+        self.assertEqual(before_registry, (self.root / "config/papers-v2.json").read_bytes())
         self.assertEqual(before_catalog, catalog.read_bytes())
         self.assertEqual((self.root / "VERSION").read_bytes(), original_version)
         self.assertEqual(self.cli("migrate_arc.py", "--mode", "plan").count("ALREADY_V2"), 1)
@@ -109,7 +109,7 @@ class ArcCliLifecycleTests(unittest.TestCase):
                  "--repo-visibility", "private",
                  "--repo-full-name", "MatPomGit/arc-ai")
         self.cli("build_article_catalog.py")
-        self.assertNotIn(NEW_ID, (self.root / "pages/articles.md").read_text())
+        self.assertNotIn(NEW_ID, (self.root / "site/articles.md").read_text())
         self.assertEqual(
             json.loads((self.root / "program.json").read_text())["repository_visibility"],
             "private")
@@ -131,7 +131,7 @@ class ArcCliLifecycleTests(unittest.TestCase):
 
     def test_inconsistent_v2_is_blocked_by_cli_and_never_claims_ready(self):
         self.initialize()
-        registry = self.root / "portfolio/papers.json"
+        registry = self.root / "config/papers-v2.json"
         source = json.loads(registry.read_text())
         source["schema_version"] = 1
         registry.write_text(json.dumps(source))

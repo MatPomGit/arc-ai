@@ -1,7 +1,7 @@
 # Public site: isolated, explicitly allowlisted pages/ only.
 site_name: "Program badawczy ARC"
-docs_dir: pages
-site_dir: site
+docs_dir: site
+site_dir: build/site
 theme:
   name: mkdocs
   highlightjs: false

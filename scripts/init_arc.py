@@ -38,7 +38,7 @@ def initialize(root: Path, *, programme: str, repository: str,
             or program.get("repository_full_name") is not None
             or program.get("repository_visibility") != "unconfigured"):
         raise ValueError("Refusing to re-initialize an existing ARC")
-    area_path = root / "areas/index.json"
+    area_path = root / "config/research-lines.json"
     if json.loads(area_path.read_text(encoding="utf-8")).get("lines"):
         raise ValueError("Existing research areas require manual review")
 

@@ -9,8 +9,8 @@ from pathlib import Path
 
 FILES = (
     "README.md", "RESEARCH.md", "ROADMAP.md", "CITATION.cff",
-    "PROJECT_STATE.yaml", "program.json", "areas/index.json",
-    "portfolio/papers.json", "docs/scientific-scope.md",
+    "PROJECT_STATE.yaml", "program.json", "config/research-lines.json",
+    "config/papers-v2.json", "docs/scientific-scope.md",
 )
 
 

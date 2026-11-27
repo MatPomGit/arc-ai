@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "template_version": "0.1.0",
+  "type": "arc-program",
+  "programme": "arc-ai",
+  "title": "ARC AI: metody sztucznej inteligencji i systemy adaptacyjne",
+  "owner": "Mateusz Pomianek",
+  "scope": "Nowe metody uczenia i wnioskowania multimodalnego, odporność na przesunięcia domen, estymacja niepewności, selektywna abstencja, Edge AI, adaptacja i niezawodność systemów asystujących.",
+  "default_branch": "main",
+  "license_spdx": "Apache-2.0",
+  "pages_status": "not_configured",
+  "pages_url": null,
+  "public_catalog_policy": "explicit_opt_in",
+  "scientific_state": "planned",
+  "owner_of_raw_data": false,
+  "repository_visibility": "public",
+  "repository_full_name": "MatPomGit/arc-ai",
+  "manuscript_root": "manuscripts"
+}

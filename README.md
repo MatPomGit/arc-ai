@@ -6,11 +6,11 @@ Badania obejmują reprezentacje sygnałów EEG, uczenie multimodalne, odpornoś�
 
 ## Manuskrypty i koncepcje
 
-[Rejestr MSC](portfolio/papers.json) rozróżnia stan badań od etapu przygotowania publikacji. [Katalog artykułów](manuscripts/README.md) przedstawia indywidualne prace i ich zakres. Każda pozycja ma odrębny folder z plikiem LaTeX, hipotezami i planem ewaluacji. Brak wyników oznaczono jawnie, a przytoczone źródła pierwotne nie są traktowane jako wykonana walidacja.
+[Rejestr MSC](config/papers-v2.json) rozróżnia stan badań od etapu przygotowania publikacji. [Katalog artykułów](manuscripts/README.md) przedstawia indywidualne prace i ich zakres. Każda pozycja ma odrębny folder z plikiem LaTeX, hipotezami i planem ewaluacji. Brak wyników oznaczono jawnie, a przytoczone źródła pierwotne nie są traktowane jako wykonana walidacja.
 
 ## Linie badawcze
 
-Opis zakresu znajduje się w [RESEARCH.md](RESEARCH.md), a [klasyfikacja tematów](areas/index.json) wskazuje osiem linii badawczych: EEG, fuzja, Edge AI, adaptacja, synchronizacja, AAL, agenci i transfer między domenami.
+Opis zakresu znajduje się w [RESEARCH.md](RESEARCH.md), a [klasyfikacja tematów](config/research-lines.json) wskazuje osiem linii badawczych: EEG, fuzja, Edge AI, adaptacja, synchronizacja, AAL, agenci i transfer między domenami.
 
 ## Reprodukowalność
 
