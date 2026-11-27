@@ -5,27 +5,79 @@
 \usepackage{amsmath,amssymb}
 \usepackage[hidelinks]{hyperref}
 \title{Privacy-Aware Fault-Tolerant Edge AI Architecture for Assisted Living}
-\author{}
+\author{Scientific owner: Mateusz Pomianek}
 \date{}
 \begin{document}
 \maketitle
+
 \begin{abstract}
-How does a local-first event architecture maintain availability and bounded disclosure during network faults? This paper proposes a methodological evaluation, not a validated effect. We define a primary outcome, an independent validation strategy and explicit stopping criteria. Results are unavailable; theoretical assumptions and data eligibility must be audited before study activation.
+This concept paper specifies an evaluation framework for local-first event processing in assisted-living environments under network disruption. The proposed comparison concerns event preservation, recovery after faults, and bounded information disclosure, subject to equivalent functional requirements. The architecture, hypotheses, metrics and validation criteria remain proposals. No benchmark results or evidence of clinical utility are available.
 \end{abstract}
-\section{Research problem}
-How does a local-first event architecture maintain availability and bounded disclosure during network faults? The research is framed around a verifiable computational property rather than a change of application context alone. Its technical originality remains a hypothesis requiring a targeted literature review.
-\section{Hypotheses and anticipated contribution}
-H1 proposes that the candidate approach will improve the pre-specified primary outcome relative to a matched, non-trivial baseline. H2 proposes that the improvement, if observed, remains reliable under independent domains, fault conditions or held-out units. Neither hypothesis has been tested.
-\section{Data, materials and eligibility}
-Fault injection, cold restarts, event replay and offline audit; no physical intervention. Data licensing, annotations, task comparability and reproducible split definitions are preconditions. Where authentic data are unavailable, only clearly labelled synthetic experiments are appropriate; simulated outcomes must never be reported as human or clinical measurements.
-\section{Methods}
-Create reproducible virtual smart-home traces, network faults and failover; compare cloud-first and local-first architectures. All model selection and calibration must use training-only data; evaluation must avoid overlap between participants, sessions, households and temporal blocks as appropriate. Fixed seeds, environment manifests and source identifiers are required for repeatability.
-\section{Evaluation protocol and statistics}
-The primary outcome is: Validated event-loss and recovery-time performance at matched disclosure and functional constraints.. Analyses must specify the estimand, comparator, independent unit, confidence interval procedure, failure criteria and sensitivity checks before running confirmatory evaluation. Report both average performance and challenging edge cases.
+
+\section{Research question and scope}
+The research question is whether a local-first event architecture can reduce event loss and recovery time relative to a cloud-first comparator while meeting the same functional and disclosure constraints under defined network faults. The intended contribution is an independently testable systems property, not the deployment of a smart-home application or a clinical intervention. Novelty relative to existing edge, offline-first and fault-tolerant approaches has not yet been established.
+
+\section{Theoretical foundations and related work}
+Dependability distinguishes availability, reliability and integrity from the mechanisms used to tolerate faults (Avi\v{z}ienis et al., 2004). Edge computing places computation near data sources, potentially reducing dependence on remote connectivity (Shi et al., 2016). Local-first software prioritizes local operation and subsequent synchronization (Kleppmann et al., 2019). Gilbert and Lynch (2002) formalize the incompatibility of strong consistency and their definition of availability during network partitions. Their result does not by itself predict the latency or durability of the proposed system.
+
+A cloud-first system can retain events in a durable gateway buffer while performing inference remotely; a local-first system can perform equivalent inference locally and synchronize permitted records later. Neither placement alone proves privacy or fault tolerance. The candidate contribution is a controlled comparison of event preservation subject to the same functional and disclosure contract, with held-out fault families. This is a proposed research gap, not an established novelty claim. A targeted review of assisted-living, resilient stream processing and privacy-aware edge systems must establish whether equivalent evaluations already exist.
+
+\section{Candidate architecture and trust boundaries}
+A candidate architecture comprises local event ingestion, persistent event identifiers, a durable local queue, policy-controlled processing and a synchronization component that resumes after reconnection. A cloud-first comparator would implement the same event semantics and functional obligations. These components are proposed design elements, not verified implementations.
+
+Represent an input event by \(e=(i,t,k,x)\), with a unique identifier, virtual timestamp, type and synthetic payload. Both systems receive identical event streams and a fixed deterministic inference function \(f(e)\), including identical thresholds and model versions. An independent reference computes the expected logical effect of each eligible event. The candidate persists the identifier and necessary state before acknowledging admission, records completion atomically with the local effect where possible, and retries synchronization until an authenticated acknowledgement or the reconciliation deadline. The receiver deduplicates by identifier; repeated transport delivery must not imply repeated logical effects. If atomicity is not implemented, the resulting crash window is a test condition rather than a claimed guarantee. Storage exhaustion produces explicit rejection; accepted input cannot disappear silently.
+
+The proposed threat model includes a passive network observer, an unauthorized remote recipient, replay of previously valid messages and accidental leakage through logs. Local compromise, physical access and traffic-analysis resistance beyond measured metadata are outside the initial claim. The trust boundary encloses the local gateway; external traffic is restricted to allowlisted fields, purposes and destinations. Both comparators use authenticated encrypted transport, the same access-control policy and identical retention rules. Raw synthetic payload export is forbidden in the primary configuration; a permitted feature representation sufficient for the fixed inference function must be demonstrated for both systems. If that is impossible, the primary comparison is infeasible rather than evidence of superiority. The audit inspects transmitted fields, destinations, retry logs and retention behaviour. Any prohibited disclosure is a contract failure, not a compensable performance penalty. Metadata volume, identifiers and timestamps are measured separately; this operational test is not a proof of anonymity or legal compliance.
+
+\section{Proposed hypotheses}
+H1: the candidate has a lower mean scenario-level unreconciled event fraction than the cloud-first baseline in the primary scenario distribution, subject to both architectures satisfying the disclosure and functional contract. H2: the direction of the same contrast remains favourable in each prespecified held-out fault family. H2 is a separate robustness criterion, not proof of universal generalization. Both hypotheses are untested; effect sizes are unknown.
+
+\section{Proposed evaluation design}
+The benchmark will use synthetic event streams, with no participants or resident recordings. Each independent scenario seed defines event arrivals, event types, fault onset, duration and recovery. Both architectures receive the identical trace and fault schedule, equivalent total storage and compute budgets, identical model semantics and the same permitted features. The baseline uses durable gateway buffering, retry and deduplication but remote inference. An optional ablation removes local durable buffering to distinguish placement from persistence. A fault-free oracle, rather than either implementation, specifies valid outputs.
+
+Candidate development conditions include network disconnection, delay, packet loss, duplicate delivery, gateway restart before and after acknowledgement, queue overflow and combined network and restart faults. Initial engineering settings are proposed rather than calibrated: disconnection durations of 10, 60 and 300 seconds, added one-way delays of 50 and 250 milliseconds, packet loss probabilities of 0.01 and 0.10, and workloads of 1 and 10 events per second. A baseline with no injected fault checks functional equivalence. Development and held-out seeds are disjoint; at least one combined fault family is withheld from tuning. The final distribution, fault schedules and resource budgets must be frozen after feasibility assessment and before confirmatory runs. No participant recruitment or physical intervention is proposed.
+
+The planned apparatus is a versioned simulator or isolated container benchmark with virtual clocks, a deterministic trace generator, fault injector, independent output oracle and field-level egress auditor. Record source commit, dependency versions, configuration, seed, trace checksum, architecture-specific run status and raw synthetic metrics. A manifest shall distinguish development, primary and held-out runs. No hardware verification is implied.
+
+\section{Outcome definitions and analysis plan}
+For scenario \(s\), let \(N_s>0\) be the number of eligible generated event identifiers and \(M_{as}\) the number without their correct logical effect by the reconciliation deadline in architecture \(a\). Define
+\[
+ L_{as}=M_{as}/N_s,\qquad D_s=L_{\mathrm{local},s}-L_{\mathrm{cloud},s}.
+\]
+The denominator includes rejected events, so the system cannot improve its score by rejecting workload. A wrong or missing effect counts as unreconciled; duplicate effects and prohibited disclosures are additional contract failures. The proposed primary estimand is \(\Delta=E(D_s)\) over the frozen primary scenario distribution, with equal weight per scenario. The deadline is provisionally 300 seconds after the final scheduled fault restoration and the end of event generation, whichever is later. This measures bounded-window loss, not permanent irrecoverability.
+
+Secondary outcomes include recovery time in seconds, duplicate logical effects, fraction of time satisfying the service contract, p95 and p99 end-to-end delay, queue occupancy and external bytes. Recovery is the first time following infrastructure restoration when the outstanding eligible workload is reconciled and ten consecutive probe events meet a common provisional one-second deadline. Scenarios not recovered by the observation horizon are right-censored; report the censoring fraction and restricted mean recovery time over the common horizon rather than deleting them. Probe workload is identical for both systems. Thresholds require feasibility confirmation before protocol freeze.
+
+The primary analysis uses paired differences and a two-sided 95\% interval obtained by resampling independent scenarios within prespecified fault strata; event-level resampling is prohibited. Report the mean difference, absolute loss rates and stratum-specific contrasts with intervals. A favourable H1 decision requires the upper interval bound below zero and no disclosure or functional contract failure. A practically relevant effect threshold must be approved before activation; no threshold is inferred from results. H2 requires simultaneous upper bounds below zero in all designated validation families, using Bonferroni-adjusted intervals. Secondary analyses are descriptive unless separately prespecified.
+
+The initial development pilot is proposed to contain 20 independent paired scenarios, separate from evaluation. Its paired-difference variance informs a provisional precision design \(n=\lceil(1.96\,s_D/0.03)^2\rceil\), where 0.03 is a proposed absolute half-width. A conservative variance bound or a justified upper variance estimate must be used if the pilot is unstable. The approximation requires simulation-based coverage assessment for bounded, zero-inflated loss and stratification. The final confirmatory sample size, validation allocation and scenario weights remain unset until that assessment. An initial planning floor of 200 independent primary pairs is not a power guarantee. No pilot or confirmatory run has been executed.
+
+Architecture-caused failures retain their scheduled denominator and count unresolved events as losses; failures of the shared test harness are adjudicated without inspecting the comparative outcome, repeated with identical seeds if possible, and reported with a worst-case sensitivity bound otherwise. Sensitivity analyses vary reconciliation windows, workload, fault severity and storage budgets and compare alternative weighting schemes. A failed disclosure or correctness gate invalidates a claim of superiority; failed runs are not silently excluded.
+
+\section{Evidence and activation gates}
+The portfolio records this work as a deferred concept with local manuscript ownership in \texttt{MatPomGit/arc-ai}. The protocol is not frozen and empirical results are unavailable. Activation requires (i) a targeted novelty review, (ii) a documented and lawful trace-generation or data pathway, (iii) explicit disclosure and correctness requirements, (iv) a reproducible fault model with a non-trivial baseline, and (v) a frozen estimand and analysis plan. The decision remains NO-GO if equivalent prior work defeats the claimed contribution, the baseline cannot satisfy the common contract, synthetic trace provenance is unresolved, independent scenario coverage is inadequate or the benchmark cannot be reproduced. Owner approval is required to activate research. Hardware suitability and any human-subjects approval would require separate verification if the scope expands beyond simulation.
+
 \section{Results}
-No empirical or simulated benchmark has yet been executed for this candidate publication. This section intentionally contains no numerical result, effect size, model comparison or inferred statistical significance.
-\section{Discussion and validity limits}
-SOURCE\_PLANNED\_ARTICLE: a systems architecture alone is insufficient without independent evaluated technical properties. A separate manuscript requires a distinct estimand and independently defendable novelty, not just a renamed application, sensor set or population.
-\section{Conclusions}
-This is a pre-experimental concept manuscript. Research activation requires an evidence-backed novelty decision, a frozen study protocol and an approved data or simulation pathway.
+No empirical study or simulated benchmark has been executed or is reported. Consequently, there are no performance estimates, confidence intervals or significance claims.
+
+\section{Discussion and limitations}
+The proposed local-first design may exchange connectivity dependence for local resource, durability and synchronization risks. Network failures, local storage failures and replay-induced duplicates are distinct failure modes and must be tested separately. A favourable simulation result would not establish household safety, clinical benefit, privacy compliance or generalization to deployed devices. A publishable contribution would require independently evaluated technical properties and demonstrable distinction from prior work.
+
+\section{Conclusion}
+This manuscript documents a deferred research concept and the conditions for its possible evaluation; it does not present a completed study.
+
+\section*{References}
+\begingroup
+\setlength{\parindent}{-1.25em}
+\setlength{\leftskip}{1.25em}
+\setlength{\parskip}{0.5em}
+Avi\v{z}ienis, A., Laprie, J.-C., Randell, B., \& Landwehr, C. (2004). Basic concepts and taxonomy of dependable and secure computing. \textit{IEEE Transactions on Dependable and Secure Computing, 1}(1), 11--33. \url{https://eprints.ncl.ac.uk/69388}
+
+Gilbert, S., \& Lynch, N. (2002). Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services. \textit{ACM SIGACT News, 33}(2), 51--59. \url{https://dblp.org/rec/journals/sigact/GilbertL02.html}
+
+Kleppmann, M., Wiggins, A., van Hardenberg, P., \& McGranaghan, M. (2019). Local-first software: You own your data, in spite of the cloud. In \textit{Proceedings of the 2019 ACM SIGPLAN International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software} (pp. 154--178). Association for Computing Machinery. \url{https://doi.org/10.1145/3359591.3359737}
+
+Shi, W., Cao, J., Zhang, Q., Li, Y., \& Xu, L. (2016). Edge computing: Vision and challenges. \textit{IEEE Internet of Things Journal, 3}(5), 637--646. \url{https://doi.org/10.1109/JIOT.2016.2579198}
+\endgroup
+
 \end{document}
