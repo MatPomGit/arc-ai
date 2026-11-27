@@ -1,0 +1,31 @@
+{
+  "id": "MSC-AR-P19",
+  "title": "Cross-Cultural Transfer of Affective Models Between Polish and Sri Lankan Contexts",
+  "area": "domain-transfer",
+  "research_state": "deferred",
+  "publication_stage": "concept",
+  "relation": "primary",
+  "owner": {
+    "mode": "local",
+    "repository": "MatPomGit/arc-ai",
+    "project_id": null
+  },
+  "manuscript": {
+    "path": "manuscripts/MSC-AR-P19/main.tex",
+    "format": "latex"
+  },
+  "study_plan": "manuscripts/MSC-AR-P19/study.yaml",
+  "public_listing": false,
+  "public_summary": null,
+  "doi": null,
+  "preprint_url": null,
+  "preregistration_url": null,
+  "publication_url": null,
+  "stage_evidence": null,
+  "schema_version": 3,
+  "dependencies": {
+    "tools": [],
+    "equipment": [],
+    "datasets": []
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "MSC-AFFECT-P01",
+  "title": "Sparse-Channel EEG Affect Representation Under Cross-Dataset and Montage Shift",
+  "area": "eeg-ml",
+  "research_state": "planned",
+  "publication_stage": "draft",
+  "relation": "primary",
+  "owner": {
+    "mode": "local",
+    "repository": "MatPomGit/arc-ai",
+    "project_id": null
+  },
+  "manuscript": {
+    "path": "manuscripts/MSC-AFFECT-P01/main.tex",
+    "format": "latex"
+  },
+  "study_plan": "manuscripts/MSC-AFFECT-P01/study.yaml",
+  "public_listing": false,
+  "public_summary": null,
+  "doi": null,
+  "preprint_url": null,
+  "preregistration_url": null,
+  "publication_url": null,
+  "stage_evidence": null,
+  "schema_version": 3,
+  "dependencies": {
+    "tools": [],
+    "equipment": [],
+    "datasets": []
+  }
+}

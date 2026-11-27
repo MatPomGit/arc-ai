@@ -1,6 +1,6 @@
 # Obowiązujące zasady agentów dla programu ARC
 
-Czytaj po kolei: `program.json`, `PROJECT_STATE.yaml`, `RESEARCH.md`, `ARCHITECTURE.md`, `portfolio/projects.json`, `portfolio/papers.json`, `portfolio/dependencies.json`, `GOVERNANCE.md`.
+Czytaj po kolei: `program.json`, `PROJECT_STATE.yaml`, `RESEARCH.md`, `ARCHITECTURE.md`, `config/projects.json`, `config/papers-v2.json`, `config/dependencies-v2.json`, `GOVERNANCE.md`.
 
 1. Repozytorium ARC **indeksuje program i może prowadzić kanoniczne lokalne manuskrypty** `MSC-*`. Nie kopiuj *zewnętrznych* manuskryptów, wyników pomiarów ani kodu `app-*`/`lib-*`.
 2. Każdy manuskrypt ma jedno globalne ID MSC i jedno kanoniczne repozytorium: lokalne ARC lub zewnętrzne MSC. W trybie lokalnym nie wymagaj fikcyjnego `project_id`; relacja `related` nie tworzy kopii.
@@ -38,7 +38,7 @@ W przypadku niejednoznaczności wybierz wyższe ryzyko. Niezależne review i for
 
 ## Publiczne strony i poufność portfolio
 
-**Nigdy nie publikuj `docs/` ani plików roboczych repozytorium jako GitHub Pages.** Osobne `pages/` jest jedynym źródłem treści publicznych, a każdy zasób wymaga jawnego zatwierdzenia w `config/pages-policy.json` i [kontroli](docs/pages.md). Na witrynie nie mogą znajdować się instrukcje dla agentów, prompty, uwagi redakcyjne i edytorskie, polecenia dla autora, placeholdery i informacje o pracy nad repozytorium. Nie twórz `CONTRIBUTING.md` ani publicznych zachęt do współtworzenia projektu.
+**Nigdy nie publikuj `docs/` ani plików roboczych repozytorium jako GitHub Pages.** Osobne `site/` jest jedynym źródłem treści publicznych, a każdy zasób wymaga jawnego zatwierdzenia w `config/pages-policy.json` i [kontroli](docs/pages.md). Na witrynie nie mogą znajdować się instrukcje dla agentów, prompty, uwagi redakcyjne i edytorskie, polecenia dla autora, placeholdery i informacje o pracy nad repozytorium. Nie twórz `CONTRIBUTING.md` ani publicznych zachęt do współtworzenia projektu.
 
 **Prywatne repozytorium nie gwarantuje prywatności Pages.** Zawsze sprawdzaj rzeczywistą widoczność witryny i przeglądaj wygenerowany HTML oraz zasoby. W publicznym ARC nie przechowuj nawet ukrytych nazw prywatnych projektów: `public_listing: false` nie chroni zawartości historii Git. Katalog publiczny może zawierać tylko `visibility: public` i jawnie zatwierdzone wpisy; nie łącz prywatnego `audit-live` z generatorem publicznej witryny. Publikacja Pages jest osobnym upoważnionym działaniem, nie skutkiem CI.
 

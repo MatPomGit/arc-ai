@@ -20,7 +20,7 @@ SPEC.loader.exec_module(validator)
 class DocumentationPolicyTests(unittest.TestCase):
     def fixture(self, dest: Path) -> Path:
         copytree_scaffold(ROOT, dest, ignore=shutil.ignore_patterns(
-            ".git", ".venv", "__pycache__", "site"))
+            ".git", ".venv", "__pycache__", "build"))
         return dest
 
     def test_scaffold_respects_document_budgets(self):
@@ -90,8 +90,8 @@ class DocumentationPolicyTests(unittest.TestCase):
     def test_new_public_page_is_limited(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = self.fixture(Path(tmp) / "arc")
-            (root / "pages/additional.md").write_text("x" * 6001, encoding="utf-8")
-            self.assertTrue(any("DOC LENGTH EXCEEDED: pages/additional.md" in e
+            (root / "site/additional.md").write_text("x" * 6001, encoding="utf-8")
+            self.assertTrue(any("DOC LENGTH EXCEEDED: site/additional.md" in e
                                 for e in validator.check_documentation(root)))
 
 

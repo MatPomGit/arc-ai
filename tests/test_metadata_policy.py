@@ -25,7 +25,7 @@ PAPER={"id":"MSC-CR-P05","title":"Hypothesis","area":"ndd",
 class MetadataTests(unittest.TestCase):
     def fixture(self,d):
         root=Path(d)/"arc"
-        copytree_scaffold(ROOT,root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,root,ignore=shutil.ignore_patterns(".git","build","__pycache__"))
         meta=json.loads((root/"program.json").read_text(encoding="utf-8"))
         meta.update(repository_visibility="public",programme="arc-neuro")
         (root/"program.json").write_text(json.dumps(meta),encoding="utf-8")
@@ -34,9 +34,9 @@ class MetadataTests(unittest.TestCase):
               .replace("projects_registered: 0","projects_registered: 1")
               .replace("papers_registered: 0","papers_registered: 1")
               .replace("phase: scaffold","phase: active"),encoding="utf-8")
-        (root/"areas/index.json").write_text(json.dumps({"lines":[{"id":"ndd","title":"NDD"}]}),encoding="utf-8")
-        (root/"portfolio/projects.json").write_text(json.dumps({"schema_version":2,"projects":[PROJECT.copy()]}),encoding="utf-8")
-        (root/"portfolio/papers.json").write_text(json.dumps({"schema_version":2,"papers":[PAPER.copy()]}),encoding="utf-8")
+        (root/"config/research-lines.json").write_text(json.dumps({"lines":[{"id":"ndd","title":"NDD"}]}),encoding="utf-8")
+        (root/"config/projects.json").write_text(json.dumps({"schema_version":2,"projects":[PROJECT.copy()]}),encoding="utf-8")
+        (root/"config/papers-v2.json").write_text(json.dumps({"schema_version":2,"papers":[PAPER.copy()]}),encoding="utf-8")
         return root
     def test_published_requires_evidence(self):
         with tempfile.TemporaryDirectory() as d:
@@ -46,7 +46,7 @@ class MetadataTests(unittest.TestCase):
     def test_private_metadata_extra_field_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            f=root/"portfolio/projects.json"
+            f=root/"config/projects.json"
             o=json.loads(f.read_text())
             o["projects"][0]["private_summary"]="DO_NOT_PUBLISH"
             f.write_text(json.dumps(o),encoding="utf-8")
@@ -54,7 +54,7 @@ class MetadataTests(unittest.TestCase):
     def test_undeclared_area_line_metadata_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            f=root/"areas/index.json"
+            f=root/"config/research-lines.json"
             o=json.loads(f.read_text())
             o["lines"][0]["confidential_programme_name"]="PRIVATE"
             f.write_text(json.dumps(o),encoding="utf-8")
@@ -70,7 +70,7 @@ class MetadataTests(unittest.TestCase):
     def test_extra_paper_field_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            f=root/"portfolio/papers.json"
+            f=root/"config/papers-v2.json"
             o=json.loads(f.read_text())
             o["papers"][0]["private_submission_url"]="https://secret.example"
             f.write_text(json.dumps(o),encoding="utf-8")
@@ -78,7 +78,7 @@ class MetadataTests(unittest.TestCase):
     def test_valid_published_evidence(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            f=root/"portfolio/papers.json"
+            f=root/"config/papers-v2.json"
             o=json.loads(f.read_text())
             o["papers"][0].update(publication_url="https://example.org/article",
                 stage_evidence={"kind":"publication_record","sha256":"a"*64,"checked_on":"2026-11-20"})
@@ -87,11 +87,11 @@ class MetadataTests(unittest.TestCase):
     def test_unauthorised_submodule_url_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            f=root/"portfolio/papers.json"
+            f=root/"config/papers-v2.json"
             f.write_text(json.dumps({"schema_version":2,"papers":[]}),encoding="utf-8")
             st=root/"PROJECT_STATE.yaml"
             st.write_text(st.read_text().replace("papers_registered: 1","papers_registered: 0"),encoding="utf-8")
-            f=root/"portfolio/projects.json"
+            f=root/"config/projects.json"
             o=json.loads(f.read_text())
             o["projects"][0].update(submodule_path="projects/msc-example",snapshot_sha="a"*40)
             f.write_text(json.dumps(o),encoding="utf-8")

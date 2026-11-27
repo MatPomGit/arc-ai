@@ -19,7 +19,7 @@ class MigrationTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory()
         self.root=Path(self.temp.name)/"arc"
-        copytree_scaffold(ROOT,self.root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,self.root,ignore=shutil.ignore_patterns(".git","build","__pycache__"))
         self.prepare_v1()
 
     def tearDown(self):
@@ -37,10 +37,10 @@ class MigrationTests(unittest.TestCase):
         meta.pop("repository_full_name",None)
         meta.pop("manuscript_root",None)
         self.save("program.json",meta)
-        self.save("areas/index.json",{"schema_version":1,"lines":[{"id":"ndd","title":"NDD"}]})
+        self.save("config/research-lines.json",{"schema_version":1,"lines":[{"id":"ndd","title":"NDD"}]})
         for name,arr in (("projects",[]),("papers",[])):
-            self.save("portfolio/"+name+".json",{"schema_version":1,name:arr})
-        self.save("portfolio/dependencies.json",{"schema_version":1,"tools":[],"equipment":[],"datasets":[]})
+            self.save({"projects":"config/projects.json","papers":"config/papers-v2.json","dependencies":"config/dependencies-v2.json"}[name],{"schema_version":1,name:arr})
+        self.save("config/dependencies-v2.json",{"schema_version":1,"tools":[],"equipment":[],"datasets":[]})
         state=self.root/"PROJECT_STATE.yaml"
         body=state.read_text()
         body=body.replace("schema_version: 2","schema_version: 1")
@@ -127,12 +127,12 @@ class MigrationTests(unittest.TestCase):
                  "primary_program":"arc-neuro","line":"ndd","status":"active",
                  "visibility":"public","public_listing":False,"default_branch":"main",
                  "snapshot_sha":None,"pages_url":None,"submodule_path":None}
-        self.save("portfolio/projects.json",{"schema_version":1,"projects":[project]})
+        self.save("config/projects.json",{"schema_version":1,"projects":[project]})
         paper={"id":"MSC-CR-P05","title":"Public hypothesis","owner_project_id":"msc-example",
                "canonical_repository":"MatPomGit/msc-example","manuscript_path":"manuscripts/P05",
                "stage":"concept","doi":None,"preprint_url":None,"preregistration_url":None,
                "publication_url":None,"stage_evidence":None}
-        self.save("portfolio/papers.json",{"schema_version":1,"papers":[paper]})
+        self.save("config/papers-v2.json",{"schema_version":1,"papers":[paper]})
         s=self.root/"PROJECT_STATE.yaml"
         s.write_text(s.read_text().replace("projects_registered: 0","projects_registered: 1")
                      .replace("papers_registered: 0","papers_registered: 1")
@@ -140,7 +140,7 @@ class MigrationTests(unittest.TestCase):
         sha=self.git_init()
         report=execute(self.root,"apply",repository="MatPomGit/arc-neuro",expected_sha=sha)
         self.assertEqual(report["status"],"APPLIED")
-        item=json.loads((self.root/"portfolio/papers.json").read_text())["papers"][0]
+        item=json.loads((self.root/"config/papers-v2.json").read_text())["papers"][0]
         self.assertEqual(item["owner"]["repository"],"MatPomGit/msc-example")
         self.assertEqual(item["publication_stage"],"concept")
         self.assertEqual(item["manuscript"]["path"],"manuscripts/P05")
@@ -157,8 +157,8 @@ class MigrationTests(unittest.TestCase):
                  "primary_program":"arc-neuro","line":"ndd","status":"active",
                  "visibility":"public","public_listing":False,"default_branch":"main",
                  "snapshot_sha":None,"pages_url":None,"submodule_path":None}
-        self.save("portfolio/projects.json",{"schema_version":1,"projects":[project]})
-        self.save("portfolio/papers.json",{"schema_version":1,"papers":[p]})
+        self.save("config/projects.json",{"schema_version":1,"projects":[project]})
+        self.save("config/papers-v2.json",{"schema_version":1,"papers":[p]})
         st=self.root/"PROJECT_STATE.yaml"
         st.write_text(st.read_text().replace("projects_registered: 0","projects_registered: 1")
                       .replace("papers_registered: 0","papers_registered: 1")
@@ -170,7 +170,7 @@ class MigrationTests(unittest.TestCase):
 
     def test_rolls_back_when_postvalidation_fails(self):
         # Existing source lacking a required page still causes post-migration failure.
-        (self.root/"pages/index.md").unlink()
+        (self.root/"site/index.md").unlink()
         sha=self.git_init()
         before=(self.root/"program.json").read_text()
         with self.assertRaisesRegex(ValueError,"Post-migration validation failed"):
@@ -199,7 +199,7 @@ class MigrationTests(unittest.TestCase):
                        expected_sha=sha)
         self.assertEqual(result["status"],"APPLIED")
         self.assertEqual(execute(self.root,"plan")["status"],"ALREADY_V2")
-        bad=self.root/"portfolio/papers.json"
+        bad=self.root/"config/papers-v2.json"
         bad.write_text('{"schema_version":2,"papers":[{"id":"MSC-TEST-P01"}]}')
         self.assertEqual(execute(self.root,"plan")["status"],"BLOCKED")
         self.assertEqual(execute(self.root,"apply")["status"],"BLOCKED")

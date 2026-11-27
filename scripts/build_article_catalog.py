@@ -25,8 +25,8 @@ def clean(value: object, ident: str) -> str:
 
 def render(root: Path) -> str:
     program=json.loads((root/"program.json").read_text(encoding="utf-8"))
-    papers=json.loads((root/"portfolio/papers.json").read_text(encoding="utf-8"))
-    projects=json.loads((root/"portfolio/projects.json").read_text(encoding="utf-8"))
+    papers=json.loads((root/"config/papers-v2.json").read_text(encoding="utf-8"))
+    projects=json.loads((root/"config/projects.json").read_text(encoding="utf-8"))
     lines=["# Artykuły naukowe","",
            "Publikacje i planowane badania prowadzone w programie.",""]
     if papers.get("schema_version")!=2 or program.get("repository_visibility")!="public":
@@ -78,7 +78,7 @@ def render(root: Path) -> str:
 
 def write_catalog(root: Path) -> Path:
     root=Path(root).resolve()
-    target=root/"pages/articles.md"
+    target=root/"site/articles.md"
     policy=json.loads((root/"config/pages-policy.json").read_text(encoding="utf-8"))
     if (target.is_symlink() or not target.parent.is_dir() or
             target.parent.is_symlink() or "articles.md" not in policy.get("public_files",[])):

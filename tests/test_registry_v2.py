@@ -32,17 +32,17 @@ class RegistryV2Tests(unittest.TestCase):
 
     def fixture(self,folder):
         root=Path(folder)/"arc"
-        copytree_scaffold(ROOT,root,ignore=shutil.ignore_patterns(".git","site","__pycache__"))
+        copytree_scaffold(ROOT,root,ignore=shutil.ignore_patterns(".git","build","__pycache__"))
         meta=json.loads((root/"program.json").read_text())
         meta.update(programme="arc-neuro",repository_visibility="public",
                     repository_full_name="MatPomGit/arc-neuro")
         self.write(root,"program.json",meta)
-        self.write(root,"areas/index.json",{"schema_version":1,"lines":[{"id":"ndd","title":"NDD"}]})
+        self.write(root,"config/research-lines.json",{"schema_version":1,"lines":[{"id":"ndd","title":"NDD"}]})
         state=root/"PROJECT_STATE.yaml"
         state.write_text(state.read_text().replace("programme: arc-REPLACE","programme: arc-neuro")
                          .replace("papers_registered: 0","papers_registered: 1")
                          .replace("phase: scaffold","phase: active"))
-        self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[paper()]})
+        self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[paper()]})
         f=root/"manuscripts/MSC-CR-P05/main.tex"
         f.parent.mkdir(parents=True)
         f.write_text("\\documentclass{article}\n\\begin{document}Draft\\end{document}\n")
@@ -65,7 +65,7 @@ class RegistryV2Tests(unittest.TestCase):
             old.rename(new)
             content={"schema_version":2,"papers":[paper()]}
             content["papers"][0]["manuscript"]["path"]="papers/ndd/MSC-CR-P05/main.tex"
-            self.write(root,"portfolio/papers.json",content)
+            self.write(root,"config/papers-v2.json",content)
             self.assertEqual([],validate(root))
 
     def test_wrong_id_in_local_folder_rejected(self):
@@ -76,7 +76,7 @@ class RegistryV2Tests(unittest.TestCase):
             alt.write_text("draft")
             obj=paper()
             obj["manuscript"]["path"]="manuscripts/MSC-OTHER-P01/main.tex"
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[obj]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[obj]})
             self.assertTrue(any("path is not standard" in e for e in validate(root)))
 
     def test_local_repository_owner_must_match_full_name(self):
@@ -84,19 +84,19 @@ class RegistryV2Tests(unittest.TestCase):
             root=self.fixture(d)
             obj=paper()
             obj["owner"]["repository"]="Other/arc-neuro"
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[obj]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[obj]})
             self.assertTrue(any("Local owner must match" in e for e in validate(root)))
 
     def test_external_owner_registered(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[paper("external")]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[paper("external")]})
             project={"id":"msc-example","title":"Study","repository":"MatPomGit/msc-example",
                      "url":"https://github.com/MatPomGit/msc-example","role":"primary",
                      "primary_program":"arc-neuro","line":"ndd","status":"active",
                      "visibility":"public","public_listing":False,"default_branch":"main",
                      "snapshot_sha":None,"pages_url":None,"submodule_path":None}
-            self.write(root,"portfolio/projects.json",{"schema_version":2,"projects":[project]})
+            self.write(root,"config/projects.json",{"schema_version":2,"projects":[project]})
             st=root/"PROJECT_STATE.yaml"
             st.write_text(st.read_text().replace("projects_registered: 0","projects_registered: 1"))
             self.assertEqual([],validate(root))
@@ -109,7 +109,7 @@ class RegistryV2Tests(unittest.TestCase):
             p["owner"]={"mode":"external","repository":None,"project_id":None,
                         "redacted":True}
             p["manuscript"]=None
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[p]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[p]})
             self.assertEqual([],validate(root))
             schema=json.loads((root/"schemas/papers.v2.schema.json").read_text())
             self.assertEqual([],list(Draft202012Validator(schema).iter_errors(
@@ -131,7 +131,7 @@ class RegistryV2Tests(unittest.TestCase):
                 with self.subTest(field=field):
                     test=dict(p)
                     test[field]=value
-                    self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[test]})
+                    self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[test]})
                     self.assertTrue(any("redacted external" in x for x in validate(root)))
                     self.assertTrue(list(Draft202012Validator(schema).iter_errors(
                         {"schema_version":2,"papers":[test]})))
@@ -139,13 +139,13 @@ class RegistryV2Tests(unittest.TestCase):
     def test_unregistered_external_owner_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[paper("external")]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[paper("external")]})
             self.assertTrue(any("Unknown canonical project" in e for e in validate(root)))
 
     def test_duplicate_id_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[paper(),paper()]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[paper(),paper()]})
             st=root/"PROJECT_STATE.yaml"
             st.write_text(st.read_text().replace("papers_registered: 1","papers_registered: 2"))
             self.assertTrue(any("duplicate MSC" in e for e in validate(root)))
@@ -161,10 +161,10 @@ class RegistryV2Tests(unittest.TestCase):
             root=self.fixture(d)
             dep={"schema_version":2,"tools":[{"paper_id":"MSC-CR-P05","ref":"lib-test"}],
                  "equipment":[],"datasets":[]}
-            self.write(root,"portfolio/dependencies.json",dep)
+            self.write(root,"config/dependencies-v2.json",dep)
             self.assertEqual([],validate(root))
             dep["tools"][0]["project_id"]="msc-example"
-            self.write(root,"portfolio/dependencies.json",dep)
+            self.write(root,"config/dependencies-v2.json",dep)
             self.assertTrue(any("exactly one owner" in e for e in validate(root)))
 
     def test_publication_requires_evidence_and_doi(self):
@@ -172,7 +172,7 @@ class RegistryV2Tests(unittest.TestCase):
             root=self.fixture(d)
             p=paper()
             p["publication_stage"]="published"
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[p]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[p]})
             issues=validate(root)
             self.assertTrue(any("status evidence" in e for e in issues),issues)
             self.assertTrue(any("lacks DOI" in e for e in issues),issues)
@@ -180,7 +180,7 @@ class RegistryV2Tests(unittest.TestCase):
     def test_wrong_schema_version_rejected(self):
         with tempfile.TemporaryDirectory() as d:
             root=self.fixture(d)
-            self.write(root,"portfolio/papers.json",{"schema_version":1,"papers":[paper()]})
+            self.write(root,"config/papers-v2.json",{"schema_version":1,"papers":[paper()]})
             self.assertTrue(any("requires schema_version 2" in e for e in validate(root)))
 
     def test_noncanonical_owner_and_bad_path_rejected(self):
@@ -189,7 +189,7 @@ class RegistryV2Tests(unittest.TestCase):
             p=paper()
             p["owner"]["repository"]="Other/arc-neuro"
             p["manuscript"]["path"]="../outside.tex"
-            self.write(root,"portfolio/papers.json",{"schema_version":2,"papers":[p]})
+            self.write(root,"config/papers-v2.json",{"schema_version":2,"papers":[p]})
             self.assertTrue(any("Invalid manuscript" in e for e in validate(root)))
 
     def test_legacy_v1_scaffold_without_v2_schema_files(self):
@@ -204,10 +204,10 @@ class RegistryV2Tests(unittest.TestCase):
             meta.pop("repository_full_name")
             meta.pop("manuscript_root")
             self.write(root,"program.json",meta)
-            for path in ("portfolio/projects.json","portfolio/papers.json","portfolio/dependencies.json"):
+            for path in ("config/projects.json","config/papers-v2.json","config/dependencies-v2.json"):
                 obj=json.loads((root/path).read_text())
                 obj["schema_version"]=1
-                if path.endswith("papers.json"):
+                if path.endswith("papers-v2.json"):
                     obj["papers"]=[]
                 self.write(root,path,obj)
             state=root/"PROJECT_STATE.yaml"
@@ -235,7 +235,7 @@ class RegistryV2Tests(unittest.TestCase):
                     self.write(root,"program.json",meta)
                     record=paper()
                     record["manuscript"]["path"]=path
-                    self.write(root,"portfolio/papers.json",
+                    self.write(root,"config/papers-v2.json",
                                {"schema_version":2,"papers":[record]})
                     self.assertTrue(any("path is not standard" in e for e in validate(root)))
 
@@ -265,7 +265,7 @@ class RegistryV2Tests(unittest.TestCase):
                     with self.subTest(group=group,row=row):
                         data={"schema_version":2,"tools":[],"equipment":[],"datasets":[]}
                         data[group]=[row]
-                        self.write(root,"portfolio/dependencies.json",data)
+                        self.write(root,"config/dependencies-v2.json",data)
                         self.assertEqual(expected,checker.is_valid(data),row)
                         self.assertEqual(expected,not validate(root),row)
 
@@ -284,16 +284,16 @@ class RegistryV2Tests(unittest.TestCase):
             blob=git("rev-parse",f"{commit}:manuscripts/MSC-CR-P05/main.tex")
             record=paper()
             record["manuscript"].update(commit_sha=commit,blob_sha=blob)
-            self.write(root,"portfolio/papers.json",
+            self.write(root,"config/papers-v2.json",
                        {"schema_version":2,"papers":[record]})
             self.assertEqual([],validate(root))
             record["manuscript"]["blob_sha"]="0"*40
-            self.write(root,"portfolio/papers.json",
+            self.write(root,"config/papers-v2.json",
                        {"schema_version":2,"papers":[record]})
             self.assertTrue(any("disagrees with pinned commit" in e
                                 for e in validate(root)))
             record["manuscript"].update(commit_sha="0"*40,blob_sha=blob)
-            self.write(root,"portfolio/papers.json",
+            self.write(root,"config/papers-v2.json",
                        {"schema_version":2,"papers":[record]})
             self.assertTrue(any("UNAVAILABLE local manuscript" in e
                                 for e in validate(root)))
@@ -303,7 +303,7 @@ class RegistryV2Tests(unittest.TestCase):
             root=self.fixture(d)
             record=paper()
             record["manuscript"]["blob_sha"]="0"*40
-            self.write(root,"portfolio/papers.json",
+            self.write(root,"config/papers-v2.json",
                        {"schema_version":2,"papers":[record]})
             self.assertTrue(any("disagrees with current file" in e
                                 for e in validate(root)))
@@ -319,7 +319,7 @@ class RegistryV2Tests(unittest.TestCase):
         dependencies=json.loads((ROOT/"schemas/dependencies.v2.schema.json").read_text())
         dep_fields=set(dependencies["properties"]["tools"]["items"]["properties"])
         self.assertEqual(dep_fields,DEP_FIELDS)
-        program=json.loads((ROOT/"program.json").read_text())
+        program=json.loads((ROOT/"config/program-v2.json").read_text())
         cfg=json.loads((ROOT/"schemas/program.v2.schema.json").read_text())
         self.assertEqual(set(program),set(cfg["required"]))
 

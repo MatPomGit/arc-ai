@@ -16,12 +16,12 @@ class AgentGovernanceTests(unittest.TestCase):
 
     def test_no_contribution_guide_and_no_public_agent_docs(self):
         self.assertFalse((ROOT / "CONTRIBUTING.md").exists())
-        self.assertFalse((ROOT / "pages/AGENTS.md").exists())
-        self.assertFalse((ROOT / "pages/CONTRIBUTING.md").exists())
+        self.assertFalse((ROOT / "site/AGENTS.md").exists())
+        self.assertFalse((ROOT / "site/CONTRIBUTING.md").exists())
 
     def test_hybrid_ownership_documentation_guardrails(self):
         documents = {
-            "portfolio/README.md": ("local", "external"),
+            "docs/registry.md": ("local", "external"),
             "REPRODUCIBILITY.md": ("local", "external"),
             "docs/data-policy.md": ("local", "external", "publicznym ARC"),
             "docs/releases.md": ("local", "external", "manuskrypt"),
@@ -34,8 +34,8 @@ class AgentGovernanceTests(unittest.TestCase):
                     self.assertIn(phrase, content)
 
     def test_canonical_research_registries_preserved(self):
-        for name in ("portfolio/projects.json", "portfolio/papers.json",
-                     "portfolio/dependencies.json", "areas/index.json"):
+        for name in ("config/projects.json", "config/papers-v2.json",
+                     "config/dependencies-v2.json", "config/research-lines.json"):
             with self.subTest(name=name):
                 self.assertTrue((ROOT / name).is_file())
 

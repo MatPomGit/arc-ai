@@ -52,7 +52,7 @@ def source_files(root: Path) -> list[str]:
 def inventory(root: Path) -> dict:
     root=root.absolute()
     meta=load(root,"program.json")
-    reg=load(root,"portfolio/papers.json")
+    reg=load(root,"config/papers-v2.json")
     paths=source_files(root)
     return {"schema_version":meta.get("schema_version"),
             "programme":meta.get("programme"),
@@ -63,10 +63,10 @@ def inventory(root: Path) -> dict:
 def _convert(root: Path, repository: str, mapping: dict):
     """Derive v2 content without modifying the target."""
     meta=load(root,"program.json")
-    projects=load(root,"portfolio/projects.json")
-    papers=load(root,"portfolio/papers.json")
-    deps=load(root,"portfolio/dependencies.json")
-    areas=load(root,"areas/index.json")
+    projects=load(root,"config/projects.json")
+    papers=load(root,"config/papers-v2.json")
+    deps=load(root,"config/dependencies-v2.json")
+    areas=load(root,"config/research-lines.json")
     problems=[]
     if meta.get("schema_version")!=1:
         raise ValueError("Migration requires schema_version 1")
@@ -246,9 +246,9 @@ def _convert(root: Path, repository: str, mapping: dict):
         state=state.replace("phase: scaffold","phase: planned",1)
     payload={
         root/"program.json":json.dumps(meta2,ensure_ascii=False,indent=2)+"\n",
-        root/"portfolio/projects.json":json.dumps(projects2,ensure_ascii=False,indent=2)+"\n",
-        root/"portfolio/papers.json":json.dumps(papers2,ensure_ascii=False,indent=2)+"\n",
-        root/"portfolio/dependencies.json":json.dumps(deps2,ensure_ascii=False,indent=2)+"\n",
+        root/"config/projects.json":json.dumps(projects2,ensure_ascii=False,indent=2)+"\n",
+        root/"config/papers-v2.json":json.dumps(papers2,ensure_ascii=False,indent=2)+"\n",
+        root/"config/dependencies-v2.json":json.dumps(deps2,ensure_ascii=False,indent=2)+"\n",
         root/"PROJECT_STATE.yaml":state,
     }
     return payload,sorted(set(problems)),len(sources),len(out)

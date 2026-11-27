@@ -1,6 +1,6 @@
 # Standard dokumentacji i limity objętości ARC
 
-**Jedno źródło prawdy:** `portfolio/*.json` i `program.json` przechowują metadane, `ARCHITECTURE.md` opisuje kontekst systemu, `docs/architecture/` szczegóły, `docs/adr/` uzasadnienia decyzji, `SECURITY.md` kanał zgłaszania podatności, `docs/security/` zagrożenia, a `GOVERNANCE.md` kompetencje. `docs/` nie jest źródłem witryny publicznej; `pages/` zawiera wyłącznie zatwierdzoną projekcję.
+**Jedno źródło prawdy:** `portfolio/*.json` i `program.json` przechowują metadane, `ARCHITECTURE.md` opisuje kontekst systemu, `docs/architecture/` szczegóły, `docs/adr/` uzasadnienia decyzji, `SECURITY.md` kanał zgłaszania podatności, `docs/security/` zagrożenia, a `GOVERNANCE.md` kompetencje. `docs/` nie jest źródłem witryny publicznej; `site/` zawiera wyłącznie zatwierdzoną projekcję.
 
 ## Budżety
 
@@ -26,6 +26,6 @@ Kontrole `python scripts/validate_documentation.py` i `python scripts/validate_p
 
 **Pierwszy audyt live lub submoduł:** dokumentuj uprawnienia, zamrożony snapshot, metody reprodukcji i rzeczywistą kontrolę integracji. Brak dostępu nie daje `PASS`.
 
-**Pierwsza strona Pages:** użyj odrębnego `pages/`, zatwierdź każdy plik i zewnętrzną widoczność, usuń instrukcje agentowe, uwagi redakcyjne i wewnętrzne metadane. Najpierw przegląd, potem osobna autoryzacja publikacji.
+**Pierwsza strona Pages:** użyj odrębnego `site/`, zatwierdź każdy plik i zewnętrzną widoczność, usuń instrukcje agentowe, uwagi redakcyjne i wewnętrzne metadane. Najpierw przegląd, potem osobna autoryzacja publikacji.
 
 **Przed wydaniem:** potwierdź licencję, bezpieczeństwo, prawa do treści, aktualność SHA, statusy artykułów, wygenerowany katalog i wynik testów. Przed zmianą każdej polityki zachowaj dokładny SHA i decyzję review.

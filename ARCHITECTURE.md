@@ -4,10 +4,10 @@
 
 ```text
 ARC (strategia, rejestry, publiczny katalog)
-  |-- areas/index.json                dziedziny/linie naukowe
-  |-- portfolio/projects.json         kanoniczne badania i ich SHA
-  |-- portfolio/papers.json           artykuły i jeden właściciel
-  |-- portfolio/dependencies.json     aparatura, dane, app/lib
+  |-- config/research-lines.json                dziedziny/linie naukowe
+  |-- config/projects.json         kanoniczne badania i ich SHA
+  |-- config/papers-v2.json           artykuły i jeden właściciel
+  |-- config/dependencies-v2.json     aparatura, dane, app/lib
   |-- manuscripts/MSC-.../             opcjonalne lokalne źródła TeX
   |-- pages/projects.md               tylko publicznie zatwierdzone wpisy
   +-- [opcjonalne git submodules]     źródła projektów, nie kopie
@@ -15,7 +15,7 @@ ARC (strategia, rejestry, publiczny katalog)
           +-- starsze repo           migracja kontrolowana
 ```
 
-**Granice publikacji:** `docs/` przechowuje dokumentację techniczną, bezpieczeństwa i decyzji architektonicznych; nigdy nie jest źródłem Pages. `pages/` zawiera wyłącznie przeglądnięte materiały dla odbiorców, z jawną listą dopuszczenia. [Architektura szczegółowa](docs/architecture/README.md), [ADR](docs/adr/README.md) i [model zagrożeń](docs/security/threat-model.md) nie są automatycznie publiczne.
+**Granice publikacji:** `docs/` przechowuje dokumentację techniczną, bezpieczeństwa i decyzji architektonicznych; nigdy nie jest źródłem Pages. `site/` zawiera wyłącznie przeglądnięte materiały dla odbiorców, z jawną listą dopuszczenia. [Architektura szczegółowa](docs/architecture/README.md), [ADR](docs/adr/README.md) i [model zagrożeń](docs/security/threat-model.md) nie są automatycznie publiczne.
 
 **Niezmiennik:** jeden globalny identyfikator MSC -> jedno kanoniczne repozytorium (`local` ARC albo `external` MSC) -> dokładnie jeden właściciel. Dla lokalnego manuskryptu nie twórz fikcyjnego `owner_project_id`. Wieloprogramowe powiązania to tagi i `related`, nie duplikaty.
 

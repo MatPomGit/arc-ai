@@ -31,9 +31,9 @@ REQUIRED = (
     "ROADMAP.md", "CHANGELOG.md", "CODE_OF_CONDUCT.md",
     "GOVERNANCE.md", "SUPPORT.md", "SECURITY.md", ".github/AGENT_WORKFLOW.md",
     "LICENSE", "CITATION.cff", "VERSION", "mkdocs.yml",
-    "program.json", "areas/index.json", "areas/README.md",
-    "portfolio/projects.json", "portfolio/papers.json",
-    "portfolio/dependencies.json", "portfolio/README.md",
+    "program.json", "config/research-lines.json", "docs/research-lines.md",
+    "config/projects.json", "config/papers-v2.json",
+    "config/dependencies-v2.json", "docs/registry.md",
     "equipment/README.md", "software/README.md",
     "docs/index.md", "docs/scientific-scope.md", "docs/publication-policy.md",
     "docs/data-policy.md", "docs/submodules.md", "docs/pages.md",
@@ -44,7 +44,7 @@ REQUIRED = (
     "docs/adr/0001-canonical-ownership.md", "docs/adr/0002-publication-boundaries.md",
     "docs/security/threat-model.md", "docs/security/incident-response.md",
     "docs/operations/runbook.md", "config/documentation-policy.json",
-    "config/pages-policy.json", "pages/index.md", "pages/projects.md",
+    "config/pages-policy.json", "site/index.md", "site/projects.md",
     "scripts/validate_repository.py", "scripts/bootstrap.py",
     "scripts/build_public_catalog.py", "scripts/validate_pages.py",
     "scripts/validate_documentation.py", "scripts/validate_state.py",
@@ -138,10 +138,13 @@ def validate(root: Path, phase: str = "scaffold", verified_repository: str | Non
         issues.append("CONTRIBUTING.md is not part of the ARC template")
 
     meta = load_json(root, "program.json", issues)
-    areas = load_json(root, "areas/index.json", issues)
-    projects = load_json(root, "portfolio/projects.json", issues)
-    papers = load_json(root, "portfolio/papers.json", issues)
-    dependencies = load_json(root, "portfolio/dependencies.json", issues)
+    if isinstance(meta, dict) and meta.get("schema_version") == 3:
+        meta = {k: v for k, v in meta.items() if k not in ("site_root", "site_output")}
+        meta["schema_version"] = 2
+    areas = load_json(root, "config/research-lines.json", issues)
+    projects = load_json(root, "config/projects.json", issues)
+    papers = load_json(root, "config/papers-v2.json", issues)
+    dependencies = load_json(root, "config/dependencies-v2.json", issues)
     if not all(isinstance(obj, dict) for obj in (meta, areas, projects, papers, dependencies)):
         return sorted(set(issues + ["Invalid ARC root JSON object type"]))
     if set(meta) - PROGRAM_FIELDS:
@@ -149,10 +152,10 @@ def validate(root: Path, phase: str = "scaffold", verified_repository: str | Non
     if meta.get("schema_version") == 2 and set(meta) != PROGRAM_FIELDS:
         issues.append("Missing required programme v2 fields")
     for filename, obj, fields in (
-        ("areas/index.json", areas, {"lines","schema_version"}),
-        ("portfolio/projects.json", projects, {"projects","schema_version"}),
-        ("portfolio/papers.json", papers, {"papers","schema_version"}),
-        ("portfolio/dependencies.json", dependencies, {"tools","equipment","datasets","schema_version"}),
+        ("config/research-lines.json", areas, {"lines","schema_version"}),
+        ("config/projects.json", projects, {"projects","schema_version"}),
+        ("config/papers-v2.json", papers, {"papers","schema_version"}),
+        ("config/dependencies-v2.json", dependencies, {"tools","equipment","datasets","schema_version"}),
     ):
         if set(obj) - fields or ("schema_version" in obj and type(obj["schema_version"]) is not int):
             issues.append("Unexpected registry fields or schema type: " + filename)
@@ -178,9 +181,9 @@ def validate(root: Path, phase: str = "scaffold", verified_repository: str | Non
             not re.fullmatch(r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)", template_version)):
         issues.append("Unexpected program template version (expected numeric SemVer core)")
     if schema_version == 2:
-        for rel, obj in (("portfolio/projects.json", projects),
-                         ("portfolio/papers.json", papers),
-                         ("portfolio/dependencies.json", dependencies)):
+        for rel, obj in (("config/projects.json", projects),
+                         ("config/papers-v2.json", papers),
+                         ("config/dependencies-v2.json", dependencies)):
             if obj.get("schema_version") != 2:
                 issues.append("Registry requires schema_version 2: " + rel)
     programme = meta.get("programme")
@@ -203,14 +206,14 @@ def validate(root: Path, phase: str = "scaffold", verified_repository: str | Non
     if meta.get("owner_of_raw_data") is not False or meta.get("public_catalog_policy") != "explicit_opt_in":
         issues.append("Unsafe programme data/catalog policy")
     if not isinstance(projects.get("projects"), list):
-        issues.append("portfolio/projects.json requires projects array")
+        issues.append("config/projects.json requires projects array")
     if not isinstance(papers.get("papers"), list):
-        issues.append("portfolio/papers.json requires papers array")
+        issues.append("config/papers-v2.json requires papers array")
     if not isinstance(areas.get("lines"), list):
-        issues.append("areas/index.json requires lines array")
+        issues.append("config/research-lines.json requires lines array")
     for key in ("tools", "equipment", "datasets"):
         if not isinstance(dependencies.get(key), list):
-            issues.append(f"portfolio/dependencies.json requires {key} array")
+            issues.append(f"config/dependencies-v2.json requires {key} array")
 
     project_items = projects.get("projects", []) if isinstance(projects.get("projects"), list) else []
     paper_items = papers.get("papers", []) if isinstance(papers.get("papers"), list) else []
@@ -422,7 +425,7 @@ def validate(root: Path, phase: str = "scaffold", verified_repository: str | Non
             issues.append("Programme license not selected")
         if meta.get("pages_status") != "approved" or not meta.get("pages_url"):
             issues.append("No reviewed public Pages configuration")
-        for f in ("README.md", "pages/index.md", "CITATION.cff", "LICENSE"):
+        for f in ("README.md", "site/index.md", "CITATION.cff", "LICENSE"):
             file = root / f
             if file.is_file() and ("REPLACE" in file.read_text(encoding="utf-8") or "NOT CONFIGURED" in file.read_text(encoding="utf-8")):
                 issues.append(f"Unresolved template text: {f}")
@@ -448,7 +451,7 @@ def main(argv: list[str] | None = None) -> int:
             is_empty_template = (
                 declared == "unconfigured"
                 and meta.get("programme") == "arc-REPLACE"
-                and json.loads((a.root / "portfolio/projects.json").read_text(
+                and json.loads((a.root / "config/projects.json").read_text(
                     encoding="utf-8")).get("projects") == []
             )
             if declared != a.repo_visibility and not is_empty_template:

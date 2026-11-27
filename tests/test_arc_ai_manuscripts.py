@@ -25,7 +25,7 @@ def blob_sha(path: Path) -> str:
 class AiManuscriptTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.registry = json.loads((ROOT / "portfolio/papers.json").read_text(encoding="utf-8"))
+        cls.registry = json.loads((ROOT / "config/papers-v2.json").read_text(encoding="utf-8"))
         cls.papers = cls.registry["papers"]
 
     def test_22_real_msc_packages_and_no_public_approval(self):

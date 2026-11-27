@@ -198,7 +198,7 @@ def check_site(site: Path, *, strict: bool = False, root: Path = ROOT) -> list[s
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--site", type=Path, default=ROOT / "site")
+    parser.add_argument("--site", type=Path, default=ROOT / "build/site")
     parser.add_argument("--strict", action="store_true")
     args = parser.parse_args()
     errors = check_site(args.site, strict=args.strict)

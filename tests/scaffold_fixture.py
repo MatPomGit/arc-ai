@@ -9,8 +9,8 @@ from pathlib import Path
 
 FILES = (
     "README.md", "RESEARCH.md", "ROADMAP.md", "CITATION.cff",
-    "PROJECT_STATE.yaml", "program.json", "areas/index.json",
-    "portfolio/papers.json", "docs/scientific-scope.md",
+    "PROJECT_STATE.yaml", "program.json", "config/research-lines.json",
+    "config/papers-v2.json", "docs/scientific-scope.md",
 )
 
 
@@ -18,7 +18,7 @@ def restore_scaffold(root: Path) -> Path:
     root = Path(root)
     fixtures = root / "tests" / "fixtures" / "arc-scaffold"
     for name in FILES:
-        original = fixtures / name
+        original = fixtures / {"config/research-lines.json": "areas/index.json", "config/papers-v2.json": "portfolio/papers.json"}.get(name, name)
         target = root / name
         if not original.is_file() or target.is_symlink():
             raise ValueError("Untrusted test scaffold fixture: " + name)

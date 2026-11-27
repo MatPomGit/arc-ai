@@ -33,11 +33,11 @@ def create(root: Path, *, ident: str, title: str, area: str,
         raise ValueError("Title must be a nonempty single line")
     meta = json.loads((root / "program.json").read_text(encoding="utf-8"))
     repository = meta.get("repository_full_name")
-    if (meta.get("schema_version") != 2 or meta.get("programme") == "arc-REPLACE"
+    if (meta.get("schema_version") not in (2, 3) or meta.get("programme") == "arc-REPLACE"
             or meta.get("repository_visibility") not in ("public", "private")
             or not isinstance(repository, str) or not repository.endswith("/" + meta["programme"])):
-        raise ValueError("Configure ARC v2 before creating manuscripts")
-    areas = json.loads((root / "areas/index.json").read_text(encoding="utf-8")).get("lines", [])
+        raise ValueError("Configure ARC before creating manuscripts")
+    areas = json.loads((root / "config/research-lines.json").read_text(encoding="utf-8")).get("lines", [])
     if area not in {x.get("id") for x in areas if isinstance(x, dict)}:
         raise ValueError("Unregistered research area")
     manuscript_root = meta.get("manuscript_root")
@@ -50,7 +50,7 @@ def create(root: Path, *, ident: str, title: str, area: str,
     files = {name: directory / name for name in ("main.tex", "study.yaml", "references.bib", "README.md")}
     for path in files.values():
         safe_target(root, path)
-    reg_path = root / "portfolio/papers.json"
+    reg_path = root / "config/papers-v2.json"
     state_path = root / "PROJECT_STATE.yaml"
     register = json.loads(reg_path.read_text(encoding="utf-8"))
     if register.get("schema_version") != 2 or not isinstance(register.get("papers"), list):
@@ -166,8 +166,15 @@ def create(root: Path, *, ident: str, title: str, area: str,
         reg_path: json.dumps(register, ensure_ascii=False, indent=2) + "\n",
         state_path: state,
     }
+    new_files = set(files.values())
+    if meta.get("schema_version") == 3:
+        metadata_path = directory / "paper.json"
+        safe_target(root, metadata_path)
+        metadata = {**record, "schema_version": 3, "dependencies": {"tools": [], "equipment": [], "datasets": []}}
+        updates[metadata_path] = json.dumps(metadata, ensure_ascii=False, indent=2) + "\n"
+        new_files.add(metadata_path)
     if apply:
-        write_batch(root, updates, set(files.values()))
+        write_batch(root, updates, new_files)
     return [str(p.relative_to(root)) for p in updates]
 
 
